@@ -1,6 +1,6 @@
 # Welcome to Tuan's Blog
 
-Welcome to my digital garden where I cultivate thoughts on **Machine Learning**, **Generative AI**, **Efficient AI**, and the future of **Trustworthy AI**.
+Welcome to my digital garden where I cultivate thoughts on **Machine Learning**, **Generative AI**, **Trustworthy AI**, **AI Systems**, **Efficient AI**, and **Paper Reviews**.
 
 ## About This Blog
 
@@ -8,7 +8,7 @@ This platform serves as a repository for:
 
 *   **Deep Dives**: Rigorous mathematical explorations of ML algorithms.
 *   **Practical Guides**: Hands-on code tutorials and systems engineering patterns.
-*   **Research Notes**: Summaries and thoughts on the latest papers in GenAI, Trustworthy AI, and Efficient AI.
+*   **Research Notes**: Summaries and thoughts on the latest papers in GenAI, Trustworthy AI, AI Systems, Efficient AI, and Paper Reviews.
 
 !!! tip "Work in Progress"
     This blog is continuously evolving. Check back often for updates!

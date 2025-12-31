@@ -1,118 +1,105 @@
 # Tuan's Blog
 
-A technical blog dedicated to Machine Learning, Generative AI, and Trustworthy AI.
+A high-performance technical blog dedicated to the frontiers of **AI Systems**, **Generative AI**, **Efficient AI**, and **Machine Learning Theory**.
+
 Built with [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
-## Project Structure
+## 🌟 Key Features
 
-```
+*   **Responsive Technology**: Clean, modern UI with "Outfit" typography and glassmorphism headers.
+*   **Engineering-Focused**: First-class support for LaTeX math ($$ E=mc^2 $$), Python code highlighting, and request/response examples.
+*   **Automated Workflow**: Fully CI/CD integrated with GitHub Actions.
+*   **Performance**: Lightning-fast static site generation.
+
+## 📂 Project Structure
+
+```bash
 mtuann.blog/
-├── docs/                   # Content source
-│   ├── index.md            # Homepage
-│   ├── ml/                 # Machine Learning Section
-│   ├── genai/              # Generative AI Section
-│   ├── efficient-ai/       # Efficient AI Section
-│   ├── trustworthy-ai/     # Trustworthy AI Section
-│   ├── snippets/           # Code snippets for inclusion
-│   └── javascripts/        # Custom JS (MathJax)
+├── docs/                   # Content Source
+│   ├── index.md            # Landing Page
+│   ├── ai-systems/         # System Engineering & Infrastructure
+│   ├── genai/              # LLMs, Diffusion, & Reasoning
+│   ├── efficient-ai/       # Quantization, Pruning, & Edge AI
+│   ├── trustworthy-ai/     # Safety, Alignment, & Interpretability
+│   ├── paper-reviews/      # Arxiv Analysis & Summaries
+│   ├── ml/                 # Foundations & Theory
+│   ├── stylesheets/        # Custom CSS (Glassmorphism, etc.)
+│   └── snippets/           # Reusable code blocks
 ├── mkdocs.yml              # Main configuration
 ├── requirements.txt        # Python dependencies
-└── README.md               # This file
+└── .github/workflows/      # Deployment pipelines
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-*   Python 3.x
-*   [uv](https://github.com/astral-sh/uv) (Recommended for faster setup) or pip
+*   Python 3.10+
+*   [uv](https://github.com/astral-sh/uv) (Recommended) or pip
 
 ### Installation
 
-We recommend using **uv** for lightning-fast environment management.
+We use **uv** for ultra-fast environment management.
 
-1.  **Clone the repository** (if not already local).
+```bash
+# 1. Clone the repo
+git clone https://github.com/mtuann/blog.git
+cd blog
 
-2.  **Setup Environment**:
+# 2. Create virtual env
+uv venv
 
-    === "Using uv (Recommended)"
-    
-        ```bash
-        # Create virtual environment
-        uv venv
-        
-        # Activate environment
-        source .venv/bin/activate
-        
-        # Install dependencies
-        uv pip install -r requirements.txt
-        ```
+# 3. Activate
+source .venv/bin/activate
 
-    === "Using standard pip"
-
-        ```bash
-        # Create virtual environment (optional but recommended)
-        python -m venv venv
-        source venv/bin/activate
-
-        # Install dependencies
-        pip install -r requirements.txt
-        ```
+# 4. Install dependencies
+uv pip install -r requirements.txt
+```
 
 ### Local Development
 
-To preview the site locally with hot-reloading:
+Start the hot-reloading development server:
 
 ```bash
 mkdocs serve
 ```
 
-Open your browser to `http://127.0.0.1:8000`.
+Visit `http://127.0.0.1:8000` in your browser.
 
-## Writing Content
+## ✍️ Writing Content
 
-1.  **Markdown**: All content is in `docs/`. Use standard Markdown.
-2.  **Math**: Use LaTeX syntax.
-    *   Inline: `\( x^2 \)`
-    *   Block: `$$ E = mc^2 $$`
-3.  **Code**: Use fences like normally.
-    *   ```python ... ```
-4.  **Admonitions**:
-    ```markdown
-    !!! tip "Pro Tip"
-        This is a tip.
-    ```
+This blog uses extended Markdown features.
 
-## Deployment
+### Math (LaTeX)
+```latex
+$$
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+$$
+```
 
-### GitHub Pages (Automated)
+### Icons & Emojis
+Use Material Design icons directly in text:
+*   `:material-brain:` -> 🧠 (styled icon)
+*   `:material-server-network:` -> 🖥️ (server icon)
 
-This project uses **GitHub Actions** to automatically build and deploy the site whenever you push to `main`.
+### Admonitions
+```markdown
+!!! tip "Optimization Tip"
+    Use FlashAttention-2 to reduce memory footprint by quadratic factors.
+```
 
-1.  **Push your changes**:
-    ```bash
-    git add .
-    git commit -m "New post"
-    git push origin main
-    ```
-2.  **Wait**: The action will run (approx 30s) and update the `gh-pages` branch.
-3.  **Config**: Ensure your repository Settings > Pages is serving from the `gh-pages` branch.
+## 🚢 Deployment
 
-### Manual Deployment (Fallback)
+**Automated (Recommended)**:
+This requires no manual effort.
+1.  Push changes to `main`.
+2.  GitHub Actions (`.github/workflows/deploy.yml`) builds and deploys to `gh-pages` automatically.
 
-If you ever need to deploy manually:
-
+**Manual**:
 ```bash
 mkdocs gh-deploy
 ```
 
-### Netlify / Vercel
+## 📜 License
 
-1.  Connect your GitHub repository to Netlify/Vercel.
-2.  **Build Command**: `mkdocs build`
-3.  **Publish Directory**: `site`
-4.  (Optional) Ensure `requirements.txt` is detected so dependencies install.
-
-## Easter Egg
-
-Check `docs/snippets/antigravity.py` for a classic Python nod. It is imported dynamically into the `ml/practice.md` page using the snippets extension.
+[MIT](LICENSE) © 2026 Tuan Nguyen

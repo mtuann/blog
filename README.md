@@ -1,4 +1,4 @@
-# mtuann Blog
+# Tuan's Blog
 
 A technical blog dedicated to Machine Learning, Generative AI, and Trustworthy AI.
 Built with [MkDocs](https://www.mkdocs.org/) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).

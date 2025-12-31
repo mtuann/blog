@@ -1,4 +1,4 @@
-# Welcome to Mtuann Blog
+# Welcome to Tuan's Blog
 
 Welcome to my digital garden where I cultivate thoughts on **Machine Learning**, **Generative AI**, **Efficient AI**, and the future of **Trustworthy AI**.
 

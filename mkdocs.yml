@@ -1,38 +1,57 @@
-site_name: Mtuann Blog
+site_name: Tuan's Blog
 site_url: https://mtuann.github.io/blog/
 repo_url: https://github.com/mtuann/blog
 repo_name: mtuann/blog
 edit_uri: edit/main/docs/
 
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/mtuann
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/mtuann
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/mtuann
+
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Outfit
+    code: JetBrains Mono
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo 
+      primary: black 
+      accent: deep purple 
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: deep purple
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
-  features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.code.copy
-  icon:
-    repo: fontawesome/brands/github
 
 markdown_extensions:
   - admonition
@@ -41,6 +60,9 @@ markdown_extensions:
   - def_list
   - footnotes
   - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   - toc:
       permalink: true

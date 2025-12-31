@@ -2,6 +2,21 @@
 
 This section focuses on implementation details, best practices, and code snippets.
 
+## SOTA Roadmap
+
+### 1. Distributed Training
+*   **Parallelism**: Data Parallel (DDP/FSDP), Tensor Parallel (TP), Pipeline Parallel (PP).
+*   **Infrastructure**: DeepSpeed, Megatron-LM, DTensor (PyTorch).
+
+### 2. High-Performance Kernels
+*   **Triton**: Writing custom CUDA kernels in Python.
+*   **FlashAttention**: IO-Aware exact attention.
+*   **Kernel Fusion**: torch.compile (Inductor).
+
+### 3. MLOps for LLMs (LLMOps)
+*   **Evaluation**: Ragas, TruLens.
+*   **serving**: vLLM, TGI, SGLang.
+
 ## Efficient Data Loading
 
 When training large models, data loading can become a bottleneck. Here is a comparison of standard vs optimized loading patterns.

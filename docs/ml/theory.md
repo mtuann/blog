@@ -2,7 +2,22 @@
 
 This section covers the mathematical foundations of modern machine learning algorithms.
 
-## The Attention Mechanism
+## SOTA Roadmap
+
+### 1. Modern Optimization Theory
+*   **Loss Landscapes**: Mode Connectivity, Sharpness-Aware Minimization (SAM).
+*   **Convergence**: Grokking (Delayed Generalization), Edge of Stability.
+
+### 2. Deep Learning Foundations
+*   **Normalization**: LayerNorm vs RMSNorm effects on signal propagation.
+*   **Scaling Laws**: Chinchilla Scaling, Kaplan Laws.
+*   **Neural Tangent Kernel (NTK)**: Limits of infinite width networks.
+
+### 3. Generalization
+*   **Double Descent**: Bias-Variance Trade-off revisited.
+*   **Benign Overfitting**: Why deep networks generalize without regularization.
+
+<!-- ## The Attention Mechanism
 
 The core of the Transformer architecture is the Scaled Dot-Product Attention.
 
@@ -35,4 +50,4 @@ $$
 \text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \dots, \text{head}_h)W^O \\
 \text{where } \text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
 \end{aligned}
-$$
+$$ -->

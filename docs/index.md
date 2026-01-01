@@ -37,6 +37,11 @@ This platform serves as a repository for:
     Infrastructure, distributed training, and cluster orchestration.
     [Explore SysML](ai-systems/index.md)
 
+-   :material-cpu-64-bit: **CUDA Engineering**
+    
+    Zero to Hero: GPU Architecture, Kernels, and Tensor Cores.
+    [Start Learning](cuda/index.md)
+
 -   :material-speedometer: **Efficient AI**
     
     Quantization, pruning, and system optimizations.

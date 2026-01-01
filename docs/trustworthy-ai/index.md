@@ -22,3 +22,8 @@ Research on bias, fairness, robustness, and interpretability in AI systems.
 ### 4. Detection & Watermarking
 *   **Watermarking**: Tree-Ring Watermarking, Distillation-Resistant Watermarking.
 *   **Hallucination**: Detection via Uncertainty (SelfCheckGPT), RAG-based Fact Checking.
+
+## Key Resources
+*   **Journal**: [Transformer Circuits Thread](https://transformer-circuits.pub/) (Anthropic's interpretability research).
+*   **Course**: [AI Safety Fundamentals](https://course.aisafetyfundamentals.com/) (BlueDot).
+*   **Benchmark**: [Chatbot Arena Leaderboard](https://chat.lmsys.org/).

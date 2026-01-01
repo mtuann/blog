@@ -22,3 +22,8 @@ Techniques to train and serve massive models on constrained resources.
 ### 4. Sparsity & Pruning
 *   **Structured Sparsity**: 2:4 Sparsity (NVIDIA Ampere).
 *   **One-Shot Pruning**: SparseGPT, Wanda (Pruning by Weight and Activation).
+
+## Key Resources
+*   **Blog**: [Tim Dettmers' Blog](https://timdettmers.com/) (The gold standard for LLM quantization).
+*   **Library**: [vLLM Blog](https://blog.vllm.ai/) (PagedAttention internals).
+*   **Paper**: [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314).

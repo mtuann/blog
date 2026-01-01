@@ -17,6 +17,11 @@ This section focuses on implementation details, best practices, and code snippet
 *   **Evaluation**: Ragas, TruLens.
 *   **serving**: vLLM, TGI, SGLang.
 
+## Key Resources
+*   **Guide**: [Effective PyTorch](https://www.pytorch.org/tutorials/recipes/recipes_index.html).
+*   **Book**: [Machine Learning Engineering](http://www.mlebook.com/wiki/doku.php) (Andriy Burkov).
+*   **Repo**: [Hugging Face Transformers](https://github.com/huggingface/transformers).
+
 ## Efficient Data Loading
 
 When training large models, data loading can become a bottleneck. Here is a comparison of standard vs optimized loading patterns.

@@ -17,6 +17,11 @@ This section covers the mathematical foundations of modern machine learning algo
 *   **Double Descent**: Bias-Variance Trade-off revisited.
 *   **Benign Overfitting**: Why deep networks generalize without regularization.
 
+## Key Resources
+*   **Book**: [Deep Learning](https://www.deeplearningbook.org/) (Goodfellow et al.).
+*   **Course**: [Practical Deep Learning for Coders](https://course.fast.ai/) (fast.ai).
+*   **Visuals**: [Distill.pub](https://distill.pub/) (Interactive explanations).
+
 <!-- ## The Attention Mechanism
 
 The core of the Transformer architecture is the Scaled Dot-Product Attention.

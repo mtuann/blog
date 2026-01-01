@@ -107,6 +107,7 @@ nav:
     - Overview: genai/index.md
     - Transformer Foundations: genai/transformer-attention.md
   - AI Systems: ai-systems/index.md
+  - CUDA Engineering: cuda/index.md
   - Efficient AI: efficient-ai/index.md
   - Trustworthy AI: trustworthy-ai/index.md
   - Paper Reviews: paper-reviews/index.md

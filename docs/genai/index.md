@@ -27,3 +27,7 @@ We will cover the following cutting-edge topics:
 *   **Prompt Engineering**: Chain of Thought (CoT), Tree of Thoughts (ToT), Reflection.
 *   **Tool Use**: ReAct, Toolformer, Function Calling patterns.
 
+## Key Resources
+*   **Blog**: [Lilian Weng's Blog](https://lilianweng.github.io/) (Highly recommended for deep technical summaries).
+*   **Visuals**: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) (Jay Alammar).
+*   **Video**: [Andrej Karpathy's Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html).

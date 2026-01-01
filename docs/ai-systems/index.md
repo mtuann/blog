@@ -22,3 +22,8 @@ Bridging the gap between cutting-edge algorithms and massive-scale hardware.
 ### 4. Data Engineering for AI
 *   **Dataloaders**: Ray Data, MosaicML Streaming.
 *   **Formats**: Parquet, Arrow, LanceDB.
+
+## Key Resources
+*   **Course**: [CS329S: Machine Learning Systems Design](https://stanford-cs329s.github.io/) (Stanford/Chip Huyen).
+*   **Blog**: [Chip Huyen's Blog](https://huyenchip.com/) (Real-world MLSys).
+*   **Paper**: [Efficient Large-Scale Language Model Training on GPU Clusters](https://arxiv.org/abs/2104.04473) (Megatron-LM).

@@ -29,6 +29,7 @@ theme:
     - search.share
     - content.code.copy
     - content.tooltips
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
   font:

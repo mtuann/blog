@@ -95,6 +95,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_javascript:
+  - javascripts/lang-sync.js
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
@@ -108,7 +109,12 @@ nav:
     - Overview: genai/index.md
     - Transformer Foundations: genai/transformer-attention.md
   - AI Systems: ai-systems/index.md
-  - CUDA Engineering: cuda/index.md
+  - CUDA Engineering: 
+    - Overview: cuda/index.md
+    - PMPP Book:
+      - Introduction: cuda/pmpp/index.md
+      - "Chapter 1: Intro": cuda/pmpp/chap-01.md
+      - "Chapter 2: Programming Model": cuda/pmpp/chap-02.md
   - Efficient AI: efficient-ai/index.md
   - Trustworthy AI: trustworthy-ai/index.md
   - Paper Reviews: paper-reviews/index.md

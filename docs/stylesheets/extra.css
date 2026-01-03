@@ -58,3 +58,22 @@ html {
 .md-grid {
     max-width: 1200px;
 }
+
+/* Language-aware Table of Contents - CSS Fallback */
+/* These rules work as a fallback if JS doesn't load */
+[data-lang="en"] .md-nav__link[href*="#vi-"] {
+    display: none !important;
+}
+
+[data-lang="vi"] .md-nav__link[href*="#en-"] {
+    display: none !important;
+}
+
+/* More specific selectors for ToC items */
+[data-lang="en"] .md-nav--secondary .md-nav__item:has(.md-nav__link[href*="#vi-"]) {
+    display: none !important;
+}
+
+[data-lang="vi"] .md-nav--secondary .md-nav__item:has(.md-nav__link[href*="#en-"]) {
+    display: none !important;
+}

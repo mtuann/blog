@@ -37,6 +37,13 @@ The path to mastering GPU programming, High-Performance Computing (HPC), and sec
 *   **Custom Attention**: Writing FlashAttention from scratch.
 *   **Requirement**: Every project must include **Benchmarks** (Op/s, Bandwidth) and Nsight timeline analysis.
 
+## 📖 Deep Dive: PMPP Study Notes
+I am currently working through the 4th Edition of **"Programming Massively Parallel Processors"**.
+
+*   [**PMPP Book Overview**](pmpp/index.md): Syllabus and core concepts.
+*   [**Chapter 1: Intro**](pmpp/chap-01.md): The shift to throughput-oriented computing.
+*   [**Chapter 2: Programming Model**](pmpp/chap-02.md): Kernels, Grids, Blocks, and Threads.
+
 ## Key Resources
 *   **Book**: [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0) (The "Bible" of GPU programming).
 *   **Official Docs**: [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) & [Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/).

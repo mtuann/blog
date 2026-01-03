@@ -29,3 +29,6 @@ site/
 # OS
 .DS_Store
 Thumbs.db
+
+# Additional folders
+docs/cuda/tmp/

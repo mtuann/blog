@@ -1,0 +1,94 @@
+/* Global Font Adjustments */
+:root {
+    --md-text-font: 'Outfit', sans-serif;
+    --md-code-font: 'JetBrains Mono', monospace;
+}
+
+/* Card Hover Effects */
+.md-typeset .grid.cards>ul>li {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.md-typeset .grid.cards>ul>li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+    border-color: var(--md-default-fg-color--lightest);
+}
+
+/* Glassmorphism Header (Optional subtle effect) */
+.md-header {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+    background-color: rgba(30, 30, 30, 0.85);
+    /* Darker for dark mode */
+}
+
+/* Admonition Styling - Softer edges */
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Code Block Styling */
+.md-typeset pre.md-code {
+    border-radius: 8px;
+}
+
+/* Hero / Welcome Text Enhancement */
+.md-typeset h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, var(--md-primary-fg-color), #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Content Width */
+.md-grid {
+    max-width: 1200px;
+}
+
+/* Default: Hide Vietnamese elements if lang is not set or is en */
+body:not([data-lang="vi"]) [id^="vi-"],
+body:not([data-lang="vi"]) .md-nav__link[href*="#vi-"] {
+    display: none !important;
+}
+
+body:not([data-lang="vi"]) .md-nav--secondary .md-nav__item:has(.md-nav__link[href*="#vi-"]) {
+    display: none !important;
+}
+
+/* Specifically hide English if lang is vi */
+body[data-lang="vi"] [id^="en-"],
+body[data-lang="vi"] .md-nav__link[href*="#en-"] {
+    display: none !important;
+}
+
+body[data-lang="vi"] .md-nav--secondary .md-nav__item:has(.md-nav__link[href*="#en-"]) {
+    display: none !important;
+}
+
+/* Ensure language specific content is shown correctly when lang is vi */
+body[data-lang="vi"] [id^="vi-"],
+body[data-lang="vi"] .md-nav__link[href*="#vi-"],
+body[data-lang="vi"] .md-nav--secondary .md-nav__item:has(.md-nav__link[href*="#vi-"]) {
+    display: block !important;
+}
+
+body[data-lang="vi"] .md-nav__item:has(.md-nav__link[href*="#vi-"]) {
+    display: block !important;
+}

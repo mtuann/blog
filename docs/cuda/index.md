@@ -38,11 +38,19 @@ The path to mastering GPU programming, High-Performance Computing (HPC), and sec
 *   **Requirement**: Every project must include **Benchmarks** (Op/s, Bandwidth) and Nsight timeline analysis.
 
 ## 📖 Deep Dive: PMPP Study Notes
-I am currently working through the 4th Edition of **"Programming Massively Parallel Processors"**.
+I am currently working through the 4th Edition of **"Programming Massively Parallel Processors"**. 
 
 *   [**PMPP Book Overview**](pmpp/index.md): Syllabus and core concepts.
-*   [**Chapter 1: Intro**](pmpp/chap-01.md): The shift to throughput-oriented computing.
-*   [**Chapter 2: Programming Model**](pmpp/chap-02.md): Kernels, Grids, Blocks, and Threads.
+*   [**Chapter 1: Introduction**](pmpp/chapter-01.md): The shift to throughput-oriented computing.
+*   [**Chapter 2: Data Parallel Computing**](pmpp/chapter-02.md): Kernels, Grids, Blocks, and Threads.
+*   [**Chapter 3: Multidimensional Grids**](pmpp/chapter-03.md): 2D/3D mapping and matrix operations.
+*   [**Chapter 4: Compute Architecture**](pmpp/chapter-04.md): SMs, warps, and occupancy.
+*   [**Chapter 5: Memory Architecture**](pmpp/chapter-05.md): Tiling and shared memory optimization.
+*   [**Chapter 6: Performance Considerations**](pmpp/chapter-06.md): Coalescing and thread coarsening.
+*   [**Chapter 7: Convolution**](pmpp/chapter-07.md): Constant memory and halo cells.
+*   [**Chapter 8: Stencil**](pmpp/chapter-08.md): 3D patterns and register tiling.
+*   [**Chapter 9: Parallel Histogram**](pmpp/chapter-09.md): Atomic operations and privatization.
+*   [**Chapter 10: Reduction**](pmpp/chapter-10.md): Minimizing divergence and hierarchical reduction.
 
 ## Key Resources
 *   **Book**: [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0) (The "Bible" of GPU programming).

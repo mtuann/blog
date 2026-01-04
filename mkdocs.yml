@@ -113,8 +113,16 @@ nav:
     - Overview: cuda/index.md
     - PMPP Book:
       - Introduction: cuda/pmpp/index.md
-      - "Chapter 1: Intro": cuda/pmpp/chap-01.md
-      - "Chapter 2: Programming Model": cuda/pmpp/chap-02.md
+      - "Chapter 1: Introduction": cuda/pmpp/chapter-01.md
+      - "Chapter 2: Data Parallel Computing": cuda/pmpp/chapter-02.md
+      - "Chapter 3: Multidimensional Grids": cuda/pmpp/chapter-03.md
+      - "Chapter 4: Compute Architecture": cuda/pmpp/chapter-04.md
+      - "Chapter 5: Memory Architecture": cuda/pmpp/chapter-05.md
+      - "Chapter 6: Performance Considerations": cuda/pmpp/chapter-06.md
+      - "Chapter 7: Convolution": cuda/pmpp/chapter-07.md
+      - "Chapter 8: Stencil": cuda/pmpp/chapter-08.md
+      - "Chapter 9: Parallel Histogram": cuda/pmpp/chapter-09.md
+      - "Chapter 10: Reduction": cuda/pmpp/chapter-10.md
   - Efficient AI: efficient-ai/index.md
   - Trustworthy AI: trustworthy-ai/index.md
   - Paper Reviews: paper-reviews/index.md

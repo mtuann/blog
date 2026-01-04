@@ -40,6 +40,10 @@
     2. **Bridging Software and Hardware**: Explains *why* code is slow by looking at hardware limitations (bandwidth, warp scheduling).
     3. **Focus on Modern AI**: Significant new content on **Tensor Cores** and **Mixed Precision** (FP16/INT8).
 
+    ## The Path Beyond {#en-path-beyond}
+
+    Ready to turn this knowledge into a career? Check out the [**GPU Engineer Roadmap**](engineer.md) for advice on projects, portfolios, and interviewing.
+
 === "Tiếng Việt"
 
     ## Lộ trình học: PMPP (Ấn bản thứ 4) {#vi-syllabus}
@@ -79,3 +83,7 @@
     1. **Phương pháp dạy dựa trên mẫu (Pattern-Based)**: Tập trung vào "Các mẫu thuật toán" như Reduction, Scan, Tích chập thay vì chỉ dạy cú pháp.
     2. **Kết nối Phần mềm và Phần cứng**: Giải thích *tại sao* code chạy chậm thông qua các giới hạn phần cứng (băng thông, warp scheduling).
     3. **Tập trung vào AI hiện đại**: Nội dung mới về **Tensor Cores** và **Độ chính xác hỗn hợp** (FP16/INT8).
+
+    ## Con đường phía trước {#vi-path-beyond}
+
+    Bạn đã sẵn sàng biến kiến thức này thành sự nghiệp? Hãy xem [**Lộ trình Kỹ sư GPU**](engineer.md) để biết các lời khuyên về dự án, danh mục hồ sơ và phỏng vấn.

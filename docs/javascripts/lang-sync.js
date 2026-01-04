@@ -33,27 +33,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Initial check - default to English
-    setTimeout(() => {
+    function init() {
         const activeTab = document.querySelector(".tabbed-labels input:checked + label");
         if (activeTab) {
-            console.log("Found active tab:", activeTab.innerText); // Debug log
             updateLang(activeTab.innerText);
         } else {
-            console.log("No active tab found, defaulting to English"); // Debug log
-            updateLang("English");
+            // Default to English if no tab is selected yet
+            document.body.setAttribute("data-lang", "en");
+            filterToc("en");
         }
-    }, 100); // Small delay to ensure DOM is fully loaded
+    }
+
+    // Run immediately and also after short delays to catch any late rendering
+    init();
+    setTimeout(init, 50);
+    setTimeout(init, 200);
 
     // Watch for tab changes using event delegation
     document.addEventListener("click", function (e) {
         // Check if a tab label was clicked
         const label = e.target.closest(".tabbed-labels label");
         if (label) {
-            setTimeout(() => {
-                console.log("Tab clicked:", label.innerText); // Debug log
-                updateLang(label.innerText);
-            }, 50); // Small delay to ensure the tab is activated
+            // Use both a short and slightly longer delay to be safe
+            setTimeout(() => updateLang(label.innerText), 10);
+            setTimeout(() => updateLang(label.innerText), 100);
         }
     });
 

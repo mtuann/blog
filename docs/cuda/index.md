@@ -1,74 +1,107 @@
-# CUDA Engineering
+---
+title: GPU Systems & CUDA
+summary: GPU architecture, profiling, memory behavior, and CUDA engineering as part of the AI systems stack.
+status: evergreen
+updated: 2026-04-24
+tags:
+  - cuda
+  - gpu
+  - ai systems
+---
 
-The path to mastering GPU programming, High-Performance Computing (HPC), and securing a role at NVIDIA/Core AI Labs.
+<div class="hero-shell section-hero cuda-hero" markdown>
+<p class="hero-eyebrow">Hardware-Software Interface</p>
 
-## Zero to Hero Roadmap
+# GPU Systems & CUDA
 
-### 0. The Foundation (Prerequisites)
-*   **Modern C++**: Pointers, Memory Layout, RAII, and `std::vector` internals. NVIDIA requires strong C++ skills, not just Python.
-*   **Computer Architecture**: Cache hierarchies (L1/L2), SIMD concepts, and Latency vs Throughput.
+<p class="hero-lead">This section lives under <strong>AI Systems</strong> because GPU programming is part of the execution substrate for training and inference. The goal here is to move from conceptual understanding to performance-aware engineering.</p>
 
-### 1. Kernel Basics
-*   **GPU Architecture**: SMs, Warps, Scheduling, and the execution hierarchy.
-*   **Structuring Kernels**: Grids, Blocks, Threads mapping.
-*   **Hello World**: Vector Addition, Matrix Multiplication (Naive).
+<div class="chip-row">
+<span class="chip">GPU architecture</span>
+<span class="chip">Profiling</span>
+<span class="chip">Memory hierarchy</span>
+<span class="chip">CUDA and Triton</span>
+</div>
 
-### 2. Tools of the Trade (Crucial)
-*   **Profiling**: Using **Nsight Compute (NCU)** and **Nsight Systems (NSYS)** to identify bottlenecks.
-*   **Debugging**: Compute Sanitizer and `printf` debugging strategies.
+<div class="hero-actions" markdown>
+[Read the PMPP Overview](pmpp/index.md){ .md-button .md-button--primary }
+[Back to AI Systems](../ai-systems/index.md){ .md-button }
+</div>
+</div>
 
-### 3. Memory Mastery
-*   **Global Memory**: Coalescing patterns to maximize bandwidth.
-*   **Shared Memory**: Using the L1/Shared cache for tiling (Tiled MatMul).
-*   **Register File**: Optimization and preventing spills.
+## Zero To Hero Roadmap
 
-### 4. Compute Optimization
-*   **Control Flow**: Branch divergence minimization.
-*   **Warp Primitives**: Shuffle instructions for fast reductions.
-*   **Occupancy**: Calculating optimal thread/block usage.
+### 1. Foundations
 
-### 5. Advanced & Modern CUDA
-*   **Tensor Cores**: Using `wmma` intrinsics (Volta/Ampere/Hopper).
-*   **CUTLASS**: Understanding the template library for high-performance GEMMs.
-*   **Triton**: The Pythonic way to write CUDA (OpenAI).
+- Modern C++ memory semantics and layout intuition.
+- Throughput-oriented architecture: SMs, warps, occupancy, and memory hierarchy.
+- The difference between writing a correct kernel and writing a fast kernel.
 
-### 6. Capstone Projects (Resume Builders)
-*   **Optimized MatMul**: Implementing tiling and analyzing performance vs cuBLAS.
-*   **Custom Attention**: Writing FlashAttention from scratch.
-*   **Requirement**: Every project must include **Benchmarks** (Op/s, Bandwidth) and Nsight timeline analysis.
+### 2. Tooling
 
-## 📖 Deep Dive: PMPP Study Notes
-I am currently working through the 4th Edition of **"Programming Massively Parallel Processors"**. 
+- Profiling with **Nsight Compute** and **Nsight Systems**.
+- Debugging with Compute Sanitizer and careful instrumentation.
+- Building the habit of measuring before optimizing.
 
-*   [**PMPP Book Overview**](pmpp/index.md): Syllabus and core concepts.
-*   [**Chapter 1: Introduction**](pmpp/chapter-01.md): The shift to throughput-oriented computing.
-*   [**Chapter 2: Data Parallel Computing**](pmpp/chapter-02.md): Kernels, Grids, Blocks, and Threads.
-*   [**Chapter 3: Multidimensional Grids**](pmpp/chapter-03.md): 2D/3D mapping and matrix operations.
-*   [**Chapter 4: Compute Architecture**](pmpp/chapter-04.md): SMs, warps, and occupancy.
-*   [**Chapter 5: Memory Architecture**](pmpp/chapter-05.md): Tiling and shared memory optimization.
-*   [**Chapter 6: Performance Considerations**](pmpp/chapter-06.md): Coalescing and thread coarsening.
-*   [**Chapter 7: Convolution**](pmpp/chapter-07.md): Constant memory and halo cells.
-*   [**Chapter 8: Stencil**](pmpp/chapter-08.md): 3D patterns and register tiling.
-*   [**Chapter 9: Parallel Histogram**](pmpp/chapter-09.md): Atomic operations and privatization.
-*   [**Chapter 10: Reduction**](pmpp/chapter-10.md): Minimizing divergence and hierarchical reduction.
-*   [**Chapter 11: Prefix Sum (Scan)**](pmpp/chapter-11.md): Parallelizing sequential recursions.
-*   [**Chapter 12: Parallel Merge**](pmpp/chapter-12.md): Data-dependent workload boundaries.
-*   [**Chapter 13: Parallel Sorting**](pmpp/chapter-13.md): Efficient data movement for sorting.
-*   [**Chapter 14: Sparse Matrix Computation**](pmpp/chapter-14.md): Handling irregular data structures.
-*   [**Chapter 15: Parallel Graph Algorithms**](pmpp/chapter-15.md): Vertex and edge centric processing.
-*   [**Chapter 16: Deep Learning**](pmpp/chapter-16.md): Modern AI as matrix multiplications.
-*   [**Chapter 17: MRI Reconstruction**](pmpp/chapter-17.md): Hardware trigonometry and constant cache.
-*   [**Chapter 18: Molecular Dynamics**](pmpp/chapter-18.md): Spatial binning and cutoff summation.
-*   [**Chapter 19: Programming Strategy**](pmpp/chapter-19.md): Computational thinking and algorithm selection.
-*   [**Chapter 20: Heterogeneous Clusters**](pmpp/chapter-20.md): Scaling with MPI and CUDA Streams.
-*   [**Chapter 21: Dynamic Parallelism**](pmpp/chapter-21.md): Kernels launching other kernels.
-*   [**Chapter 22: Evolution and Trends**](pmpp/chapter-22.md): Unified Memory and task-level concurrency.
-*   [**Chapter 23: Conclusion**](pmpp/chapter-23.md): The future of throughput-oriented computing.
-*   [**Appendix A: Numerical Issues**](pmpp/appendix-a.md): Floating-point precision and stability.
-*   [**GPU Engineer Roadmap**](pmpp/engineer.md): Career advice and landing roles at top tech companies.
+### 3. Memory And Compute Optimization
+
+- Global-memory coalescing and shared-memory tiling.
+- Register pressure, divergence, occupancy, and warp-level primitives.
+- How to reason about bandwidth ceilings and arithmetic intensity.
+
+### 4. Modern GPU Software Stacks
+
+- CUDA as the core execution model.
+- CUTLASS for high-performance GEMM design patterns.
+- Triton for custom kernels in an AI workflow.
+
+### 5. Capstone Work
+
+- Optimized matrix multiplication with benchmarks against vendor libraries.
+- Custom attention kernels with careful memory analysis.
+- Every serious project should include benchmark tables and profiler screenshots.
+
+## PMPP Study Notes
+
+I am using the 4th edition of **Programming Massively Parallel Processors** as a structured study track.
+
+### Foundations
+
+- [PMPP Overview](pmpp/index.md)
+- [Chapter 1: Introduction](pmpp/chapter-01.md)
+- [Chapter 2: Data Parallel Computing](pmpp/chapter-02.md)
+- [Chapter 3: Multidimensional Grids](pmpp/chapter-03.md)
+- [Chapter 4: Compute Architecture](pmpp/chapter-04.md)
+- [Chapter 5: Memory Architecture](pmpp/chapter-05.md)
+- [Chapter 6: Performance Considerations](pmpp/chapter-06.md)
+
+### Parallel Patterns
+
+- [Chapter 7: Convolution](pmpp/chapter-07.md)
+- [Chapter 8: Stencil](pmpp/chapter-08.md)
+- [Chapter 9: Parallel Histogram](pmpp/chapter-09.md)
+- [Chapter 10: Reduction](pmpp/chapter-10.md)
+- [Chapter 11: Prefix Sum (Scan)](pmpp/chapter-11.md)
+- [Chapter 12: Parallel Merge](pmpp/chapter-12.md)
+- [Chapter 13: Parallel Sorting](pmpp/chapter-13.md)
+- [Chapter 14: Sparse Matrix Computation](pmpp/chapter-14.md)
+- [Chapter 15: Parallel Graph Algorithms](pmpp/chapter-15.md)
+
+### AI And Advanced Systems
+
+- [Chapter 16: Deep Learning](pmpp/chapter-16.md)
+- [Chapter 17: MRI Reconstruction](pmpp/chapter-17.md)
+- [Chapter 18: Molecular Dynamics](pmpp/chapter-18.md)
+- [Chapter 19: Programming Strategy](pmpp/chapter-19.md)
+- [Chapter 20: Heterogeneous Clusters](pmpp/chapter-20.md)
+- [Chapter 21: Dynamic Parallelism](pmpp/chapter-21.md)
+- [Chapter 22: Evolution and Trends](pmpp/chapter-22.md)
+- [Chapter 23: Conclusion](pmpp/chapter-23.md)
+- [Appendix A: Numerical Issues](pmpp/appendix-a.md)
+- [GPU Engineer Roadmap](pmpp/engineer.md)
 
 ## Key Resources
-*   **Book**: [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0) (The "Bible" of GPU programming).
-*   **Official Docs**: [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) & [Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/).
-*   **Community**: [CUDA Mode](https://github.com/gpu-mode/resource-stream) (Excellent lectures & repo).
-*   **Interactive**: [GPU Mode Lectures](https://www.youtube.com/@GPUMODE) (YouTube).
+
+- **Book**: [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0).
+- **Official Docs**: [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) and [CUDA Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/).
+- **Community**: [GPU Mode](https://github.com/gpu-mode/resource-stream).

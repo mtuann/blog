@@ -1,29 +1,62 @@
+---
+title: Efficient AI
+summary: Model-level efficiency techniques for training and serving large models under real resource constraints.
+status: evergreen
+updated: 2026-04-24
+tags:
+  - efficient ai
+  - quantization
+  - inference
+---
+
+<div class="hero-shell section-hero efficiency-hero" markdown>
+<p class="hero-eyebrow">Model Efficiency</p>
+
 # Efficient AI
 
-Techniques to train and serve massive models on constrained resources.
+<p class="hero-lead">This section focuses on efficiency techniques at the model and algorithm level: compression, quantization, sparse computation, efficient architectures, and inference tricks that change the cost profile of real workloads.</p>
 
-## SOTA Roadmap
+<div class="chip-row">
+<span class="chip">Quantization</span>
+<span class="chip">Sparsity</span>
+<span class="chip">Efficient architectures</span>
+<span class="chip">Inference optimization</span>
+</div>
 
-### 1. Quantization & Compression
-*   **Weight-Only**: GPTQ, AWQ (Activation-aware Weight Quantization), ExLlamaV2.
-*   **LoRA & Derivatives**: QLoRA (4-bit), DoRA (Weight-Decomposed), LongLoRA.
-*   **Extreme Quantization**: 1.58-bit LLMs (BitNet b1.58), QuIP#.
+<div class="hero-actions" markdown>
+[Read the Inference Reading Map](../research-notes/reading-maps/efficient-llm-inference.md){ .md-button .md-button--primary }
+[Read the KV Cache Roundup](../research-notes/roundups/2026-04-kv-cache-optimization.md){ .md-button }
+</div>
+</div>
 
-### 2. Efficient Architectures (Beyond Transformer)
-*   **State Space Models (SSM)**: Mamba, S4, H3.
-*   **Linear Attention**: RWKV, RetNet (Retentive Networks).
-*   **Hybrid Models**: Jamba (Mamba + Transformer + MoE).
+<div class="hub-grid">
+<div class="hub-panel" markdown>
+### Main Tracks
 
-### 3. Inference Optimization
-*   **Memory Management**: PagedAttention (vLLM), RadixAttention (SGLang).
-*   **Decoding Strategies**: Speculative Decoding (Medusa, Lookahead), KV Cache Compression.
-*   **Frameworks**: TensorRT-LLM, MLX (Apple Silicon), TGI (HuggingFace).
+- Quantization and compression
+- Efficient architectures beyond standard attention
+- Inference optimization and cache strategy
+- Sparsity and pruning
+</div>
 
-### 4. Sparsity & Pruning
-*   **Structured Sparsity**: 2:4 Sparsity (NVIDIA Ampere).
-*   **One-Shot Pruning**: SparseGPT, Wanda (Pruning by Weight and Activation).
+<div class="hub-panel" markdown>
+### Boundary With AI Systems
+
+- If the question is about clusters, communication, memory hierarchy, or CUDA kernels, it belongs under **AI Systems**.
+- If the question is about shrinking the model, reducing FLOPs, or changing the algorithmic cost profile, it belongs here.
+</div>
+
+<div class="hub-panel" markdown>
+### Latest Notes
+
+- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+- [Prefill, Decode, and Goodput](../ai-systems/prefill-decode-goodput.md)
+</div>
+</div>
 
 ## Key Resources
-*   **Blog**: [Tim Dettmers' Blog](https://timdettmers.com/) (The gold standard for LLM quantization).
-*   **Library**: [vLLM Blog](https://blog.vllm.ai/) (PagedAttention internals).
-*   **Paper**: [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314).
+
+- **Blog**: [Tim Dettmers' blog](https://timdettmers.com/).
+- **Engineering notes**: [vLLM blog](https://blog.vllm.ai/).
+- **Paper**: [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314).

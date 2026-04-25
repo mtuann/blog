@@ -1,26 +1,71 @@
+---
+title: Machine Learning Theory
+summary: Mathematical foundations for optimization, generalization, and deep learning dynamics.
+status: evergreen
+updated: 2026-04-24
+tags:
+  - machine learning
+  - theory
+  - optimization
+---
+
 # Machine Learning Theory
 
-This section covers the mathematical foundations of modern machine learning algorithms.
+This section tracks the mathematical ideas that remain useful even as the tooling changes. The goal is to understand why models learn, where the abstractions break, and which theoretical ideas help interpret modern AI behavior.
 
-## SOTA Roadmap
+## Core Objective
 
-### 1. Modern Optimization Theory
-*   **Loss Landscapes**: Mode Connectivity, Sharpness-Aware Minimization (SAM).
-*   **Convergence**: Grokking (Delayed Generalization), Edge of Stability.
+At the heart of most ML systems is empirical risk minimization:
 
-### 2. Deep Learning Foundations
-*   **Normalization**: LayerNorm vs RMSNorm effects on signal propagation.
-*   **Scaling Laws**: Chinchilla Scaling, Kaplan Laws.
-*   **Neural Tangent Kernel (NTK)**: Limits of infinite width networks.
+$$
+\theta^\* = \arg\min_{\theta} \frac{1}{N}\sum_{i=1}^{N} \mathcal{L}(f_{\theta}(x_i), y_i)
+$$
+
+The interesting work begins after writing that equation down: optimization dynamics, inductive bias, data scale, and model architecture all shape what this objective actually produces in practice.
+
+## Foundations To Build
+
+### 1. Optimization
+
+- Gradient descent and its stochastic variants.
+- Loss landscapes, sharpness, curvature, and optimizer-state dynamics.
+- Training instabilities such as edge-of-stability behavior and delayed generalization.
+
+### 2. Representation Learning
+
+- Why learned features are useful abstractions rather than mere compression.
+- The role of normalization, residual pathways, and depth in signal propagation.
+- How architectural choices influence expressivity and trainability.
 
 ### 3. Generalization
-*   **Double Descent**: Bias-Variance Trade-off revisited.
-*   **Benign Overfitting**: Why deep networks generalize without regularization.
+
+- Double descent and the limits of classical bias-variance narratives.
+- Benign overfitting and interpolation in over-parameterized models.
+- How data quality, scale, and augmentation change what generalization means.
+
+## Frontier Topics Worth Tracking
+
+- **Scaling laws** and compute-optimal training.
+- **NTK and infinite-width perspectives** as a limit case, not a full explanation.
+- **Mechanistic views of training dynamics** such as grokking and phase transitions.
+- **Data-centric theory** for curation, filtering, and synthetic data generation.
+
+## What I Want To Publish Here
+
+- Derivations that make research papers easier to read.
+- Notes that connect theoretical claims to empirical behavior.
+- Small experiments that test intuitions before accepting a narrative.
+
+## Latest Notes
+
+- [Generalization in the Overparameterized Era](generalization-overparameterization.md)
+- [Scaling Laws and Compute-Optimal Training](scaling-laws-compute-optimal-training.md)
 
 ## Key Resources
-*   **Book**: [Deep Learning](https://www.deeplearningbook.org/) (Goodfellow et al.).
-*   **Course**: [Practical Deep Learning for Coders](https://course.fast.ai/) (fast.ai).
-*   **Visuals**: [Distill.pub](https://distill.pub/) (Interactive explanations).
+
+- **Book**: [Deep Learning](https://www.deeplearningbook.org/) by Goodfellow, Bengio, and Courville.
+- **Course**: [Practical Deep Learning for Coders](https://course.fast.ai/) for intuition that complements formal theory.
+- **Visuals**: [Distill](https://distill.pub/) for clear interactive explanations.
 
 <!-- ## The Attention Mechanism
 

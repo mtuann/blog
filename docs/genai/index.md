@@ -1,33 +1,61 @@
+---
+title: Generative AI
+summary: Notes on transformers, LLMs, multimodal models, post-training, and agentic systems.
+status: evergreen
+updated: 2026-04-24
+tags:
+  - generative ai
+  - llms
+  - multimodal
+---
+
+<div class="hero-shell section-hero genai-hero" markdown>
+<p class="hero-eyebrow">Model Families</p>
+
 # Generative AI
 
-Explorations into the frontier of Artificial Intelligence.
+<p class="hero-lead">This section follows the modern generative stack from transformer foundations to LLM behavior, post-training, multimodal generation, and tool-using systems. The goal is to connect equations, implementation choices, and deployed behavior without getting lost in hype cycles.</p>
 
-## Core Concepts
+<div class="chip-row">
+<span class="chip">Transformers</span>
+<span class="chip">Post-training</span>
+<span class="chip">Multimodal</span>
+<span class="chip">Agents</span>
+</div>
 
-*   [**Transformer & Attention Foundations**](transformer-attention.md): The architecture that started it all. A mathematical and code-level deep dive into Self-Attention, Multi-Head Attention, and Positional Encodings.
+<div class="hero-actions" markdown>
+[Read Transformer Foundations](transformer-attention.md){ .md-button .md-button--primary }
+[Read DPO Review](../paper-reviews/direct-preference-optimization.md){ .md-button }
+</div>
+</div>
 
-## SOTA Roadmap
+<div class="hub-grid">
+<div class="hub-panel" markdown>
+### Start Here
 
-We will cover the following cutting-edge topics:
+- [Transformer & Attention Foundations](transformer-attention.md)
+- Then use this hub to branch into LLMs, post-training, multimodal work, or agents.
+</div>
 
-### 1. Large Language Models (LLMs)
-*   **Architectures**: Mixture of Experts (MoE/Mixtral), Grouped Query Attention (GQA), Rotary Embeddings (RoPE).
-*   **Optimization**: FlashAttention-2, Memory-efficient Transformers.
-*   **State-of-the-Art Models**: Analysis of Llama 3, Gemini 1.5, Claude 3.5 Sonnet.
+<div class="hub-panel" markdown>
+### Core Tracks
 
-### 2. Alignment & Instruct Tuning
-*   **RLHF Alternatives**: Direct Preference Optimization (DPO), Identity Preference Optimization (IPO).
-*   **Synthetic Data**: Self-Instruct, Evol-Instruct, Constitutional AI.
+- Large language models and architecture choices
+- Post-training and preference optimization
+- Multimodal generation and representation learning
+- Agents, tool use, and systems-aware evaluation
+</div>
 
-### 3. Image & Video Generation
-*   **Diffusion Evolution**: Latent Diffusion (SDXL), Rectified Flow (Flux.1), Consistency Models.
-*   **Video**: Spacetime Patches (Sora), Masked Generative Transformers.
+<div class="hub-panel" markdown>
+### Latest Notes
 
-### 4. Reasoning & Agents
-*   **Prompt Engineering**: Chain of Thought (CoT), Tree of Thoughts (ToT), Reflection.
-*   **Tool Use**: ReAct, Toolformer, Function Calling patterns.
+- [Paper Review: Direct Preference Optimization](../paper-reviews/direct-preference-optimization.md)
+- More model and post-training deep dives will accumulate here.
+</div>
+</div>
 
 ## Key Resources
-*   **Blog**: [Lilian Weng's Blog](https://lilianweng.github.io/) (Highly recommended for deep technical summaries).
-*   **Visuals**: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) (Jay Alammar).
-*   **Video**: [Andrej Karpathy's Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html).
+
+- **Blog**: [Lilian Weng's blog](https://lilianweng.github.io/) for technical summaries.
+- **Visuals**: [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/).
+- **Course**: [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html) by Andrej Karpathy.

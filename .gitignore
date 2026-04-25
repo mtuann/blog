@@ -30,5 +30,5 @@ site/
 .DS_Store
 Thumbs.db
 
-# Additional folders
-docs/cuda/tmp/
+# Local scratch drafts
+drafts/cuda/

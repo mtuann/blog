@@ -39,7 +39,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: black 
-      accent: deep purple 
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -48,7 +48,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: deep purple
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to light mode
@@ -93,6 +93,15 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
+plugins:
+  - search
+  - meta
+
+not_in_nav: |
+  paper-reviews/*.md
+  research-notes/roundups/*.md
+  research-notes/reading-maps/*.md
+
 extra_javascript:
   - javascripts/lang-sync.js
   - javascripts/mathjax.js
@@ -102,41 +111,53 @@ extra_javascript:
 nav:
   - Home: index.md
   - Machine Learning:
+    - Overview: ml/index.md
     - Theory: ml/theory.md
-    - Practice: ml/practice.md
-  - Generative AI: 
-    - Overview: genai/index.md
+    - Generalization in the Overparameterized Era: ml/generalization-overparameterization.md
+    - Scaling Laws and Compute-Optimal Training: ml/scaling-laws-compute-optimal-training.md
+    - Practical ML: ml/practice.md
     - Transformer Foundations: genai/transformer-attention.md
-  - AI Systems: ai-systems/index.md
-  - CUDA Engineering: 
-    - Overview: cuda/index.md
-    - PMPP Book:
-      - Introduction: cuda/pmpp/index.md
-      - "Chapter 1: Introduction": cuda/pmpp/chapter-01.md
-      - "Chapter 2: Data Parallel Computing": cuda/pmpp/chapter-02.md
-      - "Chapter 3: Multidimensional Grids": cuda/pmpp/chapter-03.md
-      - "Chapter 4: Compute Architecture": cuda/pmpp/chapter-04.md
-      - "Chapter 5: Memory Architecture": cuda/pmpp/chapter-05.md
-      - "Chapter 6: Performance Considerations": cuda/pmpp/chapter-06.md
-      - "Chapter 7: Convolution": cuda/pmpp/chapter-07.md
-      - "Chapter 8: Stencil": cuda/pmpp/chapter-08.md
-      - "Chapter 9: Parallel Histogram": cuda/pmpp/chapter-09.md
-      - "Chapter 10: Reduction": cuda/pmpp/chapter-10.md
-      - "Chapter 11: Prefix Sum (Scan)": cuda/pmpp/chapter-11.md
-      - "Chapter 12: Parallel Merge": cuda/pmpp/chapter-12.md
-      - "Chapter 13: Parallel Sorting": cuda/pmpp/chapter-13.md
-      - "Chapter 14: Sparse Matrix Computation": cuda/pmpp/chapter-14.md
-      - "Chapter 15: Parallel Graph Algorithms": cuda/pmpp/chapter-15.md
-      - "Chapter 16: Deep Learning": cuda/pmpp/chapter-16.md
-      - "Chapter 17: MRI Reconstruction": cuda/pmpp/chapter-17.md
-      - "Chapter 18: Molecular Dynamics": cuda/pmpp/chapter-18.md
-      - "Chapter 19: Programming Strategy": cuda/pmpp/chapter-19.md
-      - "Chapter 20: Heterogeneous Clusters": cuda/pmpp/chapter-20.md
-      - "Chapter 21: Dynamic Parallelism": cuda/pmpp/chapter-21.md
-      - "Chapter 22: Evolution and Trends": cuda/pmpp/chapter-22.md
-      - "Chapter 23: Conclusion": cuda/pmpp/chapter-23.md
-      - "Appendix A: Numerical Issues": cuda/pmpp/appendix-a.md
-      - "GPU Engineer Roadmap": cuda/pmpp/engineer.md
-  - Efficient AI: efficient-ai/index.md
-  - Trustworthy AI: trustworthy-ai/index.md
-  - Paper Reviews: paper-reviews/index.md
+  - Generative AI:
+    - Overview: genai/index.md
+  - AI Systems:
+    - Overview: ai-systems/index.md
+    - Distributed Training Playbook: ai-systems/distributed-training-playbook.md
+    - Prefill, Decode, and Goodput: ai-systems/prefill-decode-goodput.md
+    - GPU Systems & CUDA:
+      - Overview: cuda/index.md
+      - PMPP Book:
+        - Introduction: cuda/pmpp/index.md
+        - "Chapter 1: Introduction": cuda/pmpp/chapter-01.md
+        - "Chapter 2: Data Parallel Computing": cuda/pmpp/chapter-02.md
+        - "Chapter 3: Multidimensional Grids": cuda/pmpp/chapter-03.md
+        - "Chapter 4: Compute Architecture": cuda/pmpp/chapter-04.md
+        - "Chapter 5: Memory Architecture": cuda/pmpp/chapter-05.md
+        - "Chapter 6: Performance Considerations": cuda/pmpp/chapter-06.md
+        - "Chapter 7: Convolution": cuda/pmpp/chapter-07.md
+        - "Chapter 8: Stencil": cuda/pmpp/chapter-08.md
+        - "Chapter 9: Parallel Histogram": cuda/pmpp/chapter-09.md
+        - "Chapter 10: Reduction": cuda/pmpp/chapter-10.md
+        - "Chapter 11: Prefix Sum (Scan)": cuda/pmpp/chapter-11.md
+        - "Chapter 12: Parallel Merge": cuda/pmpp/chapter-12.md
+        - "Chapter 13: Parallel Sorting": cuda/pmpp/chapter-13.md
+        - "Chapter 14: Sparse Matrix Computation": cuda/pmpp/chapter-14.md
+        - "Chapter 15: Parallel Graph Algorithms": cuda/pmpp/chapter-15.md
+        - "Chapter 16: Deep Learning": cuda/pmpp/chapter-16.md
+        - "Chapter 17: MRI Reconstruction": cuda/pmpp/chapter-17.md
+        - "Chapter 18: Molecular Dynamics": cuda/pmpp/chapter-18.md
+        - "Chapter 19: Programming Strategy": cuda/pmpp/chapter-19.md
+        - "Chapter 20: Heterogeneous Clusters": cuda/pmpp/chapter-20.md
+        - "Chapter 21: Dynamic Parallelism": cuda/pmpp/chapter-21.md
+        - "Chapter 22: Evolution and Trends": cuda/pmpp/chapter-22.md
+        - "Chapter 23: Conclusion": cuda/pmpp/chapter-23.md
+        - "Appendix A: Numerical Issues": cuda/pmpp/appendix-a.md
+        - "GPU Engineer Roadmap": cuda/pmpp/engineer.md
+  - Efficient AI:
+    - Overview: efficient-ai/index.md
+  - Trustworthy AI:
+    - Overview: trustworthy-ai/index.md
+  - Research Notes:
+    - Overview: research-notes/index.md
+    - Paper Reviews: paper-reviews/index.md
+    - Monthly Roundups: research-notes/monthly-roundups.md
+    - Reading Maps: research-notes/reading-maps.md

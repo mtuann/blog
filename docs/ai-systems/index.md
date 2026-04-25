@@ -1,29 +1,69 @@
-# AI Systems (SysML)
+---
+title: AI Systems
+summary: Training, serving, and operating modern AI workloads from cluster design to GPU systems.
+status: evergreen
+updated: 2026-04-24
+tags:
+  - ai systems
+  - distributed training
+  - inference
+---
 
-Bridging the gap between cutting-edge algorithms and massive-scale hardware.
+<div class="hero-shell section-hero systems-hero" markdown>
+<p class="hero-eyebrow">Execution Layer</p>
 
-## SOTA Roadmap
+# AI Systems
 
-### 1. Scaling Infrastructure
-*   **Cluster Orchestration**: Kubernetes for ML (KubeFlow, Ray on K8s), Slurm.
-*   **Interconnects**: InfiniBand vs Ethernet (RoCEv2), NVLink/NVSwitch topology.
-*   **Storage**: High-performance implementations (Lustre, GPUDirect Storage).
+<p class="hero-lead">This section is about the machinery that makes modern AI possible in practice: distributed training, serving, GPU systems, memory behavior, scheduling, and the tradeoffs that determine whether a model is merely impressive or actually deployable.</p>
 
-### 2. Distributed Training Frameworks
-*   **3D Parallelism**: Creating the optimal recipe of Data, Tensor, and Pipeline parallelism (Megatron-LM).
-*   **Optimization**: ZeRO Stages (DeepSpeed), FSDP (Fully Sharded Data Parallel).
-*   **Fault Tolerance**: Checkpointing strategies, auto-recovery design.
+<div class="chip-row">
+<span class="chip">Distributed training</span>
+<span class="chip">Inference systems</span>
+<span class="chip">Goodput</span>
+<span class="chip">GPU systems</span>
+</div>
 
-### 3. Inference at Scale
-*   **Serving Engines**: Deeper dive into TGI vs vLLM vs TRT-LLM architectures.
-*   **Continuous Batching**: Orca scheduling.
-*   **Prefill vs/and Decode separation**: Distaggregating prefill and decode compute (Splitwise).
+<div class="hero-actions" markdown>
+[Read Distributed Training Playbook](distributed-training-playbook.md){ .md-button .md-button--primary }
+[Read Prefill, Decode, and Goodput](prefill-decode-goodput.md){ .md-button }
+</div>
+</div>
 
-### 4. Data Engineering for AI
-*   **Dataloaders**: Ray Data, MosaicML Streaming.
-*   **Formats**: Parquet, Arrow, LanceDB.
+<div class="hub-grid">
+<div class="hub-panel" markdown>
+### Start Here
+
+- [Distributed Training Playbook](distributed-training-playbook.md)
+- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
+- [GPU Systems & CUDA](../cuda/index.md)
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+</div>
+
+<div class="hub-panel" markdown>
+### Systems Playbook
+
+- Use DDP when the model fits and you need straightforward scale-out.
+- Use ZeRO or FSDP when replicated model state is the main memory problem.
+- Use tensor or pipeline parallelism when layer size or stage partitioning becomes the real constraint.
+- Optimize serving for TTFT, TPOT, and goodput rather than raw throughput alone.
+</div>
+
+<div class="hub-panel" markdown>
+### Latest Notes
+
+- [Distributed Training Playbook](distributed-training-playbook.md)
+- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
+- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+</div>
+</div>
+
+## Why CUDA Lives Here
+
+CUDA is nested under AI Systems because it is part of the execution substrate: hardware-software interaction, profiling, kernel design, and memory behavior. Efficient AI stays separate because it focuses on model-level efficiency techniques rather than GPU programming itself.
 
 ## Key Resources
-*   **Course**: [CS329S: Machine Learning Systems Design](https://stanford-cs329s.github.io/) (Stanford/Chip Huyen).
-*   **Blog**: [Chip Huyen's Blog](https://huyenchip.com/) (Real-world MLSys).
-*   **Paper**: [Efficient Large-Scale Language Model Training on GPU Clusters](https://arxiv.org/abs/2104.04473) (Megatron-LM).
+
+- **Course**: [CS329S: Machine Learning Systems Design](https://stanford-cs329s.github.io/).
+- **Blog**: [Chip Huyen's blog](https://huyenchip.com/).
+- **Paper**: [Efficient Large-Scale Language Model Training on GPU Clusters](https://arxiv.org/abs/2104.04473).

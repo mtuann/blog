@@ -123,6 +123,7 @@ nav:
     - Overview: ai-systems/index.md
     - Distributed Learning:
       - Overview: ai-systems/distributed-learning/index.md
+      - Federated Learning: ai-systems/distributed-learning/federated-learning.md
       - Distributed Training Playbook: ai-systems/distributed-training-playbook.md
     - Inference Systems:
       - Prefill, Decode, and Goodput: ai-systems/prefill-decode-goodput.md

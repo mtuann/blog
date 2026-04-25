@@ -9,7 +9,7 @@ tags:
   - parallelism
 ---
 
-This page is a living map of distributed-learning research for foundation models. It focuses on hybrid parallelism, communication efficiency, decentralized training, expert parallelism, and resilience; serving-specific runtime work stays under AI Systems, and kernel-level performance work stays under GPU Systems & CUDA.
+This page is a living map of distributed-learning research for foundation models. It focuses on hybrid parallelism, communication efficiency, decentralized training, federated learning, expert parallelism, and resilience; serving-specific runtime work stays under AI Systems, and kernel-level performance work stays under GPU Systems & CUDA.
 
 ## Topic Map
 
@@ -19,6 +19,8 @@ This page is a living map of distributed-learning research for foundation models
   This is the heart of the field whenever bandwidth, overlap, resharding, or topology starts dominating training throughput.
 - **Decentralized and low-bandwidth training**
   The newer frontier is making large-model training survive imperfect networks, heterogeneous hardware, and node churn, not only pristine datacenter assumptions.
+- **Federated learning**
+  This branch deserves its own track because privacy, personalization, client heterogeneity, and deletion requirements create a different research agenda than datacenter-scale parallel training.
 - **MoE and expert parallelism**
   Mixture-of-experts training is turning routing, token movement, and expert load balancing into central distributed-learning questions.
 - **Checkpointing and resilience**
@@ -29,6 +31,7 @@ This page is a living map of distributed-learning research for foundation models
 - Which hybrid-parallel recipes remain robust when workload shape, sequence length, and document packing vary in the wild?
 - How much communication can be hidden before numerical behavior or implementation complexity becomes the real bottleneck?
 - What kinds of decentralized training are actually viable for foundation models, beyond proof-of-concept deployments?
+- Which federated-learning workloads are compelling enough for foundation models to justify privacy and systems complexity?
 - Which expert-parallel abstractions scale cleanly enough to become standard, rather than one-off system hacks?
 - What is the right unit of comparison for distributed checkpointing: throughput, pause time, recovery time, or lost learning progress?
 
@@ -42,13 +45,14 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 
 - Hybrid parallelism is shifting from fixed recipes toward workload-aware composition across FSDP, tensor parallelism, pipeline parallelism, and context parallelism.
 - Communication-efficient training on imperfect or low-bandwidth networks is moving from toy decentralization to realistic large-model training.
+- Federated learning is re-emerging as a frontier topic because foundation-model adaptation, personalization, and unlearning create new cross-silo use cases.
 - MoE scaling is making expert parallelism, communication overlap, and routing-aware load balancing central research problems.
 - Distributed checkpointing and recovery are becoming first-class design problems as runs stretch across more accelerators and longer wall-clock windows.
 - Native distributed APIs such as PyTorch DTensor/FSDP2 and Megatron-Core are increasingly acting as the substrate on which new research ideas are deployed.
 
 ### Keywords To Track
 
-`FSDP2`, `DTensor`, `context parallelism`, `expert parallelism`, `resharding`, `distributed optimizer`, `decentralized training`, `low-bandwidth training`, `overlapped checkpointing`, `elastic training`
+`FSDP2`, `DTensor`, `context parallelism`, `expert parallelism`, `resharding`, `distributed optimizer`, `decentralized training`, `federated learning`, `low-bandwidth training`, `overlapped checkpointing`, `elastic training`
 
 ### Recent Papers And Research Signals By Direction
 
@@ -65,6 +69,12 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 - [Go With The Flow: Churn-Tolerant Decentralized Training of Large Language Models](https://arxiv.org/abs/2509.21221) (2025)
 - [On Optimizing the Communication of Model Parallelism](https://arxiv.org/abs/2211.05322) (2024, kept as a strong reference for cross-mesh resharding)
 
+#### Federated Learning And Cross-Silo Adaptation
+
+- [Federated Learning](./federated-learning.md) (internal track page for privacy-preserving and personalized collaboration)
+- [Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544) (2026)
+- [FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://openreview.net/forum?id=kntrZOm2AQ) (ICLR 2026 Poster)
+
 #### MoE Expert Parallelism
 
 - [UniEP: Unified Expert-Parallel MoE MegaKernel for LLM Training](https://arxiv.org/abs/2604.19241) (2026)
@@ -77,6 +87,7 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 
 ### Related Notes
 
+- [Federated Learning](./federated-learning.md)
 - [Distributed Training Playbook](../distributed-training-playbook.md)
 - [AI Systems](../index.md)
 
@@ -84,6 +95,8 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 
 - [Distributed Training Playbook](../distributed-training-playbook.md)
   The current internal anchor for the main families of parallelism and how they are used in practice.
+- [Federated Learning](./federated-learning.md)
+  The dedicated branch for privacy, personalization, cross-silo collaboration, and foundation-model adaptation outside the datacenter-only lens.
 - [AI Systems](../index.md)
   The parent overview for serving/runtime questions that sit next to distributed-learning concerns but should not be merged with them.
 
@@ -101,5 +114,6 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 - A deeper note on hybrid parallelism design patterns after 2025: FSDP2, TP, PP, CP, and optimizer sharding in one mental model.
 - A dedicated page on communication bottlenecks: overlap, resharding, topology, and when low-bandwidth training is realistic.
 - A focused note on expert parallelism and MoE communication as a distributed-learning problem in its own right.
+- A dedicated note on federated learning for foundation models, covering FedLLM, personalization, privacy leakage, and unlearning.
 - A research note on distributed checkpointing, failure recovery, and what “resilient training” should actually measure.
 - A future comparison page mapping PyTorch native distributed APIs, Megatron Core, and DeepSpeed to the research questions they make easiest to study.

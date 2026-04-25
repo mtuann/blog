@@ -29,6 +29,59 @@ tags:
 </div>
 </div>
 
+## Research Radar
+
+Updated April 24, 2026.
+
+This radar prefers 2025-2026 work. Older CUDA papers stay only when they still teach the core engineering pattern better than newer papers do.
+
+### Active Directions
+
+- Attention kernels are now explicitly hardware-generation-aware: Hopper lessons are no longer enough for Blackwell.
+- CUDA graph capture is becoming a deployment bottleneck in its own right, especially for autoscaling and dynamic reconfiguration.
+- CUTLASS, CuTe DSL, and Triton are becoming the main productivity-performance interface for serious kernel work.
+- FP8 and low-precision engineering is increasingly about numerics-aware architecture design plus kernel/runtime integration.
+- Kernel generation by LLMs is becoming a real research direction rather than a novelty demo.
+- Memory movement, not raw FLOPs, remains the governing constraint for many production kernels.
+
+### Keywords To Track
+
+`FlashAttention`, `Blackwell`, `WGMMA`, `TMA`, `CUTLASS`, `CuTe DSL`, `Triton`, `FP8 GEMM`, `CUDA graphs`, `kernel autotuning`
+
+### Recent Papers By Direction
+
+#### Attention And Fused Kernel Design
+
+- [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](https://arxiv.org/abs/2603.05451) (2026)
+- [The Anatomy of a Triton Attention Kernel](https://arxiv.org/abs/2511.11581) (2025)
+- [A Case Study in CUDA Kernel Fusion: Implementing FlashAttention-2 on NVIDIA Hopper Architecture using the CUTLASS Library](https://arxiv.org/abs/2312.11918) (2023, kept because it is still one of the best public "how a real fused kernel is built" references)
+
+#### Graph Capture, Startup, And Runtime Materialization
+
+- [Foundry: Template-Based CUDA Graph Context Materialization for Fast LLM Serving Cold Start](https://arxiv.org/abs/2604.06664) (2026)
+
+#### Low-Precision And Numerics-Aware CUDA Engineering
+
+- [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
+
+#### AI-Assisted Kernel Generation
+
+- [TritonRL: Training LLMs to Think and Code Triton Without Cheating](https://arxiv.org/abs/2510.17891) (2025)
+- [DRTriton: Large-Scale Synthetic Data Reinforcement Learning for Triton Kernel Generation](https://arxiv.org/abs/2603.21465) (2026)
+
+### Sources To Follow
+
+- [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
+- [CUTLASS Documentation](https://docs.nvidia.com/cutlass/latest/overview.html)
+- [Triton Documentation](https://triton-lang.org/main/index)
+- [NVIDIA TensorRT-LLM Documentation](https://docs.nvidia.com/tensorrt-llm/index.html)
+- [GPU Mode](https://github.com/gpu-mode/resource-stream)
+- [NVIDIA Developer Blog](https://developer.nvidia.com/blog/)
+
+### Canonical References Worth Keeping
+
+- [FlashAttention-2](https://arxiv.org/abs/2307.08691)
+
 ## Zero To Hero Roadmap
 
 ### 1. Foundations

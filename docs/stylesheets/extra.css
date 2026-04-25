@@ -129,9 +129,26 @@ body {
 
 .home-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
-    gap: 1.2rem 1.5rem;
-    align-items: end;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.home-hero .hero-copy {
+    max-width: 48rem;
+}
+
+.home-hero .hero-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+.home-hero .hero-stat {
+    min-height: 100%;
+}
+
+.home-hero .hero-stat strong {
+    max-width: 16ch;
 }
 
 .hero-eyebrow {
@@ -346,10 +363,12 @@ body[data-lang="vi"] .md-nav__item:has(.md-nav__link[href*="#vi-"]) {
 }
 
 @media (max-width: 960px) {
-    .home-hero {
-        grid-template-columns: 1fr;
+    .hero-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
+@media (max-width: 680px) {
     .hero-stat-grid {
         grid-template-columns: 1fr;
     }

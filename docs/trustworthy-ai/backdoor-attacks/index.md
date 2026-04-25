@@ -129,6 +129,8 @@ As of April 25, 2026, backdoor research is no longer confined to image classific
 
 - [Trustworthy AI](../index.md)
   The parent topic page for safety evaluation, interpretability, hallucination, jailbreaks, oversight, and now backdoor-related work.
+- [Reading Map: AI Backdoor Research Landscape](../../research-notes/reading-maps/ai-backdoor-research-landscape.md)
+  A deeper field map for deciding which backdoor branches are mature, which are underexplored, and which are strongest for future paper ideas.
 - [Research Notes](../../research-notes/index.md)
   The right home for future paper reviews, reading maps, and comparison notes that branch off this subtopic.
 

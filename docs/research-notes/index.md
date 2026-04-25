@@ -2,7 +2,7 @@
 title: Research Notes
 summary: A hub for paper reviews, roundups, reading maps, and questions that deserve deeper investigation.
 status: evergreen
-updated: 2026-04-24
+updated: 2026-04-25
 tags:
   - research notes
   - paper reviews
@@ -53,6 +53,7 @@ tags:
 <ul class="link-stack">
   <li><a href="../paper-reviews/direct-preference-optimization/">Direct Preference Optimization</a></li>
   <li><a href="roundups/2026-04-kv-cache-optimization/">April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem</a></li>
+  <li><a href="reading-maps/ai-backdoor-research-landscape/">Reading Map: AI Backdoor Research Landscape</a></li>
   <li><a href="reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
 </ul>
 </div>

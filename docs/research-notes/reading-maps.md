@@ -2,7 +2,7 @@
 title: Reading Maps
 summary: Curated pathways through a topic from foundations to frontier papers.
 status: evergreen
-updated: 2026-04-24
+updated: 2026-04-25
 tags:
   - reading maps
   - research notes
@@ -29,3 +29,4 @@ Reading maps are meant to answer a practical question: if someone wants to under
 ## Published Reading Maps
 
 - [Reading Map: Efficient LLM Inference](reading-maps/efficient-llm-inference.md)
+- [Reading Map: AI Backdoor Research Landscape](reading-maps/ai-backdoor-research-landscape.md)

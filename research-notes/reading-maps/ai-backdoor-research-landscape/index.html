@@ -1,0 +1,3440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mtuann.github.io/blog/research-notes/reading-maps/ai-backdoor-research-landscape/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Reading Map - AI Backdoor Research Landscape - Tuan's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Outfit:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Outfit";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reading-map-ai-backdoor-research-landscape" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Tuan&#39;s Blog" class="md-header__button md-logo" aria-label="Tuan's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tuan's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reading Map - AI Backdoor Research Landscape
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mtuann/blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mtuann/blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ml/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../genai/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Generative AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ai-systems/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI Systems
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../efficient-ai/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Efficient AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../trustworthy-ai/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Trustworthy AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Research Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Tuan&#39;s Blog" class="md-nav__button md-logo" aria-label="Tuan's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Tuan's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mtuann/blog" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mtuann/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ml/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theory
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/generalization-overparameterization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generalization in the Overparameterized Era
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/scaling-laws-compute-optimal-training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scaling Laws and Compute-Optimal Training
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ml/practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practical ML
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../genai/transformer-attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transformer Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../genai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Generative AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai-systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Systems
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai-systems/distributed-learning/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Learning
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Distributed Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-systems/distributed-learning/federated-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federated Learning
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-systems/distributed-learning/fedllm-aggregation-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FedLLM Aggregation Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-systems/distributed-training-playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Distributed Training Playbook
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inference Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inference Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-systems/prefill-decode-goodput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefill, Decode, and Goodput
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cuda/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Systems & CUDA
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPU Systems & CUDA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cuda/pmpp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PMPP Book
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PMPP Book
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Data Parallel Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Multidimensional Grids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: Compute Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Performance Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Convolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Stencil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Parallel Histogram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Reduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Prefix Sum (Scan)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: Parallel Merge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: Parallel Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Sparse Matrix Computation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Parallel Graph Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: Deep Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: MRI Reconstruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: Molecular Dynamics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Programming Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Heterogeneous Clusters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Dynamic Parallelism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Evolution and Trends
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/chapter-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/appendix-a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix A: Numerical Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cuda/pmpp/engineer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU Engineer Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../efficient-ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Efficient AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Efficient AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../trustworthy-ai/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trustworthy AI
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Trustworthy AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../trustworthy-ai/backdoor-attacks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backdoor Attacks
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backdoor Attacks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Notes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paper-reviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paper Reviews
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monthly-roundups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monthly Roundups
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading Maps
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--evergreen"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-read-this-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How To Read This Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-0-learn-the-canonical-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 0: Learn The Canonical Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-1-know-which-branches-are-already-mature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: Know Which Branches Are Already Mature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 1: Know Which Branches Are Already Mature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llms-and-code-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLMs And Code LLMs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#federated-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Federated Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#face-recognition-and-biometrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Face Recognition And Biometrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Neural Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-2-study-the-foundation-model-supply-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: Study The Foundation-Model Supply Chain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-3-move-into-multimodal-generative-and-agentic-backdoors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: Move Into Multimodal, Generative, And Agentic Backdoors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 3: Move Into Multimodal, Generative, And Agentic Backdoors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vision-language-speech-and-multimodal-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision-Language, Speech, And Multimodal Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diffusion-and-generative-data-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion And Generative Data Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agentic Workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-4-explore-structured-outputs-and-domain-specific-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: Explore Structured Outputs And Domain-Specific AI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 4: Explore Structured Outputs And Domain-Specific AI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structured-computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured Computer Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medical-scientific-and-genomic-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medical, Scientific, And Genomic Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-for-science-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI for Science Coverage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI for Science Coverage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-publisher-sweep-clearly-finds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What The Publisher Sweep Clearly Finds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-looks-only-partially-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Looks Only Partially Covered
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-still-looks-largely-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Still Looks Largely Open
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters-for-paper-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters For Paper Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reinforcement Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-5-learn-the-benchmark-layer-before-picking-a-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5: Learn The Benchmark Layer Before Picking A Topic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stage 5: Learn The Benchmark Layer Before Picking A Topic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strong-benchmark-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strong Benchmark Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-benchmark-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium Benchmark Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak-benchmark-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weak Benchmark Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-paper-opportunities-as-of-april-25-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Paper Opportunities As Of April 25, 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Paper Opportunities As Of April 25, 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-best-bets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1: Best Bets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-good-but-more-crowded-or-harder-to-differentiate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2: Good But More Crowded Or Harder To Differentiate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-low-leverage-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3: Low-Leverage Directions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-i-had-to-choose-three-concrete-paper-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If I Had To Choose Three Concrete Paper Directions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="If I Had To Choose Three Concrete Paper Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-a-unified-benchmark-for-agent-backdoors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. A Unified Benchmark For Agent Backdoors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-a-supply-chain-benchmark-for-peft-and-model-merging-backdoors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. A Supply-Chain Benchmark For PEFT And Model-Merging Backdoors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-a-domain-aware-backdoor-benchmark-for-scientific-foundation-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A Domain-Aware Backdoor Benchmark For Scientific Foundation Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-would-avoid-unless-there-is-a-very-sharp-twist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I Would Avoid Unless There Is A Very Sharp Twist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="reading-map-ai-backdoor-research-landscape">Reading Map: AI Backdoor Research Landscape<a class="headerlink" href="#reading-map-ai-backdoor-research-landscape" title="Permanent link">&para;</a></h1>
+<p>This note answers one practical question: <strong>if you want to work on backdoor research in 2026, where is the field mature, where is it still opening up, and which directions are most likely to produce a strong paper rather than a small variant?</strong></p>
+<p>The useful mental model is that <code>backdoor research</code> is no longer one field. It is now a family of subfields split by model class, deployment surface, output structure, and benchmark maturity. A paper that is interesting in CIFAR-style classification may be uninteresting in LLMs, and a clever attack in LLMs may still be weak if it ignores the real supply chain through adapters, merging, or agents.</p>
+<h2 id="how-to-read-this-map">How To Read This Map<a class="headerlink" href="#how-to-read-this-map" title="Permanent link">&para;</a></h2>
+<p>Use five axes to judge whether a backdoor direction is still worth entering:</p>
+<ul>
+<li><strong>Model class</strong>: classifiers, language models, vision-language models, diffusion models, speech models, graph models, or RL agents.</li>
+<li><strong>Output structure</strong>: single-label classification is much more saturated than structured outputs such as detection, segmentation, generation, planning, or tool-use.</li>
+<li><strong>Attack surface</strong>: poisoned data, fine-tuning, PEFT adapters, model merging, decentralized training, architectural tampering, and simulator or workflow compromise are not equally mature.</li>
+<li><strong>Benchmark maturity</strong>: fields with standardized suites are easier to compare but often more crowded.</li>
+<li><strong>Deployment realism</strong>: the best recent papers usually explain why the threat survives actual user workflows, not just toy threat models.</li>
+</ul>
+<p>In 2026, a strong backdoor paper usually does at least one of these:</p>
+<ul>
+<li>Opens a new and realistic attack surface.</li>
+<li>Standardizes a fragmented benchmark space.</li>
+<li>Shows a mechanistic or systems reason older defenses fail.</li>
+<li>Introduces a defense that survives adaptive evaluation on modern models.</li>
+</ul>
+<p>Weak papers usually do the opposite:</p>
+<ul>
+<li>Slightly improve attack success rate on image classification.</li>
+<li>Assume unrealistic attacker power.</li>
+<li>Ignore structured outputs, generation, or workflow state.</li>
+<li>Evaluate only against weak or outdated defenses.</li>
+</ul>
+<h2 id="stage-0-learn-the-canonical-core">Stage 0: Learn The Canonical Core<a class="headerlink" href="#stage-0-learn-the-canonical-core" title="Permanent link">&para;</a></h2>
+<p>Before branching into frontier work, read the original threat model and the classic benchmark layer:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1708.06733">Gu et al. (2017), BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain</a></li>
+<li><a href="https://arxiv.org/abs/1811.03728">Chen et al. (2018), Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering</a></li>
+<li><a href="https://arxiv.org/abs/2007.08745">Li et al. (2020), Backdoor Learning: A Survey</a></li>
+<li><a href="https://openreview.net/forum?id=31_U7n18gM7">Chen et al. (2022), BackdoorBench: A Comprehensive Benchmark of Backdoor Learning</a></li>
+<li><a href="https://openreview.net/forum?id=k3462dQtQhg">Chen et al. (2022), A Unified Evaluation of Textual Backdoor Learning: Frameworks and Benchmarks</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Why the basic attack objective is <code>high ASR + high clean accuracy + stealth</code>.</li>
+<li>Why image classification and text classification dominated early evaluation.</li>
+<li>Why many old defenses assume reusable, explicit triggers and therefore break down on newer attacks.</li>
+</ul>
+<h2 id="stage-1-know-which-branches-are-already-mature">Stage 1: Know Which Branches Are Already Mature<a class="headerlink" href="#stage-1-know-which-branches-are-already-mature" title="Permanent link">&para;</a></h2>
+<p>Some backdoor branches already have enough surveys and benchmarks that a plain attack variant is likely to look incremental.</p>
+<h3 id="llms-and-code-llms">LLMs And Code LLMs<a class="headerlink" href="#llms-and-code-llms" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://openreview.net/forum?id=wZLWuFHxt5">Zhao et al. (2025), A Survey of Recent Backdoor Attacks and Defenses in Large Language Models</a></li>
+<li><a href="https://arxiv.org/abs/2502.05224">Zhou et al. (2025), A Survey on Backdoor Threats in Large Language Models (LLMs): Attacks, Defenses, and Evaluations</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0950584925000461">Qu et al. (2025), A review of backdoor attacks and defenses in code large language models</a></li>
+<li><a href="https://openreview.net/forum?id=sYLiY87mNn">Li et al. (2025), BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>The shift from text classification to open-ended generation.</li>
+<li>Why <code>harmless-input</code>, <code>triggerless</code>, and reasoning-level attacks matter more than simple token triggers.</li>
+<li>Why benchmark work is now as important as attack design.</li>
+</ul>
+<h3 id="federated-learning">Federated Learning<a class="headerlink" href="#federated-learning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1566253525003215">Li et al. (2025), Backdoor attacks and defense mechanisms in federated learning: A survey</a></li>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0952197623013507">Nguyen et al. (2024), Backdoor attacks and defenses in federated learning: Survey, challenges and future research directions</a></li>
+<li><a href="https://openreview.net/forum?id=HbhG88Bs5V">Gong et al. (2023), Backdoor Attacks and Defenses in Federated Learning: State-of-the-Art, Taxonomy, and Future Directions</a></li>
+<li><a href="https://openreview.net/forum?id=0hHnZeXr9k">Dao et al. (2026), BackFed: A Standardized and Efficient Benchmark Framework for Backdoor Attacks in Federated Learning</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Why malicious-client assumptions and training-time budgets matter.</li>
+<li>Why many older FL results look weaker once standardized evaluation is enforced.</li>
+<li>Why FL is now a benchmark-rich branch, which raises the bar for novelty.</li>
+</ul>
+<h3 id="face-recognition-and-biometrics">Face Recognition And Biometrics<a class="headerlink" href="#face-recognition-and-biometrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://openreview.net/pdf?id=UDG64Min1E">Roux et al. (2024), A Comprehensive Survey on Backdoor Attacks and Their Defenses in Face Recognition Systems</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>How full biometric pipelines change the threat model.</li>
+<li>Why physical robustness and pre-processing stages matter.</li>
+<li>Why this line is more deployment-aware than many generic CV papers.</li>
+</ul>
+<h3 id="graph-neural-networks">Graph Neural Networks<a class="headerlink" href="#graph-neural-networks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2406.10573">Yang et al. (2024), Graph Neural Backdoor: Fundamentals, Methodologies, Applications, and Future Directions</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>How graph triggers differ from patch-style triggers.</li>
+<li>Why graph-specific structure makes transfer from image intuition unreliable.</li>
+</ul>
+<h2 id="stage-2-study-the-foundation-model-supply-chain">Stage 2: Study The Foundation-Model Supply Chain<a class="headerlink" href="#stage-2-study-the-foundation-model-supply-chain" title="Permanent link">&para;</a></h2>
+<p>This is one of the most important shifts in the field. The compromised object is often no longer a dataset alone. It can be an adapter, a merged model, a pipeline stage, a pre-trained encoder, or even architecture-level logic.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2505.23561">Yuan et al. (2025), Merge Hijacking: Backdoor Attacks to Model Merging of Large Language Models</a></li>
+<li><a href="https://openreview.net/forum?id=NHOEz72fip">Yin et al. (2025), LoBAM: LoRA-Based Backdoor Attack on Model Merging</a></li>
+<li><a href="https://openreview.net/forum?id=dqMqAaw7Sq">Yang et al. (2025), Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace</a></li>
+<li><a href="https://openreview.net/forum?id=FveQNDaHnZ">Ersoy et al. (2026), Backdoor Attacks on Decentralised Post-Training</a></li>
+<li><a href="https://arxiv.org/abs/2507.12919">Childress et al. (2025), Architectural Backdoors in Deep Learning: A Survey of Vulnerabilities, Detection, and Defense</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>The unit of compromise is changing from <code>sample</code> to <code>artifact</code>.</li>
+<li>Security questions are moving into <code>PEFT</code>, <code>merging</code>, <code>shared checkpoints</code>, and <code>training infrastructure</code>.</li>
+<li>Supply-chain realism is now a strong paper value signal.</li>
+</ul>
+<h2 id="stage-3-move-into-multimodal-generative-and-agentic-backdoors">Stage 3: Move Into Multimodal, Generative, And Agentic Backdoors<a class="headerlink" href="#stage-3-move-into-multimodal-generative-and-agentic-backdoors" title="Permanent link">&para;</a></h2>
+<p>This part of the field is newer, more fragmented, and often more publishable than classic branches.</p>
+<h3 id="vision-language-speech-and-multimodal-models">Vision-Language, Speech, And Multimodal Models<a class="headerlink" href="#vision-language-speech-and-multimodal-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2511.18921">Li et al. (2025), BackdoorVLM: A Benchmark for Backdoor Attacks on Vision-Language Models</a></li>
+<li><a href="https://arxiv.org/abs/2411.11006">Yu et al. (2024), BackdoorMBTI: A Backdoor Learning Multimodal Benchmark Tool Kit for Backdoor Defense Evaluation</a></li>
+<li><a href="https://openreview.net/forum?id=HcytH0HSaG">Fortier et al. (2026), Backdoor Attacks Against Speech Language Models</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Which modality dominates trigger activation.</li>
+<li>Whether text overrides image or audio cues.</li>
+<li>Why multimodal benchmarks are still immature compared with LLM-only evaluation.</li>
+</ul>
+<h3 id="diffusion-and-generative-data-pipelines">Diffusion And Generative Data Pipelines<a class="headerlink" href="#diffusion-and-generative-data-pipelines" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://openreview.net/forum?id=iIg0_loMVm">Chou et al. (2023), How to Backdoor Diffusion Models?</a></li>
+<li><a href="https://openreview.net/forum?id=SfqCaAOF1S">Sui et al. (2025), DisDet: Exploring Detectability of Backdoor Attack on Diffusion Models</a></li>
+<li><a href="https://openreview.net/forum?id=lZLvwHYSFA">Guan et al. (2025), UFID: A Unified Framework for Black-box Input-level Backdoor Detection on Diffusion Models</a></li>
+<li><a href="https://arxiv.org/abs/2512.15769">Lu et al. (2025), Data-Chain Backdoor: Do You Trust Diffusion Models as Generative Data Supplier?</a></li>
+<li><a href="https://openreview.net/forum?id=he9MIuoaup">Wang et al. (2026), When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Diffusion models are both models and data suppliers.</li>
+<li>Synthetic-data supply chains create a new propagation story that older backdoor literature barely touched.</li>
+<li>Detection and unlearning on diffusion systems still look under-standardized.</li>
+</ul>
+<h3 id="agentic-workflows">Agentic Workflows<a class="headerlink" href="#agentic-workflows" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2601.04566">Feng et al. (2026), BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents</a></li>
+<li><a href="https://openreview.net/forum?id=Nf4MHF1pi5">Yang et al. (2024), Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Triggers can live in planning, memory, or tool use rather than only user prompts.</li>
+<li>Persistence across intermediate states is the key new phenomenon.</li>
+<li>Agent benchmarks are still young, which means there is room for strong measurement papers.</li>
+</ul>
+<h2 id="stage-4-explore-structured-outputs-and-domain-specific-ai">Stage 4: Explore Structured Outputs And Domain-Specific AI<a class="headerlink" href="#stage-4-explore-structured-outputs-and-domain-specific-ai" title="Permanent link">&para;</a></h2>
+<p>This is where many of the best <code>less crowded but still important</code> opportunities live.</p>
+<h3 id="structured-computer-vision">Structured Computer Vision<a class="headerlink" href="#structured-computer-vision" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2205.14497">Chan et al. (2022), BadDet: Backdoor Attacks on Object Detection</a></li>
+<li><a href="https://arxiv.org/abs/2209.02339">Ma et al. (2022), TransCAB: Transferable Clean-Annotation Backdoor to Object Detection with Natural Trigger in Real-World</a></li>
+<li><a href="https://openreview.net/forum?id=6rz7VyAatm">Dunnett et al. (2026), BadDet+: Robust Backdoor Attacks for Object Detection</a></li>
+<li><a href="https://openreview.net/forum?id=VmGRoNDQgJ">Lan et al. (2024), Influencer Backdoor Attack on Semantic Segmentation</a></li>
+<li><a href="https://arxiv.org/abs/2507.19905">Abbasi et al. (2025), ConSeg: Contextual Backdoor Attack Against Semantic Segmentation</a></li>
+<li><a href="https://arxiv.org/abs/2603.16405">Zhang et al. (2026), Poisoning the Pixels: Revisiting Backdoor Attacks on Semantic Segmentation</a></li>
+<li><a href="https://arxiv.org/abs/2003.03030">Zhao et al. (2020), Clean-Label Backdoor Attacks on Video Recognition Models</a></li>
+<li><a href="https://openreview.net/forum?id=YBSONcjwCa">Hammoud et al. (2024), Look, Listen, and Attack: Backdoor Attacks Against Video Action Recognition</a></li>
+<li><a href="https://openreview.net/forum?id=CcinTjYZno">Gong et al. (2024), Palette: Physically-Realizable Backdoor Attacks Against Video Recognition Models</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Structured outputs create attack semantics that do not exist in classification.</li>
+<li><code>Object disappearance</code>, <code>ghost object generation</code>, and <code>contextual mis-segmentation</code> are not small variants of image backdoors.</li>
+<li>These branches still lack a unified benchmark layer comparable to BackdoorBench.</li>
+</ul>
+<h3 id="medical-scientific-and-genomic-models">Medical, Scientific, And Genomic Models<a class="headerlink" href="#medical-scientific-and-genomic-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2106.07925">Joe et al. (2021), Machine Learning with Electronic Health Records is vulnerable to Backdoor Trigger Attacks</a></li>
+<li><a href="https://medinform.jmir.org/2022/8/e38440/">Joe et al. (2022), Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records: Development and Validation Study</a></li>
+<li><a href="https://arxiv.org/abs/2401.01911">Jin et al. (2024), Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP</a></li>
+<li><a href="https://arxiv.org/abs/2603.27465">Koilakos et al. (2026), Poisoning the Genome: Targeted Backdoor Attacks on DNA Foundation Models</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>Scientific and medical settings are high-stakes but still benchmark-poor.</li>
+<li>Data provenance and weak supervision make the supply chain unusually fragile.</li>
+<li>This is one of the least saturated branches of modern backdoor research.</li>
+</ul>
+<h3 id="ai-for-science-coverage">AI for Science Coverage<a class="headerlink" href="#ai-for-science-coverage" title="Permanent link">&para;</a></h3>
+<p>This publisher sweep is important because <code>AI for science backdoors</code> still does <strong>not</strong> look like one consolidated subfield as of <strong>April 25, 2026</strong>. What exists is concentrated in a few biomedical pockets, while large parts of scientific foundation modeling remain almost untouched.</p>
+<h4 id="what-the-publisher-sweep-clearly-finds">What The Publisher Sweep Clearly Finds<a class="headerlink" href="#what-the-publisher-sweep-clearly-finds" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Nature family</strong>
+  The clearest direct hit is <a href="https://www.nature.com/articles/s41421-024-00753-1">Feng et al. (2024), Unveiling potential threats: backdoor attacks in single-cell pre-trained models</a>, published in <strong>Cell Discovery on November 30, 2024</strong>. This is the strongest <code>AI-for-science</code> backdoor paper in the sweep: it attacks <code>scGPT</code>, <code>GeneFormer</code>, and <code>scBERT</code>, and explicitly frames backdoors as a threat to downstream biomedical analysis, drug discovery, and clinical interpretation.</li>
+<li><strong>IEEE</strong>
+  The strongest direct hit is <a href="https://ieeexplore.ieee.org/document/10516621">Jin et al. (2024), Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP</a>, also available as <a href="https://openreview.net/forum?id=YymNvIkmKR">OpenReview</a> and <a href="https://arxiv.org/abs/2401.01911">arXiv</a>. This is best viewed as a <code>medical multimodal foundation-model supply-chain</code> paper rather than a generic VLM paper.</li>
+<li><strong>Elsevier / ScienceDirect</strong>
+  The most relevant direct journal hit is <a href="https://www.sciencedirect.com/science/article/pii/S1361841523002256">Jin et al. (2023), Backdoor attack and defense in federated generative adversarial network-based medical image synthesis</a>, which appears in <strong>Medical Image Analysis (2024)</strong> and studies backdoors in <code>federated medical image synthesis</code>. Elsevier also has several graph-backdoor papers such as <a href="https://www.sciencedirect.com/science/article/pii/S0952197624011242">Tong et al. (2024), Crucial rather than random: Attacking crucial substructure for backdoor attacks on graph neural networks</a> and <a href="https://www.sciencedirect.com/science/article/pii/S0893608024005926">Feng et al. (2024), Backdoor attacks on unsupervised graph representation learning</a>. These are scientifically relevant because they touch <code>molecule classification</code>, <code>drug discovery</code>, or <code>protein-network</code> style applications, but most of them are still really <code>graph-security papers with science-flavored tasks</code>, not papers centered on scientific foundation models.</li>
+<li><strong>Springer</strong>
+  Springer returns graph-backdoor work such as <a href="https://link.springer.com/article/10.1007/s40747-025-01934-5">Chen et al. (2025), Stealthy graph backdoor attack based on feature trigger</a> and <a href="https://link.springer.com/article/10.1186/s42400-024-00305-w">Xing et al. (2025), A graph backdoor detection method for data collection scenarios</a>. Again, these are relevant to scientific data through graph tasks and molecule datasets, but the literature is still not specifically organized around <code>AI-for-science backdoors</code>.</li>
+<li><strong>Domain journals</strong>
+  The most direct domain-journal hit is <a href="https://medinform.jmir.org/2022/8/e38440/">Joe et al. (2022), Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records</a>, published in <strong>JMIR Medical Informatics on August 19, 2022</strong>. This gives the clinical-tabular branch a real domain-specific anchor instead of only ML-security venue coverage.</li>
+</ul>
+<h4 id="what-looks-only-partially-covered">What Looks Only Partially Covered<a class="headerlink" href="#what-looks-only-partially-covered" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>Drug discovery</code> and <code>molecular property prediction</code> currently appear mostly through <code>graph neural network</code> backdoor papers rather than through scientific foundation-model papers.</li>
+<li><code>Medical multimodal foundation models</code> have at least one strong direct paper through <code>MedCLIP</code>, but the space is still far from saturated.</li>
+<li><code>Scientific data synthesis</code> is beginning to appear through federated or generative medical imaging work, but benchmark standardization is still weak.</li>
+</ul>
+<h4 id="what-still-looks-largely-open">What Still Looks Largely Open<a class="headerlink" href="#what-still-looks-largely-open" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>Protein language / protein structure foundation models</code></li>
+<li><code>RNA foundation models</code></li>
+<li><code>Drug-target interaction foundation models</code></li>
+<li><code>Protein-ligand or molecular generative foundation models</code></li>
+<li><code>Materials-science foundation models</code></li>
+<li><code>Physics, climate, or simulator-based scientific foundation models</code></li>
+</ul>
+<p>The practical meaning is that <code>AI for science backdoor research</code> is strongest today in:</p>
+<ul>
+<li><code>single-cell foundation models</code></li>
+<li><code>medical image-text foundation models</code></li>
+<li><code>clinical / EHR models</code></li>
+<li><code>medical image synthesis under federated settings</code></li>
+</ul>
+<p>Everything beyond that still looks unusually open for new work.</p>
+<h4 id="why-this-matters-for-paper-strategy">Why This Matters For Paper Strategy<a class="headerlink" href="#why-this-matters-for-paper-strategy" title="Permanent link">&para;</a></h4>
+<ul>
+<li>If you want the safest path with direct prior art, work in <code>single-cell</code> or <code>medical multimodal foundation models</code>.</li>
+<li>If you want the highest novelty, move into <code>protein</code>, <code>RNA</code>, <code>DTI</code>, <code>molecular generation</code>, or broader <code>scientific foundation-model supply chains</code>.</li>
+<li>If you want the most balanced strategy, a strong paper would likely combine one real scientific domain with one underdeveloped evaluation layer such as provenance checks, benchmark construction, or artifact-level supply-chain attacks.</li>
+</ul>
+<h3 id="reinforcement-learning">Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2105.00579">Wang et al. (2021), BACKDOORL: Backdoor Attack against Competitive Reinforcement Learning</a></li>
+<li><a href="https://openreview.net/forum?id=Z3SH1xlFs6">Rathbun et al. (2026), Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning</a></li>
+</ul>
+<p>What to focus on:</p>
+<ul>
+<li>The simulator itself can become the compromised artifact.</li>
+<li>Backdoor activation in RL changes policies and trajectories, not just labels or text outputs.</li>
+<li>RL backdoor research is still thin enough that new benchmark or threat-model papers can stand out quickly.</li>
+</ul>
+<h2 id="stage-5-learn-the-benchmark-layer-before-picking-a-topic">Stage 5: Learn The Benchmark Layer Before Picking A Topic<a class="headerlink" href="#stage-5-learn-the-benchmark-layer-before-picking-a-topic" title="Permanent link">&para;</a></h2>
+<p>The easiest way to waste time in this field is to choose a topic with no realistic evaluation plan. The benchmark layer is one of the best predictors of paper quality.</p>
+<h3 id="strong-benchmark-support">Strong Benchmark Support<a class="headerlink" href="#strong-benchmark-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://openreview.net/forum?id=31_U7n18gM7">Chen et al. (2022), BackdoorBench</a></li>
+<li><a href="https://openreview.net/forum?id=k3462dQtQhg">Chen et al. (2022), OpenBackdoor / Unified textual evaluation</a></li>
+<li><a href="https://openreview.net/forum?id=sYLiY87mNn">Li et al. (2025), BackdoorLLM</a></li>
+<li><a href="https://openreview.net/forum?id=0hHnZeXr9k">Dao et al. (2026), BackFed</a></li>
+</ul>
+<p>These areas are easier to evaluate well, but harder to impress reviewers with small attack improvements.</p>
+<h3 id="medium-benchmark-support">Medium Benchmark Support<a class="headerlink" href="#medium-benchmark-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2511.18921">Li et al. (2025), BackdoorVLM</a></li>
+<li><a href="https://arxiv.org/abs/2411.11006">Yu et al. (2024), BackdoorMBTI</a></li>
+<li>diffusion benchmarks and detection suites such as <a href="https://openreview.net/forum?id=SfqCaAOF1S">Sui et al. (2025), DisDet</a></li>
+</ul>
+<p>These are good places to work if you can improve realism or standardization.</p>
+<h3 id="weak-benchmark-support">Weak Benchmark Support<a class="headerlink" href="#weak-benchmark-support" title="Permanent link">&para;</a></h3>
+<ul>
+<li>agents</li>
+<li>scientific and medical foundation models</li>
+<li>genomics</li>
+<li>structured-output CV tasks</li>
+<li>architectural backdoors</li>
+<li>RL backdoors</li>
+</ul>
+<p>These are high-upside areas, but the paper often has to build part of the evaluation stack itself.</p>
+<h2 id="best-paper-opportunities-as-of-april-25-2026">Best Paper Opportunities As Of April 25, 2026<a class="headerlink" href="#best-paper-opportunities-as-of-april-25-2026" title="Permanent link">&para;</a></h2>
+<p>If the goal is to write a paper efficiently, I would rank the landscape like this.</p>
+<h3 id="tier-1-best-bets">Tier 1: Best Bets<a class="headerlink" href="#tier-1-best-bets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Agent and workflow backdoors</strong>
+  The attack surface is genuinely new, benchmark maturity is low, and there is strong practical relevance. Good papers here can combine threat modeling, instrumentation, and long-horizon evaluation.</li>
+<li><strong>Supply-chain backdoors for PEFT, model merging, and decentralized post-training</strong>
+  This line fits how people actually use open models. It has strong systems relevance and clear artifact-level threat models.</li>
+<li><strong>Medical, scientific, and genomic foundation-model backdoors</strong>
+  High stakes plus low saturation is a strong combination. This is especially attractive if you can define provenance-aware or domain-aware evaluation.</li>
+<li><strong>Structured-output backdoors in detection, segmentation, and video</strong>
+  These tasks have real novelty because the attack semantics are task-specific, yet the field is still fragmented.</li>
+<li><strong>Diffusion and synthetic-data supply-chain backdoors</strong>
+  This line is timely because generative models are increasingly used to create training data for downstream systems.</li>
+</ul>
+<h3 id="tier-2-good-but-more-crowded-or-harder-to-differentiate">Tier 2: Good But More Crowded Or Harder To Differentiate<a class="headerlink" href="#tier-2-good-but-more-crowded-or-harder-to-differentiate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Generic LLM backdoor attacks</strong>
+  Still relevant, but a plain new trigger family is unlikely to be enough unless you bring a new benchmark, workflow, or mechanistic story.</li>
+<li><strong>Federated learning attack variants</strong>
+  Useful, but strong survey and benchmark coverage means novelty needs to be clearer than before.</li>
+<li><strong>Graph backdoors</strong>
+  Promising, but often needs a compelling application domain beyond another graph trigger construction.</li>
+</ul>
+<h3 id="tier-3-low-leverage-directions">Tier 3: Low-Leverage Directions<a class="headerlink" href="#tier-3-low-leverage-directions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Another CIFAR or GTSRB patch-trigger paper with slightly higher ASR.</li>
+<li>A defense that only handles fixed explicit triggers.</li>
+<li>A paper that never tests adaptive attackers or realistic poisoning budgets.</li>
+<li>A threat model that assumes total attacker control without deployment justification.</li>
+</ul>
+<h2 id="if-i-had-to-choose-three-concrete-paper-directions">If I Had To Choose Three Concrete Paper Directions<a class="headerlink" href="#if-i-had-to-choose-three-concrete-paper-directions" title="Permanent link">&para;</a></h2>
+<h3 id="1-a-unified-benchmark-for-agent-backdoors">1. A Unified Benchmark For Agent Backdoors<a class="headerlink" href="#1-a-unified-benchmark-for-agent-backdoors" title="Permanent link">&para;</a></h3>
+<p>What to build:</p>
+<ul>
+<li>One benchmark spanning <code>planning</code>, <code>memory</code>, <code>tool-use</code>, and <code>retrieval/tool artifacts</code>.</li>
+<li>Persistence metrics, not just final-output ASR.</li>
+<li>Evaluation on coding, browsing, and research agents.</li>
+</ul>
+<p>Why this is strong:</p>
+<ul>
+<li>The threat is new.</li>
+<li>The benchmark layer is weak.</li>
+<li>The contribution can be valuable even if the defense story is not solved yet.</li>
+</ul>
+<h3 id="2-a-supply-chain-benchmark-for-peft-and-model-merging-backdoors">2. A Supply-Chain Benchmark For PEFT And Model-Merging Backdoors<a class="headerlink" href="#2-a-supply-chain-benchmark-for-peft-and-model-merging-backdoors" title="Permanent link">&para;</a></h3>
+<p>What to build:</p>
+<ul>
+<li>One benchmark that unifies <code>LoRA adapters</code>, <code>merged models</code>, <code>shared checkpoints</code>, and <code>decentralized post-training</code>.</li>
+<li>Realistic attacker-cost constraints and deployment scenarios.</li>
+<li>Strong baselines from <a href="https://arxiv.org/abs/2505.23561">Yuan et al. (2025), Merge Hijacking</a>, <a href="https://openreview.net/forum?id=NHOEz72fip">Yin et al. (2025), LoBAM</a>, and <a href="https://openreview.net/forum?id=FveQNDaHnZ">Ersoy et al. (2026), Backdoor Attacks on Decentralised Post-Training</a>.</li>
+</ul>
+<p>Why this is strong:</p>
+<ul>
+<li>This is how open-source model ecosystems actually work.</li>
+<li>Reviewers can immediately see the practical importance.</li>
+<li>The field still lacks a shared evaluation language.</li>
+</ul>
+<h3 id="3-a-domain-aware-backdoor-benchmark-for-scientific-foundation-models">3. A Domain-Aware Backdoor Benchmark For Scientific Foundation Models<a class="headerlink" href="#3-a-domain-aware-backdoor-benchmark-for-scientific-foundation-models" title="Permanent link">&para;</a></h3>
+<p>What to build:</p>
+<ul>
+<li>One evaluation stack covering <code>medical image-text</code>, <code>genomics</code>, and optionally <code>molecular or graph scientific models</code>.</li>
+<li>Provenance-aware triggers and weak-label supply-chain attacks.</li>
+<li>Defenses tied to data integrity, not just generic pruning or filtering.</li>
+</ul>
+<p>Why this is strong:</p>
+<ul>
+<li>The branch is high stakes and unsaturated.</li>
+<li>Domain-specific assumptions are not well encoded in current backdoor benchmarks.</li>
+<li>Even a careful measurement paper could be meaningful here.</li>
+</ul>
+<h2 id="what-i-would-avoid-unless-there-is-a-very-sharp-twist">What I Would Avoid Unless There Is A Very Sharp Twist<a class="headerlink" href="#what-i-would-avoid-unless-there-is-a-very-sharp-twist" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A new explicit trigger pattern for plain image classification.</li>
+<li>Another LLM attack paper that only changes the trigger string or prompt template.</li>
+<li>A defense paper that ignores merged models, adapters, agents, or structured outputs.</li>
+<li>Any result that cannot explain why current standardized benchmarks are insufficient.</li>
+</ul>
+<h2 id="open-questions">Open Questions<a class="headerlink" href="#open-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Can we build trigger-agnostic defenses that still work for agents, multimodal systems, and structured outputs?</li>
+<li>Which artifact is now the dominant real-world risk: poisoned data, adapters, merged models, decentralized training pipelines, or architecture-level compromise?</li>
+<li>How should benchmark design capture persistence, propagation, and delayed activation rather than only single-step ASR?</li>
+<li>Can provenance, attestation, or model-signing ideas become practical defenses against supply-chain backdoors?</li>
+</ul>
+<h2 id="related-notes">Related Notes<a class="headerlink" href="#related-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../../trustworthy-ai/backdoor-attacks/">Backdoor Attacks</a></li>
+<li><a href="../../../trustworthy-ai/">Trustworthy AI</a></li>
+<li><a href="../../../ai-systems/distributed-learning/federated-learning/">Federated Learning</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mtuann" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/mtuann" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/mtuann6" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/lang-sync.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

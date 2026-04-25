@@ -28,6 +28,7 @@ mtuann.blog/
 │   ├── stylesheets/        # Custom CSS
 │   └── snippets/           # Reusable code blocks
 ├── drafts/                 # Unpublished capture notes and scratch work
+├── playbooks/              # Internal research and authoring workflows
 ├── templates/              # Reusable post templates
 ├── scripts/                # Local authoring helpers
 ├── mkdocs.yml              # Main configuration
@@ -82,6 +83,7 @@ $$
 ### Authoring Workflow
 
 - Keep unfinished ideas in `drafts/` so they never publish accidentally.
+- Use `playbooks/topic-backlog-enrichment.md` when turning a backlog item into a current, research-first topic page.
 - Use `templates/` for consistent post structure.
 - Add research-note pages without touching the top navigation.
 - Link every new note back into the relevant section hub.

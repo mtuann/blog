@@ -9,10 +9,10 @@ tags:
   - theory
 ---
 
-<div class="hero-shell section-hero ml-hero" markdown>
+<div class="hero-shell section-hero ml-hero">
 <p class="hero-eyebrow">Foundations</p>
 
-# Machine Learning
+<h1>Machine Learning</h1>
 
 <p class="hero-lead">This section is the base layer for the rest of the site: optimization, generalization, scaling, practical experimentation, and the bridge from classical ML intuition to modern deep learning behavior.</p>
 
@@ -23,35 +23,38 @@ tags:
 <span class="chip">Practical ML</span>
 </div>
 
-<div class="hero-actions" markdown>
-[Read ML Theory](theory.md){ .md-button .md-button--primary }
-[Read Scaling Laws](scaling-laws-compute-optimal-training.md){ .md-button }
+<div class="hero-actions">
+<a class="md-button md-button--primary" href="theory/">Read ML Theory</a>
+<a class="md-button" href="scaling-laws-compute-optimal-training/">Read Scaling Laws</a>
 </div>
 </div>
 
 <div class="hub-grid">
-<div class="hub-panel" markdown>
-### Start Here
-
-- [Theory](theory.md) for optimization, scaling laws, and mathematical foundations.
-- [Generalization in the Overparameterized Era](generalization-overparameterization.md) for the modern view of interpolation and test error.
-- [Practical ML](practice.md) for experimentation, training loops, and reproducibility.
-- [Transformer Foundations](../genai/transformer-attention.md) for the bridge into foundation models.
+<div class="hub-panel">
+<h3>Start Here</h3>
+<ul class="link-stack">
+  <li><a href="theory/">Theory</a><p>Optimization, scaling laws, and mathematical foundations.</p></li>
+  <li><a href="generalization-overparameterization/">Generalization in the Overparameterized Era</a><p>The modern view of interpolation and test error.</p></li>
+  <li><a href="practice/">Practical ML</a><p>Experimentation, training loops, and reproducibility.</p></li>
+  <li><a href="../genai/transformer-attention/">Transformer Foundations</a><p>The bridge into foundation models.</p></li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Flagship Notes
-
-- [Generalization in the Overparameterized Era](generalization-overparameterization.md)
-- [Scaling Laws and Compute-Optimal Training](scaling-laws-compute-optimal-training.md)
-- More derivation-driven notes will land here next.
+<div class="hub-panel">
+<h3>Flagship Notes</h3>
+<ul class="link-stack">
+  <li><a href="generalization-overparameterization/">Generalization in the Overparameterized Era</a></li>
+  <li><a href="scaling-laws-compute-optimal-training/">Scaling Laws and Compute-Optimal Training</a></li>
+  <li><p>More derivation-driven notes will land here next.</p></li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Open Questions
-
-- Which scaling insights are truly stable across architectures and data regimes?
-- What practical signals best predict whether a training run is improving or drifting?
-- Which old ML ideas are worth revisiting in the era of foundation models?
+<div class="hub-panel">
+<h3>Open Questions</h3>
+<ul>
+  <li>Which scaling insights are truly stable across architectures and data regimes?</li>
+  <li>What practical signals best predict whether a training run is improving or drifting?</li>
+  <li>Which old ML ideas are worth revisiting in the era of foundation models?</li>
+</ul>
 </div>
 </div>

@@ -9,10 +9,10 @@ tags:
   - inference
 ---
 
-<div class="hero-shell section-hero efficiency-hero" markdown>
+<div class="hero-shell section-hero efficiency-hero">
 <p class="hero-eyebrow">Model Efficiency</p>
 
-# Efficient AI
+<h1>Efficient AI</h1>
 
 <p class="hero-lead">This section focuses on efficiency techniques at the model and algorithm level: compression, quantization, sparse computation, efficient architectures, and inference tricks that change the cost profile of real workloads.</p>
 
@@ -23,35 +23,38 @@ tags:
 <span class="chip">Inference optimization</span>
 </div>
 
-<div class="hero-actions" markdown>
-[Read the Inference Reading Map](../research-notes/reading-maps/efficient-llm-inference.md){ .md-button .md-button--primary }
-[Read the KV Cache Roundup](../research-notes/roundups/2026-04-kv-cache-optimization.md){ .md-button }
+<div class="hero-actions">
+<a class="md-button md-button--primary" href="../research-notes/reading-maps/efficient-llm-inference/">Read the Inference Reading Map</a>
+<a class="md-button" href="../research-notes/roundups/2026-04-kv-cache-optimization/">Read the KV Cache Roundup</a>
 </div>
 </div>
 
 <div class="hub-grid">
-<div class="hub-panel" markdown>
-### Main Tracks
-
-- Quantization and compression
-- Efficient architectures beyond standard attention
-- Inference optimization and cache strategy
-- Sparsity and pruning
+<div class="hub-panel">
+<h3>Main Tracks</h3>
+<ul>
+  <li>Quantization and compression</li>
+  <li>Efficient architectures beyond standard attention</li>
+  <li>Inference optimization and cache strategy</li>
+  <li>Sparsity and pruning</li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Boundary With AI Systems
-
-- If the question is about clusters, communication, memory hierarchy, or CUDA kernels, it belongs under **AI Systems**.
-- If the question is about shrinking the model, reducing FLOPs, or changing the algorithmic cost profile, it belongs here.
+<div class="hub-panel">
+<h3>Boundary With AI Systems</h3>
+<ul>
+  <li>If the question is about clusters, communication, memory hierarchy, or CUDA kernels, it belongs under <strong>AI Systems</strong>.</li>
+  <li>If the question is about shrinking the model, reducing FLOPs, or changing the algorithmic cost profile, it belongs here.</li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Latest Notes
-
-- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
-- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
-- [Prefill, Decode, and Goodput](../ai-systems/prefill-decode-goodput.md)
+<div class="hub-panel">
+<h3>Latest Notes</h3>
+<ul class="link-stack">
+  <li><a href="../research-notes/roundups/2026-04-kv-cache-optimization/">April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem</a></li>
+  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
+  <li><a href="../ai-systems/prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
+</ul>
 </div>
 </div>
 

@@ -9,10 +9,10 @@ tags:
   - inference
 ---
 
-<div class="hero-shell section-hero systems-hero" markdown>
+<div class="hero-shell section-hero systems-hero">
 <p class="hero-eyebrow">Execution Layer</p>
 
-# AI Systems
+<h1>AI Systems</h1>
 
 <p class="hero-lead">This section is about the machinery that makes modern AI possible in practice: distributed training, serving, GPU systems, memory behavior, scheduling, and the tradeoffs that determine whether a model is merely impressive or actually deployable.</p>
 
@@ -23,38 +23,41 @@ tags:
 <span class="chip">GPU systems</span>
 </div>
 
-<div class="hero-actions" markdown>
-[Read Distributed Training Playbook](distributed-training-playbook.md){ .md-button .md-button--primary }
-[Read Prefill, Decode, and Goodput](prefill-decode-goodput.md){ .md-button }
+<div class="hero-actions">
+<a class="md-button md-button--primary" href="distributed-training-playbook/">Read Distributed Training Playbook</a>
+<a class="md-button" href="prefill-decode-goodput/">Read Prefill, Decode, and Goodput</a>
 </div>
 </div>
 
 <div class="hub-grid">
-<div class="hub-panel" markdown>
-### Start Here
-
-- [Distributed Training Playbook](distributed-training-playbook.md)
-- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
-- [GPU Systems & CUDA](../cuda/index.md)
-- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+<div class="hub-panel">
+<h3>Start Here</h3>
+<ul class="link-stack">
+  <li><a href="distributed-training-playbook/">Distributed Training Playbook</a></li>
+  <li><a href="prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
+  <li><a href="../cuda/">GPU Systems &amp; CUDA</a></li>
+  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Systems Playbook
-
-- Use DDP when the model fits and you need straightforward scale-out.
-- Use ZeRO or FSDP when replicated model state is the main memory problem.
-- Use tensor or pipeline parallelism when layer size or stage partitioning becomes the real constraint.
-- Optimize serving for TTFT, TPOT, and goodput rather than raw throughput alone.
+<div class="hub-panel">
+<h3>Systems Playbook</h3>
+<ul>
+  <li>Use DDP when the model fits and you need straightforward scale-out.</li>
+  <li>Use ZeRO or FSDP when replicated model state is the main memory problem.</li>
+  <li>Use tensor or pipeline parallelism when layer size or stage partitioning becomes the real constraint.</li>
+  <li>Optimize serving for TTFT, TPOT, and goodput rather than raw throughput alone.</li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Latest Notes
-
-- [Distributed Training Playbook](distributed-training-playbook.md)
-- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
-- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
-- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+<div class="hub-panel">
+<h3>Latest Notes</h3>
+<ul class="link-stack">
+  <li><a href="distributed-training-playbook/">Distributed Training Playbook</a></li>
+  <li><a href="prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
+  <li><a href="../research-notes/roundups/2026-04-kv-cache-optimization/">April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem</a></li>
+  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
+</ul>
 </div>
 </div>
 

@@ -10,10 +10,10 @@ tags:
 ---
 
 <div class="hero-shell home-hero">
-<div class="hero-copy" markdown>
+<div class="hero-copy">
 <p class="hero-eyebrow">Living Knowledge Base</p>
 
-# AI Research Garden
+<h1>AI Research Garden</h1>
 
 <p class="hero-lead">A math-first research garden for machine learning, generative AI, systems, efficiency, trust, and paper-driven synthesis. The site is designed to move from foundations to frontier work without losing the engineering and evaluation story.</p>
 
@@ -24,9 +24,9 @@ tags:
 <span class="chip">Research-note workflow</span>
 </div>
 
-<div class="hero-actions" markdown>
-[Start with Machine Learning](ml/index.md){ .md-button .md-button--primary }
-[Browse Research Notes](research-notes/index.md){ .md-button }
+<div class="hero-actions">
+<a class="md-button md-button--primary" href="ml/">Start with Machine Learning</a>
+<a class="md-button" href="research-notes/">Browse Research Notes</a>
 </div>
 </div>
 
@@ -91,31 +91,34 @@ tags:
 </div>
 
 <div class="hub-grid">
-<div class="hub-panel" markdown>
-### How To Read This Site
-
-1. Start in **Machine Learning** for the core mental models.
-2. Move into **Generative AI** for model families and post-training.
-3. Use **AI Systems** to understand training, serving, and GPU constraints.
-4. Treat **Efficient AI** and **Trustworthy AI** as cross-cutting lenses.
-5. Follow **Research Notes** for paper reviews, roundups, and reading maps.
+<div class="hub-panel">
+<h3>How To Read This Site</h3>
+<ol>
+  <li>Start in <strong>Machine Learning</strong> for the core mental models.</li>
+  <li>Move into <strong>Generative AI</strong> for model families and post-training.</li>
+  <li>Use <strong>AI Systems</strong> to understand training, serving, and GPU constraints.</li>
+  <li>Treat <strong>Efficient AI</strong> and <strong>Trustworthy AI</strong> as cross-cutting lenses.</li>
+  <li>Follow <strong>Research Notes</strong> for paper reviews, roundups, and reading maps.</li>
+ </ol>
 </div>
 
-<div class="hub-panel" markdown>
-### Editorial Model
-
-- Evergreen hubs hold roadmaps, foundations, and durable abstractions.
-- Research notes turn active reading into reviews, maps, and recurring updates.
-- New posts should always connect back to the hub that gives them context.
+<div class="hub-panel">
+<h3>Editorial Model</h3>
+<ul>
+  <li>Evergreen hubs hold roadmaps, foundations, and durable abstractions.</li>
+  <li>Research notes turn active reading into reviews, maps, and recurring updates.</li>
+  <li>New posts should always connect back to the hub that gives them context.</li>
+</ul>
 </div>
 
-<div class="hub-panel" markdown>
-### Recent Additions
-
-- [Scaling Laws and Compute-Optimal Training](ml/scaling-laws-compute-optimal-training.md)
-- [Distributed Training Playbook](ai-systems/distributed-training-playbook.md)
-- [Prefill, Decode, and Goodput](ai-systems/prefill-decode-goodput.md)
-- [Generalization in the Overparameterized Era](ml/generalization-overparameterization.md)
-- [Direct Preference Optimization](paper-reviews/direct-preference-optimization.md)
+<div class="hub-panel">
+<h3>Recent Additions</h3>
+<ul class="link-stack">
+  <li><a href="ml/scaling-laws-compute-optimal-training/">Scaling Laws and Compute-Optimal Training</a></li>
+  <li><a href="ai-systems/distributed-training-playbook/">Distributed Training Playbook</a></li>
+  <li><a href="ai-systems/prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
+  <li><a href="ml/generalization-overparameterization/">Generalization in the Overparameterized Era</a></li>
+  <li><a href="paper-reviews/direct-preference-optimization/">Direct Preference Optimization</a></li>
+</ul>
 </div>
 </div>

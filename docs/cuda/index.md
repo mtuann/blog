@@ -9,10 +9,10 @@ tags:
   - ai systems
 ---
 
-<div class="hero-shell section-hero cuda-hero" markdown>
+<div class="hero-shell section-hero cuda-hero">
 <p class="hero-eyebrow">Hardware-Software Interface</p>
 
-# GPU Systems & CUDA
+<h1>GPU Systems &amp; CUDA</h1>
 
 <p class="hero-lead">This section lives under <strong>AI Systems</strong> because GPU programming is part of the execution substrate for training and inference. The goal here is to move from conceptual understanding to performance-aware engineering.</p>
 
@@ -23,9 +23,9 @@ tags:
 <span class="chip">CUDA and Triton</span>
 </div>
 
-<div class="hero-actions" markdown>
-[Read the PMPP Overview](pmpp/index.md){ .md-button .md-button--primary }
-[Back to AI Systems](../ai-systems/index.md){ .md-button }
+<div class="hero-actions">
+<a class="md-button md-button--primary" href="pmpp/">Read the PMPP Overview</a>
+<a class="md-button" href="../ai-systems/">Back to AI Systems</a>
 </div>
 </div>
 

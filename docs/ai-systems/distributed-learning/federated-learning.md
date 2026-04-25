@@ -86,6 +86,7 @@ This radar prefers 2025-2026 work. Older references stay only when they remain t
 
 ### Related Notes
 
+- [FedLLM Aggregation Objects](./fedllm-aggregation-objects.md)
 - [Distributed Learning](./index.md)
 - [Distributed Training Playbook](../distributed-training-playbook.md)
 - [AI Systems](../index.md)
@@ -96,6 +97,8 @@ This radar prefers 2025-2026 work. Older references stay only when they remain t
   The parent map for datacenter-scale parallel training, communication efficiency, and resilience questions that sit next to federated learning.
 - [Distributed Training Playbook](../distributed-training-playbook.md)
   The current internal note for the main distributed-training abstractions that often interact with cross-silo system design.
+- [FedLLM Aggregation Objects](./fedllm-aggregation-objects.md)
+  A focused comparison of what the server should actually aggregate: LoRA factors, subspaces, Gram matrices, task vectors, or routed experts.
 
 ## Sources To Follow
 
@@ -106,7 +109,6 @@ This radar prefers 2025-2026 work. Older references stay only when they remain t
 
 ## Open Backlog
 
-- A dedicated note on FedLLM aggregation objects: LoRA weights, low-rank subspaces, Gram matrices, task vectors, and expert routing.
 - A deeper page on personalization for federated foundation models, especially how group-wise aggregation differs from per-client adaptation.
 - A focused note on federated unlearning and verification, separating legal deletion claims from measurable forgetting.
 - A systems note on cross-silo federations for healthcare, enterprise, and scientific settings where communication and trust assumptions differ sharply from mobile FL.

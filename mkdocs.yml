@@ -124,6 +124,7 @@ nav:
     - Distributed Learning:
       - Overview: ai-systems/distributed-learning/index.md
       - Federated Learning: ai-systems/distributed-learning/federated-learning.md
+      - FedLLM Aggregation Objects: ai-systems/distributed-learning/fedllm-aggregation-objects.md
       - Distributed Training Playbook: ai-systems/distributed-training-playbook.md
     - Inference Systems:
       - Prefill, Decode, and Goodput: ai-systems/prefill-decode-goodput.md
@@ -160,6 +161,8 @@ nav:
     - Overview: efficient-ai/index.md
   - Trustworthy AI:
     - Overview: trustworthy-ai/index.md
+    - Backdoor Attacks:
+      - Overview: trustworthy-ai/backdoor-attacks/index.md
   - Research Notes:
     - Overview: research-notes/index.md
     - Paper Reviews: paper-reviews/index.md

@@ -1,8 +1,8 @@
 ---
 title: Trustworthy AI
-summary: Live research directions in evaluation, interpretability, jailbreaks, hallucination, and agent oversight.
+summary: Live research directions in evaluation, interpretability, jailbreaks, backdoor attacks, hallucination, and agent oversight.
 status: evergreen
-updated: 2026-04-24
+updated: 2026-04-25
 tags:
   - trustworthy ai
   - safety
@@ -17,6 +17,8 @@ This page is a living map of trustworthy-AI research. It focuses on the moving f
   This is where much of the field is re-centering: moving from static benchmark worship to audits, hidden-behavior discovery, deployment-shaped testbeds, and evaluation agents.
 - **Jailbreaks and safety-utility tradeoffs**
   The live question is no longer just “can a model be jailbroken?” but which attacks transfer, which defenses stay useful, and what costs safety measures impose on legitimate use.
+- **Backdoor attacks and trojaned post-training**
+  This is increasingly a foundation-model problem rather than only a classical poisoned-classifier problem: triggers can be clean-sample, hidden in supply-chain artifacts, or activated through multimodal and agentic workflows.
 - **Interpretability and mechanistic reliability**
   Sparse autoencoders, feature dictionaries, and automated interpretability pipelines are now central, but the real frontier question is whether they change engineering decisions or only produce attractive analyses.
 - **Hallucination and calibration**
@@ -28,6 +30,7 @@ This page is a living map of trustworthy-AI research. It focuses on the moving f
 
 - What evaluation setups still matter once frontier models saturate the old public benchmarks?
 - Which jailbreak benchmarks measure real deployment risk rather than benchmark gaming?
+- What realistic backdoor threat models matter once attackers no longer need explicit trigger strings in user prompts?
 - When do interpretability tools produce operational leverage instead of post hoc storytelling?
 - How should hallucination be measured when tasks are ambiguous, open-ended, or multi-turn?
 - What does scalable oversight look like once agents browse, code, and plan over long horizons?
@@ -42,13 +45,14 @@ This radar emphasizes 2025-2026 work. Older entries remain only when they are st
 
 - Safety evaluation is moving from static benchmarks toward audit realism, hidden-objective discovery, and deployment-shaped testbeds.
 - Jailbreak research is shifting from one-shot attacks toward multi-turn, weak-to-strong, and workflow-specific attacks, with explicit safety-utility tradeoff measurement.
+- Backdoor research is shifting from toy trigger poisoning toward clean-sample, multimodal, agentic, and distributed attack surfaces, alongside trigger-agnostic defenses.
 - Interpretability is increasingly centered on sparse autoencoders, feature robustness, and whether mechanistic tools actually help engineering and auditing.
 - Hallucination work is becoming more evaluation-aware: better taxonomies, authentic-user benchmarks, and incentives for calibrated abstention.
 - Agent safety and scalable oversight are becoming central as models take longer-horizon actions with tools and memory.
 
 ### Keywords To Track
 
-`AuditBench`, `alignment auditing`, `agentic misalignment`, `StrongREJECT`, `safety-utility tradeoff`, `sparse autoencoders`, `hallucination benchmarks`, `preparedness`, `system cards`, `agentic oversight`
+`AuditBench`, `alignment auditing`, `agentic misalignment`, `StrongREJECT`, `BackdoorLLM`, `triggerless backdoor`, `safety-utility tradeoff`, `sparse autoencoders`, `hallucination benchmarks`, `preparedness`, `system cards`, `agentic oversight`
 
 ### Recent Papers And Research Signals By Direction
 
@@ -83,6 +87,8 @@ This radar emphasizes 2025-2026 work. Older entries remain only when they are st
 
 ## Site Coverage
 
+- [Backdoor Attacks](backdoor-attacks/index.md)
+  The dedicated subtopic page for backdoor threats in LLMs, VLMs, agents, model merging, and distributed post-training.
 - [Research Notes](../research-notes/index.md)
   The home for future paper reviews, reading maps, and roundups that will deepen this topic without bloating the overview.
 - [Paper Review: Direct Preference Optimization](../paper-reviews/direct-preference-optimization.md)

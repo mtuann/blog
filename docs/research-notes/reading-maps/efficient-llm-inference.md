@@ -28,7 +28,7 @@ The trick is to not start with serving infrastructure too early. Efficient infer
 
 Start with the original transformer paper:
 
-- [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+- [Vaswani et al. (2017), Attention Is All You Need](https://arxiv.org/abs/1706.03762)
 
 What to focus on:
 
@@ -40,8 +40,8 @@ What to focus on:
 
 Then move to IO-aware attention:
 
-- [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135)
-- [FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
+- [Dao et al. (2022), FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135)
+- [Dao et al. (2023), FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning](https://arxiv.org/abs/2307.08691)
 
 What to focus on:
 
@@ -53,7 +53,7 @@ What to focus on:
 
 Once attention kernels make sense, move to serving-time memory management:
 
-- [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
+- [Kwon et al. (2023), Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
 
 What to focus on:
 
@@ -65,9 +65,9 @@ What to focus on:
 
 Now look at phase-aware and disaggregated serving:
 
-- [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670)
-- [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079)
-- [InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management](https://arxiv.org/abs/2406.19707)
+- [Zhong et al. (2024), DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670)
+- [Qin et al. (2024), Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079)
+- [Lee et al. (2024), InfiniGen: Efficient Generative Inference of Large Language Models with Dynamic KV Cache Management](https://arxiv.org/abs/2406.19707)
 
 What to focus on:
 
@@ -79,10 +79,10 @@ What to focus on:
 
 After the serving architecture papers, look at system-aware efficiency:
 
-- [QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532)
-- [Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://arxiv.org/abs/2503.24000)
-- [DeltaKV: Residual-Based KV Cache Compression via Long-Range Similarity](https://arxiv.org/abs/2602.08005)
-- [HybridKV: Hybrid KV Cache Compression for Efficient Multimodal Large Language Model Inference](https://arxiv.org/abs/2604.05887)
+- [Lin et al. (2024), QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532)
+- [Gao et al. (2025), Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://arxiv.org/abs/2503.24000)
+- [Hao et al. (2026), DeltaKV: Residual-Based KV Cache Compression via Long-Range Similarity](https://arxiv.org/abs/2602.08005)
+- [Zeng et al. (2026), HybridKV: Hybrid KV Cache Compression for Efficient Multimodal Large Language Model Inference](https://arxiv.org/abs/2604.05887)
 
 What to focus on:
 
@@ -95,10 +95,10 @@ What to focus on:
 Read these in order:
 
 1. [Transformer & Attention Foundations](../../genai/transformer-attention.md)
-2. [FlashAttention](https://arxiv.org/abs/2205.14135)
-3. [PagedAttention](https://arxiv.org/abs/2309.06180)
-4. [DistServe](https://arxiv.org/abs/2401.09670)
-5. [Rethinking KV Cache Compression](https://arxiv.org/abs/2503.24000)
+2. [Dao et al. (2022), FlashAttention](https://arxiv.org/abs/2205.14135)
+3. [Kwon et al. (2023), PagedAttention](https://arxiv.org/abs/2309.06180)
+4. [Zhong et al. (2024), DistServe](https://arxiv.org/abs/2401.09670)
+5. [Gao et al. (2025), Rethinking KV Cache Compression](https://arxiv.org/abs/2503.24000)
 
 That sequence gives you a strong mental model from algorithm to deployment.
 

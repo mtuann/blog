@@ -55,22 +55,22 @@ This radar prefers 2025-2026 work. Older CUDA papers stay only when they still t
 
 #### Attention And Fused Kernel Design
 
-- [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](https://arxiv.org/abs/2603.05451) (2026)
-- [The Anatomy of a Triton Attention Kernel](https://arxiv.org/abs/2511.11581) (2025)
-- [A Case Study in CUDA Kernel Fusion: Implementing FlashAttention-2 on NVIDIA Hopper Architecture using the CUTLASS Library](https://arxiv.org/abs/2312.11918) (2023, kept as a best-in-class public case study)
+- [Zadouri et al. (2026), FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](https://arxiv.org/abs/2603.05451)
+- [Ringlein et al. (2025), The Anatomy of a Triton Attention Kernel](https://arxiv.org/abs/2511.11581)
+- [Bikshandi et al. (2023), A Case Study in CUDA Kernel Fusion: Implementing FlashAttention-2 on NVIDIA Hopper Architecture using the CUTLASS Library](https://arxiv.org/abs/2312.11918) (kept as a best-in-class public case study)
 
 #### Graph Capture, Startup, And Runtime Materialization
 
-- [Foundry: Template-Based CUDA Graph Context Materialization for Fast LLM Serving Cold Start](https://arxiv.org/abs/2604.06664) (2026)
+- [Liu et al. (2026), Foundry: Template-Based CUDA Graph Context Materialization for Fast LLM Serving Cold Start](https://arxiv.org/abs/2604.06664)
 
 #### Low-Precision And Numerics-Aware CUDA Engineering
 
-- [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
+- [Hernández-Cano et al. (2025), Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524)
 
 #### AI-Assisted Kernel Generation
 
-- [TritonRL: Training LLMs to Think and Code Triton Without Cheating](https://arxiv.org/abs/2510.17891) (2025)
-- [DRTriton: Large-Scale Synthetic Data Reinforcement Learning for Triton Kernel Generation](https://arxiv.org/abs/2603.21465) (2026)
+- [Woo et al. (2025), TritonRL: Training LLMs to Think and Code Triton Without Cheating](https://arxiv.org/abs/2510.17891)
+- [Guo et al. (2026), DRTriton: Large-Scale Synthetic Data Reinforcement Learning for Triton Kernel Generation](https://arxiv.org/abs/2603.21465)
 
 ### Related Notes
 

@@ -46,11 +46,11 @@ Weak papers usually do the opposite:
 
 Before branching into frontier work, read the original threat model and the classic benchmark layer:
 
-- [BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain](https://arxiv.org/abs/1708.06733)
-- [Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering](https://arxiv.org/abs/1811.03728)
-- [Backdoor Learning: A Survey](https://arxiv.org/abs/2007.08745)
-- [BackdoorBench: A Comprehensive Benchmark of Backdoor Learning](https://openreview.net/forum?id=31_U7n18gM7)
-- [A Unified Evaluation of Textual Backdoor Learning: Frameworks and Benchmarks](https://openreview.net/forum?id=k3462dQtQhg)
+- [Gu et al. (2017), BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain](https://arxiv.org/abs/1708.06733)
+- [Chen et al. (2018), Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering](https://arxiv.org/abs/1811.03728)
+- [Li et al. (2020), Backdoor Learning: A Survey](https://arxiv.org/abs/2007.08745)
+- [Chen et al. (2022), BackdoorBench: A Comprehensive Benchmark of Backdoor Learning](https://openreview.net/forum?id=31_U7n18gM7)
+- [Chen et al. (2022), A Unified Evaluation of Textual Backdoor Learning: Frameworks and Benchmarks](https://openreview.net/forum?id=k3462dQtQhg)
 
 What to focus on:
 
@@ -64,10 +64,10 @@ Some backdoor branches already have enough surveys and benchmarks that a plain a
 
 ### LLMs And Code LLMs
 
-- [A Survey of Recent Backdoor Attacks and Defenses in Large Language Models](https://openreview.net/forum?id=wZLWuFHxt5)
-- [A Survey on Backdoor Threats in Large Language Models (LLMs): Attacks, Defenses, and Evaluations](https://arxiv.org/abs/2502.05224)
-- [A review of backdoor attacks and defenses in code large language models](https://www.sciencedirect.com/science/article/pii/S0950584925000461)
-- [BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models](https://openreview.net/forum?id=sYLiY87mNn)
+- [Zhao et al. (2025), A Survey of Recent Backdoor Attacks and Defenses in Large Language Models](https://openreview.net/forum?id=wZLWuFHxt5)
+- [Zhou et al. (2025), A Survey on Backdoor Threats in Large Language Models (LLMs): Attacks, Defenses, and Evaluations](https://arxiv.org/abs/2502.05224)
+- [Qu et al. (2025), A review of backdoor attacks and defenses in code large language models](https://www.sciencedirect.com/science/article/pii/S0950584925000461)
+- [Li et al. (2025), BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models](https://openreview.net/forum?id=sYLiY87mNn)
 
 What to focus on:
 
@@ -77,10 +77,10 @@ What to focus on:
 
 ### Federated Learning
 
-- [Backdoor attacks and defense mechanisms in federated learning: A survey](https://www.sciencedirect.com/science/article/abs/pii/S1566253525003215)
-- [Backdoor attacks and defenses in federated learning: Survey, challenges and future research directions](https://www.sciencedirect.com/science/article/pii/S0952197623013507)
-- [Backdoor Attacks and Defenses in Federated Learning: State-of-the-Art, Taxonomy, and Future Directions](https://openreview.net/forum?id=HbhG88Bs5V)
-- [BackFed: A Standardized and Efficient Benchmark Framework for Backdoor Attacks in Federated Learning](https://openreview.net/forum?id=0hHnZeXr9k)
+- [Li et al. (2025), Backdoor attacks and defense mechanisms in federated learning: A survey](https://www.sciencedirect.com/science/article/abs/pii/S1566253525003215)
+- [Nguyen et al. (2024), Backdoor attacks and defenses in federated learning: Survey, challenges and future research directions](https://www.sciencedirect.com/science/article/pii/S0952197623013507)
+- [Gong et al. (2023), Backdoor Attacks and Defenses in Federated Learning: State-of-the-Art, Taxonomy, and Future Directions](https://openreview.net/forum?id=HbhG88Bs5V)
+- [Dao et al. (2026), BackFed: A Standardized and Efficient Benchmark Framework for Backdoor Attacks in Federated Learning](https://openreview.net/forum?id=0hHnZeXr9k)
 
 What to focus on:
 
@@ -90,7 +90,7 @@ What to focus on:
 
 ### Face Recognition And Biometrics
 
-- [A Comprehensive Survey on Backdoor Attacks and Their Defenses in Face Recognition Systems](https://openreview.net/pdf?id=UDG64Min1E)
+- [Roux et al. (2024), A Comprehensive Survey on Backdoor Attacks and Their Defenses in Face Recognition Systems](https://openreview.net/pdf?id=UDG64Min1E)
 
 What to focus on:
 
@@ -100,7 +100,7 @@ What to focus on:
 
 ### Graph Neural Networks
 
-- [Graph Neural Backdoor: Fundamentals, Methodologies, Applications, and Future Directions](https://arxiv.org/abs/2406.10573)
+- [Yang et al. (2024), Graph Neural Backdoor: Fundamentals, Methodologies, Applications, and Future Directions](https://arxiv.org/abs/2406.10573)
 
 What to focus on:
 
@@ -111,11 +111,11 @@ What to focus on:
 
 This is one of the most important shifts in the field. The compromised object is often no longer a dataset alone. It can be an adapter, a merged model, a pipeline stage, a pre-trained encoder, or even architecture-level logic.
 
-- [Merge Hijacking: Backdoor Attacks to Model Merging of Large Language Models](https://arxiv.org/abs/2505.23561)
-- [LoBAM: LoRA-Based Backdoor Attack on Model Merging](https://openreview.net/forum?id=NHOEz72fip)
-- [Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace](https://openreview.net/forum?id=dqMqAaw7Sq)
-- [Backdoor Attacks on Decentralised Post-Training](https://openreview.net/forum?id=FveQNDaHnZ)
-- [Architectural Backdoors in Deep Learning: A Survey of Vulnerabilities, Detection, and Defense](https://arxiv.org/abs/2507.12919)
+- [Yuan et al. (2025), Merge Hijacking: Backdoor Attacks to Model Merging of Large Language Models](https://arxiv.org/abs/2505.23561)
+- [Yin et al. (2025), LoBAM: LoRA-Based Backdoor Attack on Model Merging](https://openreview.net/forum?id=NHOEz72fip)
+- [Yang et al. (2025), Mitigating the Backdoor Effect for Multi-Task Model Merging via Safety-Aware Subspace](https://openreview.net/forum?id=dqMqAaw7Sq)
+- [Ersoy et al. (2026), Backdoor Attacks on Decentralised Post-Training](https://openreview.net/forum?id=FveQNDaHnZ)
+- [Childress et al. (2025), Architectural Backdoors in Deep Learning: A Survey of Vulnerabilities, Detection, and Defense](https://arxiv.org/abs/2507.12919)
 
 What to focus on:
 
@@ -129,9 +129,9 @@ This part of the field is newer, more fragmented, and often more publishable tha
 
 ### Vision-Language, Speech, And Multimodal Models
 
-- [BackdoorVLM: A Benchmark for Backdoor Attacks on Vision-Language Models](https://arxiv.org/abs/2511.18921)
-- [BackdoorMBTI: A Backdoor Learning Multimodal Benchmark Tool Kit for Backdoor Defense Evaluation](https://arxiv.org/abs/2411.11006)
-- [Backdoor Attacks Against Speech Language Models](https://openreview.net/forum?id=HcytH0HSaG)
+- [Li et al. (2025), BackdoorVLM: A Benchmark for Backdoor Attacks on Vision-Language Models](https://arxiv.org/abs/2511.18921)
+- [Yu et al. (2024), BackdoorMBTI: A Backdoor Learning Multimodal Benchmark Tool Kit for Backdoor Defense Evaluation](https://arxiv.org/abs/2411.11006)
+- [Fortier et al. (2026), Backdoor Attacks Against Speech Language Models](https://openreview.net/forum?id=HcytH0HSaG)
 
 What to focus on:
 
@@ -141,11 +141,11 @@ What to focus on:
 
 ### Diffusion And Generative Data Pipelines
 
-- [How to Backdoor Diffusion Models?](https://openreview.net/forum?id=iIg0_loMVm)
-- [DisDet: Exploring Detectability of Backdoor Attack on Diffusion Models](https://openreview.net/forum?id=SfqCaAOF1S)
-- [UFID: A Unified Framework for Black-box Input-level Backdoor Detection on Diffusion Models](https://openreview.net/forum?id=lZLvwHYSFA)
-- [Data-Chain Backdoor: Do You Trust Diffusion Models as Generative Data Supplier?](https://arxiv.org/abs/2512.15769)
-- [When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models](https://openreview.net/forum?id=he9MIuoaup)
+- [Chou et al. (2023), How to Backdoor Diffusion Models?](https://openreview.net/forum?id=iIg0_loMVm)
+- [Sui et al. (2025), DisDet: Exploring Detectability of Backdoor Attack on Diffusion Models](https://openreview.net/forum?id=SfqCaAOF1S)
+- [Guan et al. (2025), UFID: A Unified Framework for Black-box Input-level Backdoor Detection on Diffusion Models](https://openreview.net/forum?id=lZLvwHYSFA)
+- [Lu et al. (2025), Data-Chain Backdoor: Do You Trust Diffusion Models as Generative Data Supplier?](https://arxiv.org/abs/2512.15769)
+- [Wang et al. (2026), When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models](https://openreview.net/forum?id=he9MIuoaup)
 
 What to focus on:
 
@@ -155,8 +155,8 @@ What to focus on:
 
 ### Agentic Workflows
 
-- [BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://arxiv.org/abs/2601.04566)
-- [Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents](https://openreview.net/forum?id=Nf4MHF1pi5)
+- [Feng et al. (2026), BackdoorAgent: A Unified Framework for Backdoor Attacks on LLM-based Agents](https://arxiv.org/abs/2601.04566)
+- [Yang et al. (2024), Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents](https://openreview.net/forum?id=Nf4MHF1pi5)
 
 What to focus on:
 
@@ -170,15 +170,15 @@ This is where many of the best `less crowded but still important` opportunities 
 
 ### Structured Computer Vision
 
-- [BadDet: Backdoor Attacks on Object Detection](https://arxiv.org/abs/2205.14497)
-- [TransCAB: Transferable Clean-Annotation Backdoor to Object Detection with Natural Trigger in Real-World](https://arxiv.org/abs/2209.02339)
-- [BadDet+: Robust Backdoor Attacks for Object Detection](https://openreview.net/forum?id=6rz7VyAatm)
-- [Influencer Backdoor Attack on Semantic Segmentation](https://openreview.net/forum?id=VmGRoNDQgJ)
-- [ConSeg: Contextual Backdoor Attack Against Semantic Segmentation](https://arxiv.org/abs/2507.19905)
-- [Poisoning the Pixels: Revisiting Backdoor Attacks on Semantic Segmentation](https://arxiv.org/abs/2603.16405)
-- [Clean-Label Backdoor Attacks on Video Recognition Models](https://arxiv.org/abs/2003.03030)
-- [Look, Listen, and Attack: Backdoor Attacks Against Video Action Recognition](https://openreview.net/forum?id=YBSONcjwCa)
-- [Palette: Physically-Realizable Backdoor Attacks Against Video Recognition Models](https://openreview.net/forum?id=CcinTjYZno)
+- [Chan et al. (2022), BadDet: Backdoor Attacks on Object Detection](https://arxiv.org/abs/2205.14497)
+- [Ma et al. (2022), TransCAB: Transferable Clean-Annotation Backdoor to Object Detection with Natural Trigger in Real-World](https://arxiv.org/abs/2209.02339)
+- [Dunnett et al. (2026), BadDet+: Robust Backdoor Attacks for Object Detection](https://openreview.net/forum?id=6rz7VyAatm)
+- [Lan et al. (2024), Influencer Backdoor Attack on Semantic Segmentation](https://openreview.net/forum?id=VmGRoNDQgJ)
+- [Abbasi et al. (2025), ConSeg: Contextual Backdoor Attack Against Semantic Segmentation](https://arxiv.org/abs/2507.19905)
+- [Zhang et al. (2026), Poisoning the Pixels: Revisiting Backdoor Attacks on Semantic Segmentation](https://arxiv.org/abs/2603.16405)
+- [Zhao et al. (2020), Clean-Label Backdoor Attacks on Video Recognition Models](https://arxiv.org/abs/2003.03030)
+- [Hammoud et al. (2024), Look, Listen, and Attack: Backdoor Attacks Against Video Action Recognition](https://openreview.net/forum?id=YBSONcjwCa)
+- [Gong et al. (2024), Palette: Physically-Realizable Backdoor Attacks Against Video Recognition Models](https://openreview.net/forum?id=CcinTjYZno)
 
 What to focus on:
 
@@ -188,10 +188,10 @@ What to focus on:
 
 ### Medical, Scientific, And Genomic Models
 
-- [Machine Learning with Electronic Health Records is vulnerable to Backdoor Trigger Attacks](https://arxiv.org/abs/2106.07925)
-- [Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records: Development and Validation Study](https://medinform.jmir.org/2022/8/e38440/)
-- [Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP](https://arxiv.org/abs/2401.01911)
-- [Poisoning the Genome: Targeted Backdoor Attacks on DNA Foundation Models](https://arxiv.org/abs/2603.27465)
+- [Joe et al. (2021), Machine Learning with Electronic Health Records is vulnerable to Backdoor Trigger Attacks](https://arxiv.org/abs/2106.07925)
+- [Joe et al. (2022), Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records: Development and Validation Study](https://medinform.jmir.org/2022/8/e38440/)
+- [Jin et al. (2024), Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP](https://arxiv.org/abs/2401.01911)
+- [Koilakos et al. (2026), Poisoning the Genome: Targeted Backdoor Attacks on DNA Foundation Models](https://arxiv.org/abs/2603.27465)
 
 What to focus on:
 
@@ -206,15 +206,15 @@ This publisher sweep is important because `AI for science backdoors` still does 
 #### What The Publisher Sweep Clearly Finds
 
 - **Nature family**
-  The clearest direct hit is [Unveiling potential threats: backdoor attacks in single-cell pre-trained models](https://www.nature.com/articles/s41421-024-00753-1), published in **Cell Discovery on November 30, 2024**. This is the strongest `AI-for-science` backdoor paper in the sweep: it attacks `scGPT`, `GeneFormer`, and `scBERT`, and explicitly frames backdoors as a threat to downstream biomedical analysis, drug discovery, and clinical interpretation.
+  The clearest direct hit is [Feng et al. (2024), Unveiling potential threats: backdoor attacks in single-cell pre-trained models](https://www.nature.com/articles/s41421-024-00753-1), published in **Cell Discovery on November 30, 2024**. This is the strongest `AI-for-science` backdoor paper in the sweep: it attacks `scGPT`, `GeneFormer`, and `scBERT`, and explicitly frames backdoors as a threat to downstream biomedical analysis, drug discovery, and clinical interpretation.
 - **IEEE**
-  The strongest direct hit is [Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP](https://ieeexplore.ieee.org/document/10516621), also available as [OpenReview](https://openreview.net/forum?id=YymNvIkmKR) and [arXiv](https://arxiv.org/abs/2401.01911). This is best viewed as a `medical multimodal foundation-model supply-chain` paper rather than a generic VLM paper.
+  The strongest direct hit is [Jin et al. (2024), Backdoor Attack on Unpaired Medical Image-Text Foundation Models: A Pilot Study on MedCLIP](https://ieeexplore.ieee.org/document/10516621), also available as [OpenReview](https://openreview.net/forum?id=YymNvIkmKR) and [arXiv](https://arxiv.org/abs/2401.01911). This is best viewed as a `medical multimodal foundation-model supply-chain` paper rather than a generic VLM paper.
 - **Elsevier / ScienceDirect**
-  The most relevant direct journal hit is [Backdoor attack and defense in federated generative adversarial network-based medical image synthesis](https://www.sciencedirect.com/science/article/pii/S1361841523002256), which appears in **Medical Image Analysis (2024)** and studies backdoors in `federated medical image synthesis`. Elsevier also has several graph-backdoor papers such as [Crucial rather than random: Attacking crucial substructure for backdoor attacks on graph neural networks](https://www.sciencedirect.com/science/article/pii/S0952197624011242) and [Backdoor attacks on unsupervised graph representation learning](https://www.sciencedirect.com/science/article/pii/S0893608024005926). These are scientifically relevant because they touch `molecule classification`, `drug discovery`, or `protein-network` style applications, but most of them are still really `graph-security papers with science-flavored tasks`, not papers centered on scientific foundation models.
+  The most relevant direct journal hit is [Jin et al. (2023), Backdoor attack and defense in federated generative adversarial network-based medical image synthesis](https://www.sciencedirect.com/science/article/pii/S1361841523002256), which appears in **Medical Image Analysis (2024)** and studies backdoors in `federated medical image synthesis`. Elsevier also has several graph-backdoor papers such as [Tong et al. (2024), Crucial rather than random: Attacking crucial substructure for backdoor attacks on graph neural networks](https://www.sciencedirect.com/science/article/pii/S0952197624011242) and [Feng et al. (2024), Backdoor attacks on unsupervised graph representation learning](https://www.sciencedirect.com/science/article/pii/S0893608024005926). These are scientifically relevant because they touch `molecule classification`, `drug discovery`, or `protein-network` style applications, but most of them are still really `graph-security papers with science-flavored tasks`, not papers centered on scientific foundation models.
 - **Springer**
-  Springer returns graph-backdoor work such as [Stealthy graph backdoor attack based on feature trigger](https://link.springer.com/article/10.1007/s40747-025-01934-5) and [A graph backdoor detection method for data collection scenarios](https://link.springer.com/article/10.1186/s42400-024-00305-w). Again, these are relevant to scientific data through graph tasks and molecule datasets, but the literature is still not specifically organized around `AI-for-science backdoors`.
+  Springer returns graph-backdoor work such as [Chen et al. (2025), Stealthy graph backdoor attack based on feature trigger](https://link.springer.com/article/10.1007/s40747-025-01934-5) and [Xing et al. (2025), A graph backdoor detection method for data collection scenarios](https://link.springer.com/article/10.1186/s42400-024-00305-w). Again, these are relevant to scientific data through graph tasks and molecule datasets, but the literature is still not specifically organized around `AI-for-science backdoors`.
 - **Domain journals**
-  The most direct domain-journal hit is [Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records](https://medinform.jmir.org/2022/8/e38440/), published in **JMIR Medical Informatics on August 19, 2022**. This gives the clinical-tabular branch a real domain-specific anchor instead of only ML-security venue coverage.
+  The most direct domain-journal hit is [Joe et al. (2022), Exploiting Missing Value Patterns for a Backdoor Attack on Machine Learning Models of Electronic Health Records](https://medinform.jmir.org/2022/8/e38440/), published in **JMIR Medical Informatics on August 19, 2022**. This gives the clinical-tabular branch a real domain-specific anchor instead of only ML-security venue coverage.
 
 #### What Looks Only Partially Covered
 
@@ -248,8 +248,8 @@ Everything beyond that still looks unusually open for new work.
 
 ### Reinforcement Learning
 
-- [BACKDOORL: Backdoor Attack against Competitive Reinforcement Learning](https://arxiv.org/abs/2105.00579)
-- [Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](https://openreview.net/forum?id=Z3SH1xlFs6)
+- [Wang et al. (2021), BACKDOORL: Backdoor Attack against Competitive Reinforcement Learning](https://arxiv.org/abs/2105.00579)
+- [Rathbun et al. (2026), Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](https://openreview.net/forum?id=Z3SH1xlFs6)
 
 What to focus on:
 
@@ -263,18 +263,18 @@ The easiest way to waste time in this field is to choose a topic with no realist
 
 ### Strong Benchmark Support
 
-- [BackdoorBench](https://openreview.net/forum?id=31_U7n18gM7)
-- [OpenBackdoor / Unified textual evaluation](https://openreview.net/forum?id=k3462dQtQhg)
-- [BackdoorLLM](https://openreview.net/forum?id=sYLiY87mNn)
-- [BackFed](https://openreview.net/forum?id=0hHnZeXr9k)
+- [Chen et al. (2022), BackdoorBench](https://openreview.net/forum?id=31_U7n18gM7)
+- [Chen et al. (2022), OpenBackdoor / Unified textual evaluation](https://openreview.net/forum?id=k3462dQtQhg)
+- [Li et al. (2025), BackdoorLLM](https://openreview.net/forum?id=sYLiY87mNn)
+- [Dao et al. (2026), BackFed](https://openreview.net/forum?id=0hHnZeXr9k)
 
 These areas are easier to evaluate well, but harder to impress reviewers with small attack improvements.
 
 ### Medium Benchmark Support
 
-- [BackdoorVLM](https://arxiv.org/abs/2511.18921)
-- [BackdoorMBTI](https://arxiv.org/abs/2411.11006)
-- diffusion benchmarks and detection suites such as [DisDet](https://openreview.net/forum?id=SfqCaAOF1S)
+- [Li et al. (2025), BackdoorVLM](https://arxiv.org/abs/2511.18921)
+- [Yu et al. (2024), BackdoorMBTI](https://arxiv.org/abs/2411.11006)
+- diffusion benchmarks and detection suites such as [Sui et al. (2025), DisDet](https://openreview.net/forum?id=SfqCaAOF1S)
 
 These are good places to work if you can improve realism or standardization.
 
@@ -344,7 +344,7 @@ What to build:
 
 - One benchmark that unifies `LoRA adapters`, `merged models`, `shared checkpoints`, and `decentralized post-training`.
 - Realistic attacker-cost constraints and deployment scenarios.
-- Strong baselines from [Merge Hijacking](https://arxiv.org/abs/2505.23561), [LoBAM](https://openreview.net/forum?id=NHOEz72fip), and [Backdoor Attacks on Decentralised Post-Training](https://openreview.net/forum?id=FveQNDaHnZ).
+- Strong baselines from [Yuan et al. (2025), Merge Hijacking](https://arxiv.org/abs/2505.23561), [Yin et al. (2025), LoBAM](https://openreview.net/forum?id=NHOEz72fip), and [Ersoy et al. (2026), Backdoor Attacks on Decentralised Post-Training](https://openreview.net/forum?id=FveQNDaHnZ).
 
 Why this is strong:
 

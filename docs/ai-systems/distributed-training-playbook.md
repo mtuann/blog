@@ -58,7 +58,7 @@ Its weakness is obvious: as model size grows, every rank still pays the full mod
 
 When memory pressure comes mostly from model states rather than the size of one individual layer, sharding is the right tool.
 
-[ZeRO](https://arxiv.org/abs/1910.02054) is the canonical reference for this idea. The core progression is:
+[Rajbhandari et al. (2019), ZeRO](https://arxiv.org/abs/1910.02054) is the canonical reference for this idea. The core progression is:
 
 - shard optimizer states
 - shard gradients
@@ -76,7 +76,7 @@ Use ZeRO or FSDP when:
 
 Tensor parallelism splits individual layers across devices. This is the right move when a single layer is too large or too compute-heavy for one device, especially in large dense transformer blocks.
 
-The practical reference here is [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](https://arxiv.org/abs/2104.04473).
+The practical reference here is [Narayanan et al. (2021), Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](https://arxiv.org/abs/2104.04473).
 
 Use tensor parallelism when:
 

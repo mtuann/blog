@@ -54,24 +54,24 @@ This radar prefers 2025-2026 systems work. A 2024 paper stays only if it clearly
 
 #### Prefill / Decode Serving Architectures
 
-- [Prefill-Decode Aggregation or Disaggregation? Unifying Both for Goodput-Optimized LLM Serving](https://arxiv.org/abs/2508.01989) (2025)
-- [Disaggregated Prefill and Decoding Inference System for Large Language Model Serving on Multi-Vendor GPUs](https://arxiv.org/abs/2509.17542) (2025)
-- [SPAD: Specialized Prefill and Decode Hardware for Disaggregated LLM Inference](https://arxiv.org/abs/2510.08544) (2025)
-- [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670) (2024, kept as an impact reference)
-- [P/D-Serve: Serving Disaggregated Large Language Model at Scale](https://arxiv.org/abs/2408.08147) (2024, kept as an important deployment follow-up)
+- [Wang et al. (2025), Prefill-Decode Aggregation or Disaggregation? Unifying Both for Goodput-Optimized LLM Serving](https://arxiv.org/abs/2508.01989)
+- [Chen et al. (2025), Disaggregated Prefill and Decoding Inference System for Large Language Model Serving on Multi-Vendor GPUs](https://arxiv.org/abs/2509.17542)
+- [Zhang et al. (2025), SPAD: Specialized Prefill and Decode Hardware for Disaggregated LLM Inference](https://arxiv.org/abs/2510.08544)
+- [Zhong et al. (2024), DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670) (kept as an impact reference)
+- [Jin et al. (2024), P/D-Serve: Serving Disaggregated Large Language Model at Scale](https://arxiv.org/abs/2408.08147) (kept as an important deployment follow-up)
 
 #### Hierarchical KV Cache And Memory Management
 
-- [Strata: Hierarchical Context Caching for Long Context Language Model Serving](https://arxiv.org/abs/2508.18572) (2025)
-- [AdaptCache: KV Cache Native Storage Hierarchy for Low-Delay and High-Quality Language Model Serving](https://arxiv.org/abs/2509.00105) (2025)
-- [Adaptive Multi-Objective Tiered Storage Configuration for KV Cache in LLM Service](https://arxiv.org/abs/2603.08739) (2026)
-- [Mell: Memory-Efficient Large Language Model Serving via Multi-GPU KV Cache Management](https://arxiv.org/abs/2501.06709) (2025)
-- [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079) (2024, kept as a defining architecture paper)
+- [Xie et al. (2025), Strata: Hierarchical Context Caching for Long Context Language Model Serving](https://arxiv.org/abs/2508.18572)
+- [Feng et al. (2025), AdaptCache: KV Cache Native Storage Hierarchy for Low-Delay and High-Quality Language Model Serving](https://arxiv.org/abs/2509.00105)
+- [Zheng et al. (2026), Adaptive Multi-Objective Tiered Storage Configuration for KV Cache in LLM Service](https://arxiv.org/abs/2603.08739)
+- [Qianli et al. (2025), Mell: Memory-Efficient Large Language Model Serving via Multi-GPU KV Cache Management](https://arxiv.org/abs/2501.06709)
+- [Qin et al. (2024), Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079) (kept as a defining architecture paper)
 
 #### Prefix Reuse And Runtime Scheduling
 
-- [Apt-Serve: Adaptive Request Scheduling on Hybrid Cache for Scalable LLM Inference Serving](https://arxiv.org/abs/2504.07494) (2025)
-- [Preble: Efficient Distributed Prompt Scheduling for LLM Serving](https://arxiv.org/abs/2407.00023) (2024, kept because prompt-sharing is still a core systems pattern)
+- [Gao et al. (2025), Apt-Serve: Adaptive Request Scheduling on Hybrid Cache for Scalable LLM Inference Serving](https://arxiv.org/abs/2504.07494)
+- [Srivatsa et al. (2024), Preble: Efficient Distributed Prompt Scheduling for LLM Serving](https://arxiv.org/abs/2407.00023) (kept because prompt-sharing is still a core systems pattern)
 
 ### Related Notes
 

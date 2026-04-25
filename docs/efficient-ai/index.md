@@ -54,28 +54,28 @@ This radar leans toward 2025-2026 work. A 2024 paper remains only when it is sti
 
 #### Quantization And Low-Precision Training
 
-- [LiquidGEMM: Hardware-Efficient W4A8 GEMM Kernel for High-Performance LLM Serving](https://arxiv.org/abs/2509.01229) (2025)
-- [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
-- [Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586) (2025)
-- [QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532) (2024, kept as an impact paper)
+- [Hu et al. (2025), LiquidGEMM: Hardware-Efficient W4A8 GEMM Kernel for High-Performance LLM Serving](https://arxiv.org/abs/2509.01229)
+- [Hernández-Cano et al. (2025), Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524)
+- [Tseng et al. (2025), Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586)
+- [Lin et al. (2024), QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532) (kept as an impact paper)
 
 #### KV Cache Compression And Reuse
 
-- [Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://arxiv.org/abs/2503.24000) (2025)
-- [Revisiting Multimodal KV Cache Compression: A Frequency-Domain-Guided Outlier-KV-Aware Approach](https://arxiv.org/abs/2511.16786) (2025)
-- [DeltaKV: Residual-Based KV Cache Compression via Long-Range Similarity](https://arxiv.org/abs/2602.08005) (2026)
-- [HybridKV: Hybrid KV Cache Compression for Efficient Multimodal Large Language Model Inference](https://arxiv.org/abs/2604.05887) (2026)
+- [Gao et al. (2025), Rethinking Key-Value Cache Compression Techniques for Large Language Model Serving](https://arxiv.org/abs/2503.24000)
+- [Yang et al. (2025), Revisiting Multimodal KV Cache Compression: A Frequency-Domain-Guided Outlier-KV-Aware Approach](https://arxiv.org/abs/2511.16786)
+- [Hao et al. (2026), DeltaKV: Residual-Based KV Cache Compression via Long-Range Similarity](https://arxiv.org/abs/2602.08005)
+- [Zeng et al. (2026), HybridKV: Hybrid KV Cache Compression for Efficient Multimodal Large Language Model Inference](https://arxiv.org/abs/2604.05887)
 
 #### Speculative And Accelerated Decoding
 
-- [Accelerating Large-Scale Reasoning Model Inference with Sparse Self-Speculative Decoding](https://arxiv.org/abs/2512.01278) (2025)
-- [Mirror Speculative Decoding: Breaking the Serial Barrier in LLM Inference](https://arxiv.org/abs/2510.13161) (2025)
-- [SpecPV: Improving Self-Speculative Decoding for Long-Context Generation via Partial Verification](https://arxiv.org/abs/2512.02337) (2025)
+- [Zhao et al. (2025), Accelerating Large-Scale Reasoning Model Inference with Sparse Self-Speculative Decoding](https://arxiv.org/abs/2512.01278)
+- [Bhendawade et al. (2025), Mirror Speculative Decoding: Breaking the Serial Barrier in LLM Inference](https://arxiv.org/abs/2510.13161)
+- [Tan et al. (2025), SpecPV: Improving Self-Speculative Decoding for Long-Context Generation via Partial Verification](https://arxiv.org/abs/2512.02337)
 
 #### Efficient Architectures Beyond Dense Attention
 
-- [Hybrid Architectures for Language Models: Systematic Analysis and Design Insights](https://arxiv.org/abs/2510.04800) (2025)
-- [Characterizing State Space Model and Hybrid Language Model Performance with Long Context](https://arxiv.org/abs/2507.12442) (2025)
+- [Bae et al. (2025), Hybrid Architectures for Language Models: Systematic Analysis and Design Insights](https://arxiv.org/abs/2510.04800)
+- [Mitra et al. (2025), Characterizing State Space Model and Hybrid Language Model Performance with Long Context](https://arxiv.org/abs/2507.12442)
 
 ### Related Notes
 

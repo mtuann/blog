@@ -62,28 +62,28 @@ This radar emphasizes 2025-2026 work. Older entries remain only when they are st
 - [Building and evaluating alignment auditing agents](https://alignment.anthropic.com/2025/automated-auditing/) (Anthropic, July 24, 2025)
 - [Automated Alignment Researchers: Using large language models to scale scalable oversight](https://www.anthropic.com/research/automated-alignment-researchers?curius=1184) (Anthropic, April 14, 2026)
 - [A3: An Automated Alignment Agent for Safety Finetuning](https://alignment.anthropic.com/2026/automated-alignment-agent/) (Anthropic, March 11, 2026)
-- [MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574) (2024, kept as a benchmark anchor)
+- [Wang et al. (2024), MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574) (kept as a benchmark anchor)
 
 #### Jailbreaks, Defenses, And Safety-Utility Tradeoffs
 
-- [HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human-LLM Collaborative Writing](https://arxiv.org/abs/2604.19274) (2026)
-- [Boundary Point Jailbreaking of Black-Box LLMs](https://arxiv.org/abs/2602.15001) (2026)
-- [AutoRAN: Weak-to-Strong Jailbreaking of Large Reasoning Models](https://arxiv.org/abs/2505.10846) (2025)
-- [A StrongREJECT for Empty Jailbreaks](https://arxiv.org/abs/2402.10260) (2024, kept as a benchmark anchor)
+- [Kim et al. (2026), HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human-LLM Collaborative Writing](https://arxiv.org/abs/2604.19274)
+- [Davies et al. (2026), Boundary Point Jailbreaking of Black-Box LLMs](https://arxiv.org/abs/2602.15001)
+- [Liang et al. (2025), AutoRAN: Weak-to-Strong Jailbreaking of Large Reasoning Models](https://arxiv.org/abs/2505.10846)
+- [Souly et al. (2024), A StrongREJECT for Empty Jailbreaks](https://arxiv.org/abs/2402.10260) (kept as a benchmark anchor)
 
 #### Interpretability And Mechanistic Reliability
 
-- [AdaptiveK Sparse Autoencoders: Dynamic Sparsity Allocation for Interpretable LLM Representations](https://arxiv.org/abs/2508.17320) (2025)
-- [Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](https://arxiv.org/abs/2511.05541) (2025)
-- [Interpretability Illusions with Sparse Autoencoders: Evaluating Robustness of Concept Representations](https://arxiv.org/abs/2505.16004) (2025)
-- [A Survey on Sparse Autoencoders: Interpreting the Internal Mechanisms of Large Language Models](https://arxiv.org/abs/2503.05613) (2025 survey)
+- [Yao et al. (2025), AdaptiveK Sparse Autoencoders: Dynamic Sparsity Allocation for Interpretable LLM Representations](https://arxiv.org/abs/2508.17320)
+- [Bhalla et al. (2025), Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](https://arxiv.org/abs/2511.05541)
+- [Li et al. (2025), Interpretability Illusions with Sparse Autoencoders: Evaluating Robustness of Concept Representations](https://arxiv.org/abs/2505.16004)
+- [Shu et al. (2025), A Survey on Sparse Autoencoders: Interpreting the Internal Mechanisms of Large Language Models](https://arxiv.org/abs/2503.05613) (survey)
 
 #### Hallucination, Calibration, And Reliability
 
 - [Why language models hallucinate](https://openai.com/index/why-language-models-hallucinate) (OpenAI, September 5, 2025)
-- [Detecting Hallucinations in Authentic LLM-Human Interactions](https://arxiv.org/abs/2510.10539) (2025)
-- [HalluLens: LLM Hallucination Benchmark](https://arxiv.org/abs/2504.17550) (2025)
-- [HalluVerse25: Fine-grained Multilingual Benchmark Dataset for LLM Hallucinations](https://arxiv.org/abs/2503.07833) (2025)
+- [Ren et al. (2025), Detecting Hallucinations in Authentic LLM-Human Interactions](https://arxiv.org/abs/2510.10539)
+- [Bang et al. (2025), HalluLens: LLM Hallucination Benchmark](https://arxiv.org/abs/2504.17550)
+- [Abdaljalil et al. (2025), HalluVerse25: Fine-grained Multilingual Benchmark Dataset for LLM Hallucinations](https://arxiv.org/abs/2503.07833)
 
 ## Site Coverage
 

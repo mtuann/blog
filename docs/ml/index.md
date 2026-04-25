@@ -54,37 +54,37 @@ This radar prefers 2025-2026 work. Older entries stay only when they still serve
 
 #### Scaling Laws And Data Quality
 
-- [Neural Neural Scaling Laws](https://arxiv.org/abs/2601.19831) (2026)
-- [Relative Scaling Laws for LLMs](https://arxiv.org/abs/2510.24626) (2025)
-- [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL) (ICLR 2026 poster)
+- [Hu et al. (2026), Neural Neural Scaling Laws](https://arxiv.org/abs/2601.19831)
+- [Held et al. (2025), Relative Scaling Laws for LLMs](https://arxiv.org/abs/2510.24626)
+- [Subramanyam et al. (2026), Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL) (ICLR 2026 poster)
 
 #### Data Quality, Curation, And Data Value
 
-- [Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640) (2025)
-- [Predictive Data Selection: The Data That Predicts Is the Data That Teaches](https://arxiv.org/abs/2503.00808) (2025)
-- [MASS: Mathematical Data Selection via Skill Graphs for Pretraining Large Language Models](https://arxiv.org/abs/2503.14917) (2025)
-- [Why Less is More (Sometimes): A Theory of Data Curation](https://openreview.net/forum?id=8KcjEygedc) (ICLR 2026 poster)
-- [Data curation via joint example selection further accelerates multimodal learning](https://arxiv.org/abs/2406.17711) (2024, kept as an impact curation paper)
-- [The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale](https://arxiv.org/abs/2406.17557) (2024, kept as an impact dataset paper)
-- [Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research](https://arxiv.org/abs/2402.00159) (2024, kept as an impact open-data reference)
+- [Wang et al. (2025), Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640)
+- [Shum et al. (2025), Predictive Data Selection: The Data That Predicts Is the Data That Teaches](https://arxiv.org/abs/2503.00808)
+- [Li et al. (2025), MASS: Mathematical Data Selection via Skill Graphs for Pretraining Large Language Models](https://arxiv.org/abs/2503.14917)
+- [Dohmatob et al. (2026), Why Less is More (Sometimes): A Theory of Data Curation](https://openreview.net/forum?id=8KcjEygedc) (ICLR 2026 poster)
+- [Evans et al. (2024), Data curation via joint example selection further accelerates multimodal learning](https://arxiv.org/abs/2406.17711) (kept as an impact curation paper)
+- [Penedo et al. (2024), The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale](https://arxiv.org/abs/2406.17557) (kept as an impact dataset paper)
+- [Soldaini et al. (2024), Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research](https://arxiv.org/abs/2402.00159) (kept as an impact open-data reference)
 
 #### Synthetic Data As A Scaling Resource
 
-- [Scaling Laws of Synthetic Data for Language Models](https://arxiv.org/abs/2503.19551) (2025)
-- [Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640) (2025)
-- [PluRel: Synthetic Data unlocks Scaling Laws for Relational Foundation Models](https://openreview.net/forum?id=iti7t2oI85) (ICLR 2026 DATA-FM workshop)
+- [Qin et al. (2025), Scaling Laws of Synthetic Data for Language Models](https://arxiv.org/abs/2503.19551)
+- [Wang et al. (2025), Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640)
+- [Kothapalli et al. (2026), PluRel: Synthetic Data unlocks Scaling Laws for Relational Foundation Models](https://openreview.net/forum?id=iti7t2oI85) (ICLR 2026 DATA-FM workshop)
 
 #### Generalization, Implicit Bias, And Robustness
 
-- [Variational Deep Learning via Implicit Regularization](https://openreview.net/forum?id=WsN88Ns0i6) (ICLR 2026 poster)
-- [Implicit Regularization of SGD Reduces Shortcut Learning](https://openreview.net/forum?id=CPdAB7H8mU) (ICLR 2026 poster)
+- [Wenger et al. (2026), Variational Deep Learning via Implicit Regularization](https://openreview.net/forum?id=WsN88Ns0i6) (ICLR 2026 poster)
+- [Mirzaie et al. (2026), Implicit Regularization of SGD Reduces Shortcut Learning](https://openreview.net/forum?id=CPdAB7H8mU) (ICLR 2026 poster)
 
 #### Low-Precision Training Recipes
 
-- [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
-- [MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](https://openreview.net/forum?id=uvgJM9RQ6T) (ICLR 2026 poster)
-- [FP8-Flow-MoE: A Casting-Free FP8 Recipe without Double Quantization Error](https://arxiv.org/abs/2511.02302) (2025)
-- [Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586) (2025)
+- [Hernández-Cano et al. (2025), Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524)
+- [Zhang et al. (2026), MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](https://openreview.net/forum?id=uvgJM9RQ6T) (ICLR 2026 poster)
+- [Wang et al. (2025), FP8-Flow-MoE: A Casting-Free FP8 Recipe without Double Quantization Error](https://arxiv.org/abs/2511.02302)
+- [Tseng et al. (2025), Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586)
 
 ## Site Coverage
 

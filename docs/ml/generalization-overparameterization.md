@@ -50,7 +50,7 @@ Deep networks made the classical story feel incomplete. In practice:
 - the same models could still achieve strong test performance
 - explicit regularization was not always the decisive explanation
 
-That tension was made especially vivid by [Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/abs/1611.03530), which showed that large networks can even fit random labels. The point was not that generalization vanished, but that naive capacity arguments were no longer enough.
+That tension was made especially vivid by [Zhang et al. (2016), Understanding Deep Learning Requires Rethinking Generalization](https://arxiv.org/abs/1611.03530), which showed that large networks can even fit random labels. The point was not that generalization vanished, but that naive capacity arguments were no longer enough.
 
 ## Double Descent
 
@@ -67,7 +67,7 @@ The modern ML picture is not "overfitting disappeared." It is that the relations
 Two useful references here are:
 
 - [Reconciling modern machine-learning practice and the classical bias-variance trade-off](https://www.cs.columbia.edu/~djhsu/papers/biasvariance-pnas.pdf)
-- [Deep Double Descent: Where Bigger Models and More Data Hurt](https://arxiv.org/abs/1912.02292)
+- [Nakkiran et al. (2019), Deep Double Descent: Where Bigger Models and More Data Hurt](https://arxiv.org/abs/1912.02292)
 
 ## A Helpful Mental Model
 
@@ -87,7 +87,7 @@ This does **not** mean that fitting noise is always safe. It means there are str
 
 The most useful clean result is:
 
-- [Benign Overfitting in Linear Regression](https://arxiv.org/abs/1906.11300)
+- [Bartlett et al. (2019), Benign Overfitting in Linear Regression](https://arxiv.org/abs/1906.11300)
 
 That paper matters because it gives a precise statement in a simple setting. It shows that overparameterization alone is not enough; the covariance structure and effective rank matter too.
 

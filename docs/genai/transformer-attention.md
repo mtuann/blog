@@ -2,7 +2,7 @@
 
 === "English"
 
-    The **Transformer** architecture, introduced in the seminal paper *[Attention Is All You Need](https://arxiv.org/abs/1706.03762)* (Vaswani et al., 2017), revolutionized natural language processing by dispensing with recurrence and convolutions entirely.
+    The **Transformer** architecture, introduced in the seminal paper *[Vaswani et al. (2017), Attention Is All You Need](https://arxiv.org/abs/1706.03762)*, revolutionized natural language processing by dispensing with recurrence and convolutions entirely.
 
     This deep dive covers the mathematical and implementation foundations of the Transformer, focusing on the mechanism that powers it all: **Self-Attention**.
 

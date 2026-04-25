@@ -32,7 +32,7 @@ This equation is powerful for two reasons:
 1. It turns "train bigger and hope" into a measurable planning problem.
 2. It exposes when a training run is limited more by model size or by data.
 
-The famous early reference is [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), which showed smooth power-law trends over model size, dataset size, and training compute.
+The famous early reference is [Kaplan et al. (2020), Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361), which showed smooth power-law trends over model size, dataset size, and training compute.
 
 ## Why This Was So Useful
 
@@ -60,7 +60,7 @@ That result shaped a lot of early large-model strategy.
 
 ## Chinchilla Revised The Rule
 
-The next major update came from [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556). The Chinchilla result argued that many large language models had been **undertrained** relative to their parameter count.
+The next major update came from [Hoffmann et al. (2022), Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556). The Chinchilla result argued that many large language models had been **undertrained** relative to their parameter count.
 
 The key practical lesson was:
 

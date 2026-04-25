@@ -54,32 +54,32 @@ This radar prioritizes 2025-2026 material. A 2024 item stays only if it still ac
 
 #### Reasoning And Post-Training
 
-- [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) (2025)
-- [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) (2025)
+- [DeepSeek-AI et al. (2025), DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)
+- [Yang et al. (2025), Qwen3 Technical Report](https://arxiv.org/abs/2505.09388)
 - [Our First Proof submissions](https://openai.com/research/index/conclusion/) (OpenAI, February 20, 2026)
 - [Introducing GPT-Rosalind for life sciences research](https://openai.com/index/introducing-gpt-rosalind/) (OpenAI, April 16, 2026)
 
 #### Long-Context, Memory, And Retrieval-Aware Inference
 
-- [Long Context Modeling with Ranked Memory-Augmented Retrieval](https://arxiv.org/abs/2503.14800) (2025)
-- [Long-Context Inference with Retrieval-Augmented Speculative Decoding](https://arxiv.org/abs/2502.20330) (2025)
-- [In-Context Learning with Long-Context Models: An In-Depth Exploration](https://arxiv.org/abs/2405.00200) (2024, kept as an impact reference)
+- [Alselwi et al. (2025), Long Context Modeling with Ranked Memory-Augmented Retrieval](https://arxiv.org/abs/2503.14800)
+- [Chen et al. (2025), Long-Context Inference with Retrieval-Augmented Speculative Decoding](https://arxiv.org/abs/2502.20330)
+- [Bertsch et al. (2024), In-Context Learning with Long-Context Models: An In-Depth Exploration](https://arxiv.org/abs/2405.00200) (kept as an impact reference)
 
 #### Native Multimodal Models
 
-- [AudioGen-Omni: A Unified Multimodal Diffusion Transformer for Video-Synchronized Audio, Speech, and Song Generation](https://arxiv.org/abs/2508.00733) (2025)
-- [Bridging the Gap Between Multimodal Foundation Models and World Models](https://arxiv.org/abs/2510.03727) (2025)
-- [Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education](https://arxiv.org/abs/2602.12196) (2026)
-- [CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072) (2024, kept as an impact open video-generation reference)
+- [Wang et al. (2025), AudioGen-Omni: A Unified Multimodal Diffusion Transformer for Video-Synchronized Audio, Speech, and Song Generation](https://arxiv.org/abs/2508.00733)
+- [He et al. (2025), Bridging the Gap Between Multimodal Foundation Models and World Models](https://arxiv.org/abs/2510.03727)
+- [Huti et al. (2026), Visual Reasoning Benchmark: Evaluating Multimodal LLMs on Classroom-Authentic Visual Problems from Primary Education](https://arxiv.org/abs/2602.12196)
+- [Yang et al. (2024), CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer](https://arxiv.org/abs/2408.06072) (kept as an impact open video-generation reference)
 
 #### Agents, Tool Use, And Evaluation
 
-- [The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration](https://arxiv.org/abs/2603.22862) (2026 survey)
-- [Survey on Evaluation of LLM-based Agents](https://arxiv.org/abs/2503.16416) (2025)
+- [Xu et al. (2026), The Evolution of Tool Use in LLM Agents: From Single-Tool Call to Multi-Tool Orchestration](https://arxiv.org/abs/2603.22862) (survey)
+- [Yehudai et al. (2025), Survey on Evaluation of LLM-based Agents](https://arxiv.org/abs/2503.16416)
 - [PaperBench: Evaluating AI's Ability to Replicate AI Research](https://openai.com/research/paperbench/) (OpenAI, April 2, 2025)
 - [BrowseComp: a benchmark for browsing agents](https://openai.com/index/browsecomp/) (OpenAI, April 10, 2025)
 - [Evaluating AI's ability to perform scientific research tasks](https://openai.com/index/frontierscience//) (OpenAI, December 16, 2025)
-- [MIRAI: Evaluating LLM Agents for Event Forecasting](https://arxiv.org/abs/2407.01231) (2024, kept as an impact benchmark)
+- [Ye et al. (2024), MIRAI: Evaluating LLM Agents for Event Forecasting](https://arxiv.org/abs/2407.01231) (kept as an impact benchmark)
 
 ## Site Coverage
 

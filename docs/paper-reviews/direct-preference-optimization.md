@@ -18,7 +18,7 @@ Paper metadata:
 
 - Authors: Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn, and others
 - Source: arXiv 2023
-- Link: [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290)
+- Link: [Rafailov et al. (2023), Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290)
 
 ## Question
 

@@ -58,32 +58,32 @@ This radar prefers 2025-2026 work. Older items stay only when they remain the cl
 
 #### Hybrid Parallelism And Load Balancing
 
-- [WLB-LLM: Workload-Balanced 4D Parallelism for Large Language Model Training](https://arxiv.org/abs/2503.17924) (2025)
-- [ByteScale: Efficient Scaling of LLM Training with a 2048K Context Length on More Than 12,000 GPUs](https://arxiv.org/abs/2502.21231) (2025)
-- [Data-Centric Elastic Pipeline Parallelism for Efficient Long-Context LLM Training](https://arxiv.org/abs/2509.21275) (2025)
+- [Wang et al. (2025), WLB-LLM: Workload-Balanced 4D Parallelism for Large Language Model Training](https://arxiv.org/abs/2503.17924)
+- [Ge et al. (2025), ByteScale: Efficient Scaling of LLM Training with a 2048K Context Length on More Than 12,000 GPUs](https://arxiv.org/abs/2502.21231)
+- [Wang et al. (2025), Data-Centric Elastic Pipeline Parallelism for Efficient Long-Context LLM Training](https://arxiv.org/abs/2509.21275)
 - [Speeding Up Variable-Length Training with Dynamic Context Parallelism and NVIDIA Megatron Core](https://developer.nvidia.com/blog/speeding-up-variable-length-training-with-dynamic-context-parallelism-and-nvidia-megatron-core/) (NVIDIA, February 27, 2026)
 
 #### Communication-Efficient And Decentralized Training
 
-- [DiLoCoX: A Low-Communication Large-Scale Training Framework for Decentralized Cluster](https://arxiv.org/abs/2506.21263) (2025)
-- [Go With The Flow: Churn-Tolerant Decentralized Training of Large Language Models](https://arxiv.org/abs/2509.21221) (2025)
-- [On Optimizing the Communication of Model Parallelism](https://arxiv.org/abs/2211.05322) (2024, kept as a strong reference for cross-mesh resharding)
+- [Qi et al. (2025), DiLoCoX: A Low-Communication Large-Scale Training Framework for Decentralized Cluster](https://arxiv.org/abs/2506.21263)
+- [Blagoev et al. (2025), Go With The Flow: Churn-Tolerant Decentralized Training of Large Language Models](https://arxiv.org/abs/2509.21221)
+- [Zhuang et al. (2022), On Optimizing the Communication of Model Parallelism](https://arxiv.org/abs/2211.05322) (kept as a strong reference for cross-mesh resharding)
 
 #### Federated Learning And Cross-Silo Adaptation
 
 - [Federated Learning](./federated-learning.md) (internal track page for privacy-preserving and personalized collaboration)
-- [Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544) (2026)
-- [FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://openreview.net/forum?id=kntrZOm2AQ) (ICLR 2026 Poster)
+- [Li et al. (2026), Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544)
+- [Meng et al. (2026), FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://openreview.net/forum?id=kntrZOm2AQ) (ICLR 2026 Poster)
 
 #### MoE Expert Parallelism
 
-- [UniEP: Unified Expert-Parallel MoE MegaKernel for LLM Training](https://arxiv.org/abs/2604.19241) (2026)
-- [Dynamic Expert Sharing: Decoupling Memory from Parallelism in Mixture-of-Experts Diffusion LLMs](https://arxiv.org/abs/2602.00879) (2026)
+- [Zheng et al. (2026), UniEP: Unified Expert-Parallel MoE MegaKernel for LLM Training](https://arxiv.org/abs/2604.19241)
+- [Chen et al. (2026), Dynamic Expert Sharing: Decoupling Memory from Parallelism in Mixture-of-Experts Diffusion LLMs](https://arxiv.org/abs/2602.00879)
 
 #### Checkpointing, Recovery, And Resilience
 
-- [DataStates-LLM: Scalable Checkpointing for Transformer Models Using Composable State Providers](https://arxiv.org/abs/2601.16956) (2026)
-- [GoCkpt: Gradient-Assisted Multi-Step overlapped Checkpointing for Efficient LLM Training](https://arxiv.org/abs/2511.07035) (2025)
+- [Maurya et al. (2026), DataStates-LLM: Scalable Checkpointing for Transformer Models Using Composable State Providers](https://arxiv.org/abs/2601.16956)
+- [Zhang et al. (2025), GoCkpt: Gradient-Assisted Multi-Step overlapped Checkpointing for Efficient LLM Training](https://arxiv.org/abs/2511.07035)
 
 ### Related Notes
 

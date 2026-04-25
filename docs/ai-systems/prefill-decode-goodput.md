@@ -56,7 +56,7 @@ That is where **goodput** becomes a better framing than raw throughput.
 
 The KV cache turns serving into a memory-management problem. It grows with sequence length, stays resident during generation, and competes with batching for scarce accelerator memory.
 
-This is why [PagedAttention](https://arxiv.org/abs/2309.06180) mattered so much. It reframed KV-cache handling with a memory-management abstraction that reduced fragmentation and improved batch utilization.
+This is why [Kwon et al. (2023), PagedAttention](https://arxiv.org/abs/2309.06180) mattered so much. It reframed KV-cache handling with a memory-management abstraction that reduced fragmentation and improved batch utilization.
 
 Once you internalize that idea, a lot of later serving work makes more sense.
 
@@ -66,8 +66,8 @@ The next key insight is that colocating prefill and decode can create interferen
 
 That is the motivation behind systems such as:
 
-- [DistServe](https://arxiv.org/abs/2401.09670), which separates prefill and decode for better goodput
-- [Mooncake](https://arxiv.org/abs/2407.00079), which treats KV cache as a first-class architectural concern
+- [Zhong et al. (2024), DistServe](https://arxiv.org/abs/2401.09670), which separates prefill and decode for better goodput
+- [Qin et al. (2024), Mooncake](https://arxiv.org/abs/2407.00079), which treats KV cache as a first-class architectural concern
 
 The important lesson is not that disaggregation is always best. It is that phase-aware serving is now a serious design axis.
 

@@ -57,32 +57,32 @@ This radar prefers 2025-2026 work. Older references stay only when they remain t
 
 #### Foundation-Model And Adapter-Based Federated Fine-Tuning
 
-- [A Survey on Federated Fine-tuning of Large Language Models](https://arxiv.org/abs/2503.12016) (2025, useful as the current survey anchor for the FedLLM space)
-- [Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](https://arxiv.org/abs/2502.01755) (2025)
-- [FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://openreview.net/forum?id=kntrZOm2AQ) (ICLR 2026 Poster)
-- [Rethinking LoRA Aggregation for Federated Fine-tuning of Foundation Models](https://openreview.net/forum?id=k5SgTEKdA2) (ICLR 2026 submission)
-- [Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation](https://openreview.net/forum?id=htbzmulSaG) (ICLR 2026 Poster)
+- [Wu et al. (2025), A Survey on Federated Fine-tuning of Large Language Models](https://arxiv.org/abs/2503.12016) (useful as the current survey anchor for the FedLLM space)
+- [Chen et al. (2025), Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](https://arxiv.org/abs/2502.01755)
+- [Meng et al. (2026), FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](https://openreview.net/forum?id=kntrZOm2AQ) (ICLR 2026 Poster)
+- [Li et al. (2026), Rethinking LoRA Aggregation for Federated Fine-tuning of Foundation Models](https://openreview.net/forum?id=k5SgTEKdA2) (ICLR 2026 submission)
+- [Wu et al. (2026), Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation](https://openreview.net/forum?id=htbzmulSaG) (ICLR 2026 Poster)
 
 #### Personalization Under Heterogeneity
 
-- [Bi-level Personalization for Federated Foundation Models: A Task-vector Aggregation Approach](https://arxiv.org/abs/2509.12697) (2025)
-- [TAP: Two-Stage Adaptive Personalization of Multi-task and Multi-Modal Foundation Models in Federated Learning](https://openreview.net/forum?id=bXTDrSo0ya) (ICLR 2026 submission)
-- [Representation-Aligned Multi-Scale Personalization for Federated Learning](https://openreview.net/forum?id=LGomq5co14) (ICLR 2026 submission)
-- [FLEx: Personalized Federated Learning for Mixture-of-Experts LLMs via Expert Grafting](https://openreview.net/forum?id=T4dvY146Tk) (ICLR 2026 withdrawn submission, still useful as a signal that MoE-style personalization is emerging)
+- [Yang et al. (2025), Bi-level Personalization for Federated Foundation Models: A Task-vector Aggregation Approach](https://arxiv.org/abs/2509.12697)
+- [Lee et al. (2026), TAP: Two-Stage Adaptive Personalization of Multi-task and Multi-Modal Foundation Models in Federated Learning](https://openreview.net/forum?id=bXTDrSo0ya) (ICLR 2026 submission)
+- [Liang et al. (2026), Representation-Aligned Multi-Scale Personalization for Federated Learning](https://openreview.net/forum?id=LGomq5co14) (ICLR 2026 submission)
+- [Liu et al. (2026), FLEx: Personalized Federated Learning for Mixture-of-Experts LLMs via Expert Grafting](https://openreview.net/forum?id=T4dvY146Tk) (ICLR 2026 withdrawn submission, still useful as a signal that MoE-style personalization is emerging)
 
 #### Privacy, Leakage, And Unlearning
 
-- [Reconstructing Training Data from Adapter-based Federated Large Language Models](https://arxiv.org/abs/2601.17533) (2026)
-- [Understanding Federated Unlearning through the Lens of Memorization](https://openreview.net/forum?id=jUGWx29UHK) (ICLR 2026 submission)
-- [Exact Federated Continual Unlearning for Ridge Heads on Frozen Foundation Models](https://arxiv.org/abs/2603.12977) (2026)
-- [FedQUIT: On-Device Federated Unlearning via a Quasi-Competent Virtual Teacher](https://openreview.net/forum?id=BLYR9Fm7PI) (ICLR 2026 submission)
+- [Chen et al. (2026), Reconstructing Training Data from Adapter-based Federated Large Language Models](https://arxiv.org/abs/2601.17533)
+- [Wei et al. (2026), Understanding Federated Unlearning through the Lens of Memorization](https://openreview.net/forum?id=jUGWx29UHK) (ICLR 2026 submission)
+- [Quan et al. (2026), Exact Federated Continual Unlearning for Ridge Heads on Frozen Foundation Models](https://arxiv.org/abs/2603.12977)
+- [Mora et al. (2026), FedQUIT: On-Device Federated Unlearning via a Quasi-Competent Virtual Teacher](https://openreview.net/forum?id=BLYR9Fm7PI) (ICLR 2026 submission)
 
 #### Cross-Silo, Multimodal, And Scientific Federations
 
-- [Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544) (2026)
-- [FeDaL: Federated Dataset Learning for General Time Series Foundation Models](https://openreview.net/forum?id=HK6t5x5gJq) (ICLR 2026 Poster)
-- [FedMosaic: Federated Retrieval-Augmented Generation via Parametric Adapters](https://arxiv.org/abs/2602.05235) (2026)
-- [Federated Foundation Models in Harsh Wireless Environments: Prospects, Challenges, and Future Directions](https://arxiv.org/abs/2509.01957) (2025, kept as a good systems-framing reference for hostile deployment settings)
+- [Li et al. (2026), Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers](https://arxiv.org/abs/2603.19544)
+- [Chen et al. (2026), FeDaL: Federated Dataset Learning for General Time Series Foundation Models](https://openreview.net/forum?id=HK6t5x5gJq) (ICLR 2026 Poster)
+- [Liang et al. (2026), FedMosaic: Federated Retrieval-Augmented Generation via Parametric Adapters](https://arxiv.org/abs/2602.05235)
+- [Chen et al. (2025), Federated Foundation Models in Harsh Wireless Environments: Prospects, Challenges, and Future Directions](https://arxiv.org/abs/2509.01957) (kept as a good systems-framing reference for hostile deployment settings)
 
 ### Related Notes
 

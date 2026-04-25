@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-summary: Foundational ideas, practical workflows, and the bridge from core ML to modern generative models.
+summary: Live research directions in machine learning foundations, scaling, data, and optimization.
 status: evergreen
 updated: 2026-04-24
 tags:
@@ -9,61 +9,34 @@ tags:
   - theory
 ---
 
-<div class="hero-shell section-hero ml-hero">
-<p class="hero-eyebrow">Foundations</p>
+This page is a living map of machine learning research directions that still matter once hype is stripped away. The emphasis here is on scaling, data, optimization, and generalization, with enough structure to decide what to read next and enough current signals to avoid freezing the page in a 2024 worldview.
 
-<h1>Machine Learning</h1>
+## Topic Map
 
-<p class="hero-lead">This section is the base layer for the rest of the site: optimization, generalization, scaling, practical experimentation, and the bridge from classical ML intuition to modern deep learning behavior.</p>
+- **Scaling laws and resource allocation**
+  This is the bridge from classical sample complexity intuition to foundation-model-era training decisions. It now includes not only model size and token count, but also data quality, task mix, and subgroup behavior. Start with [Scaling Laws and Compute-Optimal Training](scaling-laws-compute-optimal-training.md).
+- **Data curation and data value**
+  The center of gravity has shifted from “collect more data” to “understand which data changes the frontier.” This includes filtering, deduplication, example selection, mixture design, and data valuation.
+- **Synthetic data as a training resource**
+  Synthetic data is no longer just augmentation. The active question is when synthetic corpora create new scaling regimes, when they merely smooth over scarcity, and when they introduce collapse or tail-risk artifacts.
+- **Generalization and implicit bias**
+  Overparameterization is still the core puzzle, but the newer angle is how optimization, data quality, and shortcut features interact. The current anchors are [Generalization in the Overparameterized Era](generalization-overparameterization.md) and [ML Theory](theory.md).
+- **Training numerics and recipe stability**
+  Low-precision training now matters not just for cost, but for whether scaling experiments remain scientifically interpretable. FP8 and MXFP4 recipes sit at the boundary between ML theory and systems reality.
 
-<div class="chip-row">
-<span class="chip">Optimization</span>
-<span class="chip">Generalization</span>
-<span class="chip">Scaling laws</span>
-<span class="chip">Practical ML</span>
-</div>
+## Research Questions Right Now
 
-<div class="hero-actions">
-<a class="md-button md-button--primary" href="theory/">Read ML Theory</a>
-<a class="md-button" href="scaling-laws-compute-optimal-training/">Read Scaling Laws</a>
-</div>
-</div>
-
-<div class="hub-grid">
-<div class="hub-panel">
-<h3>Start Here</h3>
-<ul class="link-stack">
-  <li><a href="theory/">Theory</a><p>Optimization, scaling laws, and mathematical foundations.</p></li>
-  <li><a href="generalization-overparameterization/">Generalization in the Overparameterized Era</a><p>The modern view of interpolation and test error.</p></li>
-  <li><a href="practice/">Practical ML</a><p>Experimentation, training loops, and reproducibility.</p></li>
-  <li><a href="../genai/transformer-attention/">Transformer Foundations</a><p>The bridge into foundation models.</p></li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Flagship Notes</h3>
-<ul class="link-stack">
-  <li><a href="generalization-overparameterization/">Generalization in the Overparameterized Era</a></li>
-  <li><a href="scaling-laws-compute-optimal-training/">Scaling Laws and Compute-Optimal Training</a></li>
-  <li><p>More derivation-driven notes will land here next.</p></li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Open Questions</h3>
-<ul>
-  <li>Which scaling insights are truly stable across architectures and data regimes?</li>
-  <li>What practical signals best predict whether a training run is improving or drifting?</li>
-  <li>Which old ML ideas are worth revisiting in the era of foundation models?</li>
-</ul>
-</div>
-</div>
+- When does better data beat more data, and how can we tell before paying the full pretraining cost?
+- Which scaling laws remain predictive once data quality, multilingual transfer, or task-specific metrics matter more than aggregate validation loss?
+- How much of modern generalization comes from optimizer bias versus architecture versus data curriculum?
+- Which synthetic-data regimes improve base-model quality, and which ones only inflate apparent progress on narrow evaluations?
+- Which low-precision recipes preserve the optimization trajectory, not just the final benchmark score?
 
 ## Research Radar
 
 Updated April 24, 2026.
 
-This radar prefers 2025-2026 work. Anything older is kept only if it still serves as the cleanest foundation or an impact reference for the direction.
+This radar prefers 2025-2026 work. Older entries stay only when they still serve as the cleanest impact reference for a direction that is actively evolving.
 
 ### Active Directions
 
@@ -77,20 +50,21 @@ This radar prefers 2025-2026 work. Anything older is kept only if it still serve
 
 `task-aware scaling`, `relative scaling laws`, `data-quality scaling`, `synthetic data scaling`, `data valuation`, `data curation`, `predictive data selection`, `FP8 training`, `MXFP4`, `implicit regularization`
 
-### Recent Papers By Direction
+### Recent Papers And Research Signals By Direction
 
-#### Scaling Beyond A Single Loss Curve
+#### Scaling Laws And Data Quality
 
 - [Neural Neural Scaling Laws](https://arxiv.org/abs/2601.19831) (2026)
 - [Relative Scaling Laws for LLMs](https://arxiv.org/abs/2510.24626) (2025)
-- [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://arxiv.org/abs/2510.03313) (2025)
+- [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://openreview.net/forum?id=x54wwB6QvL) (ICLR 2026 poster)
 
 #### Data Quality, Curation, And Data Value
 
 - [Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640) (2025)
 - [Predictive Data Selection: The Data That Predicts Is the Data That Teaches](https://arxiv.org/abs/2503.00808) (2025)
 - [MASS: Mathematical Data Selection via Skill Graphs for Pretraining Large Language Models](https://arxiv.org/abs/2503.14917) (2025)
-- [Data curation via joint example selection further accelerates multimodal learning](https://arxiv.org/abs/2406.17711) (2024, kept because it strongly shaped the current curation conversation)
+- [Why Less is More (Sometimes): A Theory of Data Curation](https://openreview.net/forum?id=8KcjEygedc) (ICLR 2026 poster)
+- [Data curation via joint example selection further accelerates multimodal learning](https://arxiv.org/abs/2406.17711) (2024, kept as an impact curation paper)
 - [The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale](https://arxiv.org/abs/2406.17557) (2024, kept as an impact dataset paper)
 - [Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research](https://arxiv.org/abs/2402.00159) (2024, kept as an impact open-data reference)
 
@@ -98,26 +72,44 @@ This radar prefers 2025-2026 work. Anything older is kept only if it still serve
 
 - [Scaling Laws of Synthetic Data for Language Models](https://arxiv.org/abs/2503.19551) (2025)
 - [Data Value in the Age of Scaling: Understanding LLM Scaling Dynamics Under Real-Synthetic Data Mixtures](https://arxiv.org/abs/2511.13640) (2025)
+- [PluRel: Synthetic Data unlocks Scaling Laws for Relational Foundation Models](https://openreview.net/forum?id=iti7t2oI85) (ICLR 2026 DATA-FM workshop)
+
+#### Generalization, Implicit Bias, And Robustness
+
+- [Variational Deep Learning via Implicit Regularization](https://openreview.net/forum?id=WsN88Ns0i6) (ICLR 2026 poster)
+- [Implicit Regularization of SGD Reduces Shortcut Learning](https://openreview.net/forum?id=CPdAB7H8mU) (ICLR 2026 poster)
 
 #### Low-Precision Training Recipes
 
 - [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
-- [InfiR2: A Comprehensive FP8 Training Recipe for Reasoning-Enhanced Language Models](https://arxiv.org/abs/2509.22536) (2025)
+- [MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](https://openreview.net/forum?id=uvgJM9RQ6T) (ICLR 2026 poster)
 - [FP8-Flow-MoE: A Casting-Free FP8 Recipe without Double Quantization Error](https://arxiv.org/abs/2511.02302) (2025)
 - [Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586) (2025)
 
-### Sources To Follow
+## Site Coverage
 
-- [OpenReview](https://openreview.net/) for current ICLR-style discussion and freshly posted papers.
-- [Proceedings of Machine Learning Research](https://proceedings.mlr.press/pmlr.html) for ICML, AISTATS, COLT, and workshop proceedings.
-- [Google DeepMind Research](https://deepmind.google/en/research/) for data curation, scaling, and optimization work.
-- [Ai2 Open Data](https://allenai.org/open-data) and the [Dolma project page](https://allenai.org/blog/dolma-3-trillion-tokens-open-llm-corpus-9a0ff4b8da64) for open-corpus and data-pipeline signals.
-- [Hugging Face FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) for open pretraining-data releases.
-- [PyTorch Blog](https://pytorch.org/blog/) for practical training-system updates that often land before polished survey coverage.
+- [Scaling Laws and Compute-Optimal Training](scaling-laws-compute-optimal-training.md)
+  The evergreen note for compute-optimal thinking, classic scaling laws, and where newer quality-aware laws depart from the Chinchilla-era mental model.
+- [Generalization in the Overparameterized Era](generalization-overparameterization.md)
+  The best current internal anchor for interpolation, double descent, and benign overfitting.
+- [ML Theory](theory.md)
+  The landing point for optimization and theory-heavy notes that explain why these research directions matter.
+- [Practical ML](practice.md)
+  The engineering layer for experiments, reproducibility, and training-loop discipline.
 
-### Canonical References Worth Keeping
+## Sources To Follow
 
-- [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
-- [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556)
-- [Deep Double Descent: Where Bigger Models and More Data Hurt](https://arxiv.org/abs/1912.02292)
-- [Benign Overfitting in Linear Regression](https://arxiv.org/abs/1906.11300)
+- [OpenReview](https://openreview.net/)
+- [Proceedings of Machine Learning Research](https://proceedings.mlr.press/pmlr.html)
+- [Journal of Machine Learning Research](https://jmlr.org/)
+- [Google DeepMind Research](https://deepmind.google/en/research/)
+- [Ai2 Open Data](https://allenai.org/open-data)
+- [Hugging Face FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb)
+
+## Open Backlog
+
+- A deeper note on data curation beyond deduplication: selection, mixture design, and when pruning beats scaling.
+- A focused reading map on synthetic data scaling, model collapse, and how to evaluate real-synthetic mixtures.
+- A theory note on implicit regularization after 2025: shortcut learning, flatness, and optimizer-dependent bias.
+- A practical research note on FP8 and MXFP4 training recipes, including what counts as a scientifically honest comparison.
+- A future subpage on multilingual and cross-lingual data scaling once the current crop of 2026 work stabilizes.

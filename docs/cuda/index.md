@@ -1,6 +1,6 @@
 ---
 title: GPU Systems & CUDA
-summary: GPU architecture, profiling, memory behavior, and CUDA engineering as part of the AI systems stack.
+summary: Live research directions in GPU kernels, graph capture, low-precision CUDA engineering, and compiler-driven performance work.
 status: evergreen
 updated: 2026-04-24
 tags:
@@ -9,25 +9,28 @@ tags:
   - ai systems
 ---
 
-<div class="hero-shell section-hero cuda-hero">
-<p class="hero-eyebrow">Hardware-Software Interface</p>
+This page is a living map of GPU-systems and CUDA research. It focuses on live kernel, compiler, graph-capture, and hardware-generation shifts that matter for frontier training and inference stacks, rather than trying to be a beginner roadmap.
 
-<h1>GPU Systems &amp; CUDA</h1>
+## Topic Map
 
-<p class="hero-lead">This section lives under <strong>AI Systems</strong> because GPU programming is part of the execution substrate for training and inference. The goal here is to move from conceptual understanding to performance-aware engineering.</p>
+- **Attention and fused kernels**
+  This remains the flagship research surface: how to move less data, fuse more work, and match kernel structure to the asymmetries of new hardware generations.
+- **Graph capture and runtime materialization**
+  CUDA graphs are no longer an implementation footnote. They now shape startup latency, autoscaling behavior, and deployment-time flexibility.
+- **Compiler and kernel authoring stacks**
+  CUTLASS, CuTe DSL, Triton, and adjacent compiler tooling are increasingly the real productivity layer for performance work, not raw CUDA alone.
+- **Low-precision numerics**
+  FP8 and other low-precision paths matter when they survive scale, preserve useful optimization dynamics, and remain compatible with fused-kernel design.
+- **AI-assisted kernel generation**
+  A new frontier is whether models can meaningfully search, synthesize, or refine high-performance kernels instead of only writing toy code snippets.
 
-<div class="chip-row">
-<span class="chip">GPU architecture</span>
-<span class="chip">Profiling</span>
-<span class="chip">Memory hierarchy</span>
-<span class="chip">CUDA and Triton</span>
-</div>
+## Research Questions Right Now
 
-<div class="hero-actions">
-<a class="md-button md-button--primary" href="pmpp/">Read the PMPP Overview</a>
-<a class="md-button" href="../ai-systems/">Back to AI Systems</a>
-</div>
-</div>
+- Which kernel design ideas survive the transition from Hopper-era assumptions to Blackwell-era hardware behavior?
+- How much of serving cold-start and deployment friction is now a graph-materialization problem?
+- When should a team invest in CUTLASS/CuTe/Triton-based specialization instead of relying on vendor or framework defaults?
+- Which low-precision kernel paths are genuinely production-stable rather than benchmark-specific?
+- Can AI-generated kernels become trustworthy components of the optimization workflow, or are they still mostly search-time assistants for humans?
 
 ## Research Radar
 
@@ -48,13 +51,13 @@ This radar prefers 2025-2026 work. Older CUDA papers stay only when they still t
 
 `FlashAttention`, `Blackwell`, `WGMMA`, `TMA`, `CUTLASS`, `CuTe DSL`, `Triton`, `FP8 GEMM`, `CUDA graphs`, `kernel autotuning`
 
-### Recent Papers By Direction
+### Recent Papers And Research Signals By Direction
 
 #### Attention And Fused Kernel Design
 
 - [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](https://arxiv.org/abs/2603.05451) (2026)
 - [The Anatomy of a Triton Attention Kernel](https://arxiv.org/abs/2511.11581) (2025)
-- [A Case Study in CUDA Kernel Fusion: Implementing FlashAttention-2 on NVIDIA Hopper Architecture using the CUTLASS Library](https://arxiv.org/abs/2312.11918) (2023, kept because it is still one of the best public "how a real fused kernel is built" references)
+- [A Case Study in CUDA Kernel Fusion: Implementing FlashAttention-2 on NVIDIA Hopper Architecture using the CUTLASS Library](https://arxiv.org/abs/2312.11918) (2023, kept as a best-in-class public case study)
 
 #### Graph Capture, Startup, And Runtime Materialization
 
@@ -69,92 +72,30 @@ This radar prefers 2025-2026 work. Older CUDA papers stay only when they still t
 - [TritonRL: Training LLMs to Think and Code Triton Without Cheating](https://arxiv.org/abs/2510.17891) (2025)
 - [DRTriton: Large-Scale Synthetic Data Reinforcement Learning for Triton Kernel Generation](https://arxiv.org/abs/2603.21465) (2026)
 
-### Sources To Follow
+### Related Notes
+
+- [AI Systems](../ai-systems/index.md)
+- [Prefill, Decode, and Goodput](../ai-systems/prefill-decode-goodput.md)
+
+## Site Coverage
+
+- [AI Systems](../ai-systems/index.md)
+  The parent systems overview for runtime, serving, and deployment questions that sit above kernel-level work.
+- [Prefill, Decode, and Goodput](../ai-systems/prefill-decode-goodput.md)
+  The best adjacent internal note when kernel choices start affecting latency and serving behavior, not just raw throughput.
+
+## Sources To Follow
 
 - [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
 - [CUTLASS Documentation](https://docs.nvidia.com/cutlass/latest/overview.html)
 - [Triton Documentation](https://triton-lang.org/main/index)
 - [NVIDIA TensorRT-LLM Documentation](https://docs.nvidia.com/tensorrt-llm/index.html)
 - [GPU Mode](https://github.com/gpu-mode/resource-stream)
-- [NVIDIA Developer Blog](https://developer.nvidia.com/blog/)
 
-### Canonical References Worth Keeping
+## Open Backlog
 
-- [FlashAttention-2](https://arxiv.org/abs/2307.08691)
-
-## Zero To Hero Roadmap
-
-### 1. Foundations
-
-- Modern C++ memory semantics and layout intuition.
-- Throughput-oriented architecture: SMs, warps, occupancy, and memory hierarchy.
-- The difference between writing a correct kernel and writing a fast kernel.
-
-### 2. Tooling
-
-- Profiling with **Nsight Compute** and **Nsight Systems**.
-- Debugging with Compute Sanitizer and careful instrumentation.
-- Building the habit of measuring before optimizing.
-
-### 3. Memory And Compute Optimization
-
-- Global-memory coalescing and shared-memory tiling.
-- Register pressure, divergence, occupancy, and warp-level primitives.
-- How to reason about bandwidth ceilings and arithmetic intensity.
-
-### 4. Modern GPU Software Stacks
-
-- CUDA as the core execution model.
-- CUTLASS for high-performance GEMM design patterns.
-- Triton for custom kernels in an AI workflow.
-
-### 5. Capstone Work
-
-- Optimized matrix multiplication with benchmarks against vendor libraries.
-- Custom attention kernels with careful memory analysis.
-- Every serious project should include benchmark tables and profiler screenshots.
-
-## PMPP Study Notes
-
-I am using the 4th edition of **Programming Massively Parallel Processors** as a structured study track.
-
-### Foundations
-
-- [PMPP Overview](pmpp/index.md)
-- [Chapter 1: Introduction](pmpp/chapter-01.md)
-- [Chapter 2: Data Parallel Computing](pmpp/chapter-02.md)
-- [Chapter 3: Multidimensional Grids](pmpp/chapter-03.md)
-- [Chapter 4: Compute Architecture](pmpp/chapter-04.md)
-- [Chapter 5: Memory Architecture](pmpp/chapter-05.md)
-- [Chapter 6: Performance Considerations](pmpp/chapter-06.md)
-
-### Parallel Patterns
-
-- [Chapter 7: Convolution](pmpp/chapter-07.md)
-- [Chapter 8: Stencil](pmpp/chapter-08.md)
-- [Chapter 9: Parallel Histogram](pmpp/chapter-09.md)
-- [Chapter 10: Reduction](pmpp/chapter-10.md)
-- [Chapter 11: Prefix Sum (Scan)](pmpp/chapter-11.md)
-- [Chapter 12: Parallel Merge](pmpp/chapter-12.md)
-- [Chapter 13: Parallel Sorting](pmpp/chapter-13.md)
-- [Chapter 14: Sparse Matrix Computation](pmpp/chapter-14.md)
-- [Chapter 15: Parallel Graph Algorithms](pmpp/chapter-15.md)
-
-### AI And Advanced Systems
-
-- [Chapter 16: Deep Learning](pmpp/chapter-16.md)
-- [Chapter 17: MRI Reconstruction](pmpp/chapter-17.md)
-- [Chapter 18: Molecular Dynamics](pmpp/chapter-18.md)
-- [Chapter 19: Programming Strategy](pmpp/chapter-19.md)
-- [Chapter 20: Heterogeneous Clusters](pmpp/chapter-20.md)
-- [Chapter 21: Dynamic Parallelism](pmpp/chapter-21.md)
-- [Chapter 22: Evolution and Trends](pmpp/chapter-22.md)
-- [Chapter 23: Conclusion](pmpp/chapter-23.md)
-- [Appendix A: Numerical Issues](pmpp/appendix-a.md)
-- [GPU Engineer Roadmap](pmpp/engineer.md)
-
-## Key Resources
-
-- **Book**: [Programming Massively Parallel Processors](https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0).
-- **Official Docs**: [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) and [CUDA Best Practices Guide](https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/).
-- **Community**: [GPU Mode](https://github.com/gpu-mode/resource-stream).
+- A deeper note on attention-kernel evolution from FlashAttention-2 to FlashAttention-4 and what changed in the hardware assumptions.
+- A practical research note on CUDA graphs, runtime materialization, and cold-start behavior in serving stacks.
+- A comparison page for CUDA, CUTLASS, CuTe DSL, and Triton as research and engineering interfaces.
+- A focused note on FP8 kernel engineering and where numerics, layout, and fusion choices interact.
+- A future page on AI-assisted kernel generation and how to evaluate generated kernels honestly.

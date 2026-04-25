@@ -121,8 +121,11 @@ nav:
     - Overview: genai/index.md
   - AI Systems:
     - Overview: ai-systems/index.md
-    - Distributed Training Playbook: ai-systems/distributed-training-playbook.md
-    - Prefill, Decode, and Goodput: ai-systems/prefill-decode-goodput.md
+    - Distributed Learning:
+      - Overview: ai-systems/distributed-learning/index.md
+      - Distributed Training Playbook: ai-systems/distributed-training-playbook.md
+    - Inference Systems:
+      - Prefill, Decode, and Goodput: ai-systems/prefill-decode-goodput.md
     - GPU Systems & CUDA:
       - Overview: cuda/index.md
       - PMPP Book:

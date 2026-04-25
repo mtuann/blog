@@ -1,6 +1,6 @@
 ---
 title: Home
-summary: A living knowledge base for machine learning, generative AI, systems, efficiency, and research notes.
+summary: A living knowledge base for machine learning, generative AI, distributed learning, systems, efficiency, and research notes.
 status: evergreen
 updated: 2026-04-24
 tags:
@@ -15,7 +15,7 @@ tags:
 
 <h1>AI Research Garden</h1>
 
-<p class="hero-lead">A math-first research garden for machine learning, generative AI, systems, efficiency, trust, and paper-driven synthesis. The site is designed to move from foundations to frontier work without losing the engineering and evaluation story.</p>
+<p class="hero-lead">A math-first research garden for machine learning, generative AI, distributed learning, systems, efficiency, trust, and paper-driven synthesis. The site is designed to move from foundations to frontier work without losing the engineering and evaluation story.</p>
 
 <div class="chip-row">
 <span class="chip">Foundations to frontier</span>
@@ -32,23 +32,31 @@ tags:
 
 <div class="hero-stat-grid">
   <div class="hero-stat">
-    <span>Coverage</span>
-    <strong>Core ML to production systems</strong>
+    <div class="hero-stat-head">
+      <span>Coverage</span>
+      <strong>Core ML to production systems</strong>
+    </div>
     <p>The sections are organized so theory, implementation, and evaluation can reinforce each other.</p>
   </div>
   <div class="hero-stat">
-    <span>Publishing Model</span>
-    <strong>Evergreen hubs plus note streams</strong>
+    <div class="hero-stat-head">
+      <span>Publishing Model</span>
+      <strong>Evergreen hubs plus note streams</strong>
+    </div>
     <p>Stable topic pages hold the mental model while reviews, roundups, and maps keep the site current.</p>
   </div>
   <div class="hero-stat">
-    <span>Writing Style</span>
-    <strong>Equations, code, and point of view</strong>
+    <div class="hero-stat-head">
+      <span>Writing Style</span>
+      <strong>Equations, code, and point of view</strong>
+    </div>
     <p>Posts are meant to be useful for both learning and deciding what to build, test, or read next.</p>
   </div>
   <div class="hero-stat">
-    <span>Workflow</span>
-    <strong>Low-friction updates</strong>
+    <div class="hero-stat-head">
+      <span>Workflow</span>
+      <strong>Low-friction updates</strong>
+    </div>
     <p>Drafts stay outside <code>docs/</code>, templates keep structure consistent, and section hubs link new work back in.</p>
   </div>
 </div>
@@ -70,7 +78,7 @@ tags:
 
 -   :material-server-network: **AI Systems**
 
-    Distributed training, inference systems, observability, and GPU systems.
+    Distributed learning, inference systems, observability, and GPU systems.
     [Explore AI Systems](ai-systems/index.md)
 
 -   :material-speedometer: **Efficient AI**
@@ -96,7 +104,7 @@ tags:
 <ol>
   <li>Start in <strong>Machine Learning</strong> for the core mental models.</li>
   <li>Move into <strong>Generative AI</strong> for model families and post-training.</li>
-  <li>Use <strong>AI Systems</strong> to understand training, serving, and GPU constraints.</li>
+  <li>Use <strong>AI Systems</strong> to understand distributed learning, serving, and GPU constraints.</li>
   <li>Treat <strong>Efficient AI</strong> and <strong>Trustworthy AI</strong> as cross-cutting lenses.</li>
   <li>Follow <strong>Research Notes</strong> for paper reviews, roundups, and reading maps.</li>
  </ol>
@@ -116,6 +124,7 @@ tags:
 <ul class="link-stack">
   <li><a href="ml/scaling-laws-compute-optimal-training/">Scaling Laws and Compute-Optimal Training</a></li>
   <li><a href="ai-systems/distributed-training-playbook/">Distributed Training Playbook</a></li>
+  <li><a href="ai-systems/distributed-learning/">Distributed Learning</a></li>
   <li><a href="ai-systems/prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
   <li><a href="ml/generalization-overparameterization/">Generalization in the Overparameterized Era</a></li>
   <li><a href="paper-reviews/direct-preference-optimization/">Direct Preference Optimization</a></li>

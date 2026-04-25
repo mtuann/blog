@@ -1,75 +1,42 @@
 ---
 title: AI Systems
-summary: Training, serving, and operating modern AI workloads from cluster design to GPU systems.
+summary: Live research directions in AI serving, runtime design, memory systems, and GPU-aware deployment.
 status: evergreen
 updated: 2026-04-24
 tags:
   - ai systems
-  - distributed training
+  - serving
   - inference
 ---
 
-<div class="hero-shell section-hero systems-hero">
-<p class="hero-eyebrow">Execution Layer</p>
+This page is a living map of AI systems research around training and serving stacks. It is intentionally biased toward runtime design, serving orchestration, cache and memory behavior, and hardware-aware execution; distributed optimization lives under the Distributed Learning subtopic, and kernel-level performance work lives under GPU Systems & CUDA.
 
-<h1>AI Systems</h1>
+## Topic Map
 
-<p class="hero-lead">This section is about the machinery that makes modern AI possible in practice: distributed training, serving, GPU systems, memory behavior, scheduling, and the tradeoffs that determine whether a model is merely impressive or actually deployable.</p>
+- **Serving architectures**
+  This is the core of the page: prefill/decode decomposition, aggregation versus disaggregation, request routing, and runtime structure for large-model serving.
+- **Cache and memory systems**
+  KV cache is no longer a local optimization detail. It has become a hierarchy design problem spanning HBM, CPU memory, SSD, and scheduling policy.
+- **Scheduling, SLOs, and goodput**
+  The field is converging on goodput, latency distribution, and cache efficiency as the metrics that actually matter, rather than raw tokens-per-second.
+- **Distributed Learning**
+  Training-parallelism research now has enough depth to deserve its own subtrack. Use [Distributed Learning](distributed-learning/index.md) when the question is about FSDP, tensor parallelism, decentralized training, or checkpointing at scale.
+- **GPU Systems & CUDA**
+  Use [GPU Systems & CUDA](../cuda/index.md) when the question is about kernels, graph capture, compiler/runtime integration, or hardware-generation-specific optimizations.
 
-<div class="chip-row">
-<span class="chip">Distributed training</span>
-<span class="chip">Inference systems</span>
-<span class="chip">Goodput</span>
-<span class="chip">GPU systems</span>
-</div>
+## Research Questions Right Now
 
-<div class="hero-actions">
-<a class="md-button md-button--primary" href="distributed-training-playbook/">Read Distributed Training Playbook</a>
-<a class="md-button" href="prefill-decode-goodput/">Read Prefill, Decode, and Goodput</a>
-</div>
-</div>
-
-<div class="hub-grid">
-<div class="hub-panel">
-<h3>Start Here</h3>
-<ul class="link-stack">
-  <li><a href="distributed-training-playbook/">Distributed Training Playbook</a></li>
-  <li><a href="prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
-  <li><a href="../cuda/">GPU Systems &amp; CUDA</a></li>
-  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Systems Playbook</h3>
-<ul>
-  <li>Use DDP when the model fits and you need straightforward scale-out.</li>
-  <li>Use ZeRO or FSDP when replicated model state is the main memory problem.</li>
-  <li>Use tensor or pipeline parallelism when layer size or stage partitioning becomes the real constraint.</li>
-  <li>Optimize serving for TTFT, TPOT, and goodput rather than raw throughput alone.</li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Latest Notes</h3>
-<ul class="link-stack">
-  <li><a href="distributed-training-playbook/">Distributed Training Playbook</a></li>
-  <li><a href="prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
-  <li><a href="../research-notes/roundups/2026-04-kv-cache-optimization/">April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem</a></li>
-  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
-</ul>
-</div>
-</div>
-
-## Why CUDA Lives Here
-
-CUDA is nested under AI Systems because it is part of the execution substrate: hardware-software interaction, profiling, kernel design, and memory behavior. Efficient AI stays separate because it focuses on model-level efficiency techniques rather than GPU programming itself.
+- When should serving stacks aggregate prefill and decode, and when should they disaggregate them?
+- What cache tiering policies actually survive real workloads rather than only synthetic benchmarks?
+- How should goodput be measured when requests vary wildly in prompt length, generation length, and prefix overlap?
+- Which runtime decisions belong in software scheduling, and which now justify custom hardware or hardware-specific serving paths?
+- How much of the future serving advantage comes from better algorithms versus better workload shape assumptions?
 
 ## Research Radar
 
 Updated April 24, 2026.
 
-This radar now prefers 2025-2026 systems work. A 2024 paper stays only if it clearly shaped the current serving stack or remains the most useful public systems reference.
+This radar prefers 2025-2026 systems work. A 2024 paper stays only if it clearly shaped the current serving stack or remains the most useful public systems reference.
 
 ### Active Directions
 
@@ -77,21 +44,21 @@ This radar now prefers 2025-2026 systems work. A 2024 paper stays only if it cle
 - KV-cache management is becoming a storage-hierarchy problem spanning HBM, CPU memory, and SSD, with cache-aware scheduling and adaptive compression.
 - Prompt reuse and prefix-aware scheduling are becoming first-class runtime policies rather than isolated optimizations.
 - Serving systems are increasingly co-designed with hardware assumptions, especially around decode bandwidth, communication overhead, and tiered memory.
-- Training-side systems work remains centered on practical combinations of FSDP, ZeRO, tensor parallelism, and pipeline parallelism, but the public frontier is moving fastest on inference stacks.
+- Runtime systems are increasingly evaluated in terms of goodput, tail latency, and cache hit behavior rather than raw tokens-per-second alone.
 
 ### Keywords To Track
 
-`TTFT`, `TPOT`, `goodput`, `prefill-decode disaggregation`, `disaggregation-aggregation`, `hierarchical KV cache`, `cache-aware scheduling`, `prefix reuse`, `request migration`, `FSDP`, `ZeRO`
+`TTFT`, `TPOT`, `goodput`, `prefill-decode disaggregation`, `disaggregation-aggregation`, `hierarchical KV cache`, `cache-aware scheduling`, `prefix reuse`, `request migration`, `decode bandwidth`
 
-### Recent Papers By Direction
+### Recent Papers And Research Signals By Direction
 
 #### Prefill / Decode Serving Architectures
 
 - [Prefill-Decode Aggregation or Disaggregation? Unifying Both for Goodput-Optimized LLM Serving](https://arxiv.org/abs/2508.01989) (2025)
 - [Disaggregated Prefill and Decoding Inference System for Large Language Model Serving on Multi-Vendor GPUs](https://arxiv.org/abs/2509.17542) (2025)
 - [SPAD: Specialized Prefill and Decode Hardware for Disaggregated LLM Inference](https://arxiv.org/abs/2510.08544) (2025)
-- [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670) (2024, kept as the impact reference that pushed disaggregation into the mainstream)
-- [P/D-Serve: Serving Disaggregated Large Language Model at Scale](https://arxiv.org/abs/2408.08147) (2024, kept as an important deployment-oriented follow-up)
+- [DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving](https://arxiv.org/abs/2401.09670) (2024, kept as an impact reference)
+- [P/D-Serve: Serving Disaggregated Large Language Model at Scale](https://arxiv.org/abs/2408.08147) (2024, kept as an important deployment follow-up)
 
 #### Hierarchical KV Cache And Memory Management
 
@@ -99,29 +66,42 @@ This radar now prefers 2025-2026 systems work. A 2024 paper stays only if it cle
 - [AdaptCache: KV Cache Native Storage Hierarchy for Low-Delay and High-Quality Language Model Serving](https://arxiv.org/abs/2509.00105) (2025)
 - [Adaptive Multi-Objective Tiered Storage Configuration for KV Cache in LLM Service](https://arxiv.org/abs/2603.08739) (2026)
 - [Mell: Memory-Efficient Large Language Model Serving via Multi-GPU KV Cache Management](https://arxiv.org/abs/2501.06709) (2025)
-- [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079) (2024, kept as a defining KV-cache-centric architecture paper)
+- [Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving](https://arxiv.org/abs/2407.00079) (2024, kept as a defining architecture paper)
 
 #### Prefix Reuse And Runtime Scheduling
 
 - [Apt-Serve: Adaptive Request Scheduling on Hybrid Cache for Scalable LLM Inference Serving](https://arxiv.org/abs/2504.07494) (2025)
 - [Preble: Efficient Distributed Prompt Scheduling for LLM Serving](https://arxiv.org/abs/2407.00023) (2024, kept because prompt-sharing is still a core systems pattern)
 
-### Sources To Follow
+### Related Notes
+
+- [Distributed Learning](distributed-learning/index.md)
+- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
+- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+
+## Site Coverage
+
+- [Distributed Learning](distributed-learning/index.md)
+  The systems-facing training track for hybrid parallelism, communication efficiency, and resilience at scale.
+- [Prefill, Decode, and Goodput](prefill-decode-goodput.md)
+  The best internal note for the serving metrics and latency tradeoffs that dominate real deployment.
+- [GPU Systems & CUDA](../cuda/index.md)
+  The kernel and compiler layer beneath the serving/runtime stack.
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+  A guided path through inference papers that complement this overview without making it too dense.
+
+## Sources To Follow
 
 - [vLLM Documentation](https://docs.vllm.ai/)
-- [PyTorch FSDP Documentation](https://docs.pytorch.org/docs/stable/fsdp.html)
 - [NVIDIA TensorRT-LLM Documentation](https://docs.nvidia.com/tensorrt-llm/index.html)
 - [LMCache Documentation](https://docs.lmcache.ai/)
-- [OpenReview](https://openreview.net/) for current systems papers before they settle into surveys
+- [OpenReview](https://openreview.net/)
 
-### Canonical References Worth Keeping
+## Open Backlog
 
-- [ZeRO: Memory Optimizations Toward Training Trillion Parameter Models](https://arxiv.org/abs/1910.02054)
-- [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](https://arxiv.org/abs/2104.04473)
-- [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180)
-
-## Key Resources
-
-- **Course**: [CS329S: Machine Learning Systems Design](https://stanford-cs329s.github.io/).
-- **Blog**: [Chip Huyen's blog](https://huyenchip.com/).
-- **Paper**: [Efficient Large-Scale Language Model Training on GPU Clusters](https://arxiv.org/abs/2104.04473).
+- A deeper systems note on aggregation versus disaggregation for prefill/decode under different workload regimes.
+- A comparative note on vLLM, TensorRT-LLM, LMCache, and where their abstractions differ in practice.
+- A research note on benchmarking methodology for serving: goodput, tail latency, and cache-aware workloads.
+- A dedicated page on hierarchical KV-cache design patterns, not just individual papers.
+- A future overview of hardware-software co-design in serving, including what is moving into accelerator-specific paths.

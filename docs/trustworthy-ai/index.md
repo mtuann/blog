@@ -1,6 +1,6 @@
 ---
 title: Trustworthy AI
-summary: Interpretability, robustness, evaluation, and safety for modern AI systems.
+summary: Live research directions in evaluation, interpretability, jailbreaks, hallucination, and agent oversight.
 status: evergreen
 updated: 2026-04-24
 tags:
@@ -9,60 +9,34 @@ tags:
   - evaluation
 ---
 
-<div class="hero-shell section-hero trust-hero">
-<p class="hero-eyebrow">Reliability</p>
+This page is a living map of trustworthy-AI research. It focuses on the moving frontier in evaluation, auditing, interpretability, hallucination, and agent oversight, rather than trying to summarize “AI safety” as one monolithic subject.
 
-<h1>Trustworthy AI</h1>
+## Topic Map
 
-<p class="hero-lead">This section covers how we understand, evaluate, stress-test, and govern modern AI behavior. The focus is practical and research-oriented: what makes models reliable, where they fail, and how to reason about those failures without mistaking benchmarks for guarantees.</p>
+- **Evaluation and auditing**
+  This is where much of the field is re-centering: moving from static benchmark worship to audits, hidden-behavior discovery, deployment-shaped testbeds, and evaluation agents.
+- **Jailbreaks and safety-utility tradeoffs**
+  The live question is no longer just “can a model be jailbroken?” but which attacks transfer, which defenses stay useful, and what costs safety measures impose on legitimate use.
+- **Interpretability and mechanistic reliability**
+  Sparse autoencoders, feature dictionaries, and automated interpretability pipelines are now central, but the real frontier question is whether they change engineering decisions or only produce attractive analyses.
+- **Hallucination and calibration**
+  This is shifting from anecdotal error collection to benchmark design, authentic-user evaluation, abstention behavior, and uncertainty-aware response strategies.
+- **Agent oversight**
+  As models become longer-horizon tool users, trustworthy-AI work is increasingly about monitoring, auditing, and constraining agentic behavior rather than only scoring single-shot outputs.
 
-<div class="chip-row">
-<span class="chip">Interpretability</span>
-<span class="chip">Safety</span>
-<span class="chip">Evaluation</span>
-<span class="chip">Provenance</span>
-</div>
+## Research Questions Right Now
 
-<div class="hero-actions">
-<a class="md-button md-button--primary" href="../paper-reviews/direct-preference-optimization/">Read DPO Review</a>
-<a class="md-button" href="../research-notes/">Browse Research Notes</a>
-</div>
-</div>
-
-<div class="hub-grid">
-<div class="hub-panel">
-<h3>Core Tracks</h3>
-<ul>
-  <li>Mechanistic interpretability and probing</li>
-  <li>Robustness, jailbreaking, and red-teaming</li>
-  <li>Evaluation design and judge-model limits</li>
-  <li>Detection, provenance, and hallucination handling</li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Questions Worth Tracking</h3>
-<ul>
-  <li>Which safety evaluations remain meaningful after strong post-training?</li>
-  <li>How do we separate model capability from scaffolding artifacts?</li>
-  <li>Which interpretability results can influence real engineering decisions?</li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Latest Notes</h3>
-<ul class="link-stack">
-  <li><a href="../paper-reviews/direct-preference-optimization/">Paper Review: Direct Preference Optimization</a></li>
-  <li><p>More evaluation and interpretability notes will collect here.</p></li>
-</ul>
-</div>
-</div>
+- What evaluation setups still matter once frontier models saturate the old public benchmarks?
+- Which jailbreak benchmarks measure real deployment risk rather than benchmark gaming?
+- When do interpretability tools produce operational leverage instead of post hoc storytelling?
+- How should hallucination be measured when tasks are ambiguous, open-ended, or multi-turn?
+- What does scalable oversight look like once agents browse, code, and plan over long horizons?
 
 ## Research Radar
 
 Updated April 24, 2026.
 
-This radar now emphasizes 2025-2026 work. Older entries remain only when they are still the benchmark anchor or the cleanest canonical reference for a live subfield.
+This radar emphasizes 2025-2026 work. Older entries remain only when they are still the benchmark anchor or the cleanest canonical reference for a live subfield.
 
 ### Active Directions
 
@@ -84,14 +58,14 @@ This radar now emphasizes 2025-2026 work. Older entries remain only when they ar
 - [Building and evaluating alignment auditing agents](https://alignment.anthropic.com/2025/automated-auditing/) (Anthropic, July 24, 2025)
 - [Automated Alignment Researchers: Using large language models to scale scalable oversight](https://www.anthropic.com/research/automated-alignment-researchers?curius=1184) (Anthropic, April 14, 2026)
 - [A3: An Automated Alignment Agent for Safety Finetuning](https://alignment.anthropic.com/2026/automated-alignment-agent/) (Anthropic, March 11, 2026)
-- [MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574) (2024, kept because it remains a widely used post-MMLU benchmark anchor)
+- [MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574) (2024, kept as a benchmark anchor)
 
 #### Jailbreaks, Defenses, And Safety-Utility Tradeoffs
 
 - [HarDBench: A Benchmark for Draft-Based Co-Authoring Jailbreak Attacks for Safe Human-LLM Collaborative Writing](https://arxiv.org/abs/2604.19274) (2026)
 - [Boundary Point Jailbreaking of Black-Box LLMs](https://arxiv.org/abs/2602.15001) (2026)
 - [AutoRAN: Weak-to-Strong Jailbreaking of Large Reasoning Models](https://arxiv.org/abs/2505.10846) (2025)
-- [A StrongREJECT for Empty Jailbreaks](https://arxiv.org/abs/2402.10260) (2024, kept because it is still one of the benchmark anchors for jailbreak evaluation)
+- [A StrongREJECT for Empty Jailbreaks](https://arxiv.org/abs/2402.10260) (2024, kept as a benchmark anchor)
 
 #### Interpretability And Mechanistic Reliability
 
@@ -107,23 +81,25 @@ This radar now emphasizes 2025-2026 work. Older entries remain only when they ar
 - [HalluLens: LLM Hallucination Benchmark](https://arxiv.org/abs/2504.17550) (2025)
 - [HalluVerse25: Fine-grained Multilingual Benchmark Dataset for LLM Hallucinations](https://arxiv.org/abs/2503.07833) (2025)
 
-### Sources To Follow
+## Site Coverage
+
+- [Research Notes](../research-notes/index.md)
+  The home for future paper reviews, reading maps, and roundups that will deepen this topic without bloating the overview.
+- [Paper Review: Direct Preference Optimization](../paper-reviews/direct-preference-optimization.md)
+  A relevant current note for preference learning and post-training, which still touches evaluation and safety tradeoffs even if it is not a full trustworthy-AI page.
+
+## Sources To Follow
 
 - [Anthropic Research](https://www.anthropic.com/research)
 - [Anthropic Alignment Research](https://www.anthropic.com/research/team/alignment)
 - [OpenAI Safety](https://openai.com/safety/)
 - [OpenAI Safety Evaluations Hub](https://openai.com/safety/evaluations-hub/)
-- [Google DeepMind Responsibility & Safety](https://deepmind.google/en/responsibility-and-safety/)
 - [Transformer Circuits](https://transformer-circuits.pub/)
 
-### Canonical References Worth Keeping
+## Open Backlog
 
-- [TruthfulQA: Measuring How Models Mimic Human Falsehoods](https://arxiv.org/abs/2109.07958)
-- [SelfCheckGPT](https://arxiv.org/abs/2303.08896)
-- [Constitutional AI: Harmlessness from AI Feedback](https://arxiv.org/abs/2212.08073)
-
-## Key Resources
-
-- **Research journal**: [Transformer Circuits](https://transformer-circuits.pub/).
-- **Course**: [AI Safety Fundamentals](https://course.aisafetyfundamentals.com/).
-- **Benchmark hub**: [Chatbot Arena](https://chat.lmsys.org/).
+- A deeper note on evaluation after benchmark saturation: auditing, grader design, hidden-behavior discovery, and deployment realism.
+- A focused reading map on jailbreak research and safety-utility tradeoffs across 2025-2026.
+- A dedicated note on sparse autoencoders, feature robustness, and what counts as real interpretability progress.
+- A research note on hallucination taxonomies, abstention, and authentic-user evaluation.
+- A future overview of agent oversight and scalable monitoring once agentic behavior becomes the default deployment mode.

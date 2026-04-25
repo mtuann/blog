@@ -1,6 +1,6 @@
 ---
 title: Efficient AI
-summary: Model-level efficiency techniques for training and serving large models under real resource constraints.
+summary: Live research directions in quantization, speculative decoding, efficient architectures, and model-level efficiency.
 status: evergreen
 updated: 2026-04-24
 tags:
@@ -9,60 +9,34 @@ tags:
   - inference
 ---
 
-<div class="hero-shell section-hero efficiency-hero">
-<p class="hero-eyebrow">Model Efficiency</p>
+This page is a living map of model-level efficiency research. It focuses on techniques that change the compute, memory, or algorithmic cost profile inside the model stack; cluster orchestration and serving-runtime decisions stay under AI Systems.
 
-<h1>Efficient AI</h1>
+## Topic Map
 
-<p class="hero-lead">This section focuses on efficiency techniques at the model and algorithm level: compression, quantization, sparse computation, efficient architectures, and inference tricks that change the cost profile of real workloads.</p>
+- **Quantization and low-precision training**
+  This is no longer just about fitting models into memory. The real research question is which low-bit schemes preserve useful optimization dynamics and which ones merely create brittle benchmark wins.
+- **Cache compression and reuse**
+  KV-cache work belongs here when it changes the effective memory footprint or algorithmic behavior of the model, not merely the runtime scheduler around it.
+- **Speculative and accelerated decoding**
+  The frontier has moved from draft models to self-speculation, partial verification, and other schemes that reduce serial generation cost without collapsing output quality.
+- **Efficient architectures**
+  The interesting question is no longer “attention or not?” but which hybrid combinations of attention, state-space, and memory mechanisms actually shift the cost-quality frontier.
+- **Boundary with AI Systems**
+  If the main question is orchestration, serving topology, or hardware scheduling, it belongs under AI Systems. If the main question is changing FLOPs, memory, or the model’s own execution pattern, it belongs here.
 
-<div class="chip-row">
-<span class="chip">Quantization</span>
-<span class="chip">Sparsity</span>
-<span class="chip">Efficient architectures</span>
-<span class="chip">Inference optimization</span>
-</div>
+## Research Questions Right Now
 
-<div class="hero-actions">
-<a class="md-button md-button--primary" href="../research-notes/reading-maps/efficient-llm-inference/">Read the Inference Reading Map</a>
-<a class="md-button" href="../research-notes/roundups/2026-04-kv-cache-optimization/">Read the KV Cache Roundup</a>
-</div>
-</div>
-
-<div class="hub-grid">
-<div class="hub-panel">
-<h3>Main Tracks</h3>
-<ul>
-  <li>Quantization and compression</li>
-  <li>Efficient architectures beyond standard attention</li>
-  <li>Inference optimization and cache strategy</li>
-  <li>Sparsity and pruning</li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Boundary With AI Systems</h3>
-<ul>
-  <li>If the question is about clusters, communication, memory hierarchy, or CUDA kernels, it belongs under <strong>AI Systems</strong>.</li>
-  <li>If the question is about shrinking the model, reducing FLOPs, or changing the algorithmic cost profile, it belongs here.</li>
-</ul>
-</div>
-
-<div class="hub-panel">
-<h3>Latest Notes</h3>
-<ul class="link-stack">
-  <li><a href="../research-notes/roundups/2026-04-kv-cache-optimization/">April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem</a></li>
-  <li><a href="../research-notes/reading-maps/efficient-llm-inference/">Reading Map: Efficient LLM Inference</a></li>
-  <li><a href="../ai-systems/prefill-decode-goodput/">Prefill, Decode, and Goodput</a></li>
-</ul>
-</div>
-</div>
+- Which efficiency techniques still help when evaluated end-to-end rather than in isolated kernel or benchmark settings?
+- When does quantization change the optimization problem itself, rather than just the final deployment format?
+- Which cache-compression schemes generalize across long-context, multimodal, and reasoning-heavy workloads?
+- How much speculative decoding speedup remains after verification cost and failure cases are measured honestly?
+- Which efficient architectures are genuinely new regimes, and which are just temporary workarounds for current hardware bottlenecks?
 
 ## Research Radar
 
 Updated April 24, 2026.
 
-This radar now leans toward 2025-2026 work. A 2024 paper remains only when it is still the clearest impact paper for the efficiency pattern.
+This radar leans toward 2025-2026 work. A 2024 paper remains only when it is still the clearest impact paper for the efficiency pattern.
 
 ### Active Directions
 
@@ -76,14 +50,14 @@ This radar now leans toward 2025-2026 work. A 2024 paper remains only when it is
 
 `KV cache compression`, `FP8`, `MXFP4`, `W4A8`, `system co-design`, `self-speculative decoding`, `partial verification`, `Mamba`, `hybrid architectures`, `long-context efficiency`
 
-### Recent Papers By Direction
+### Recent Papers And Research Signals By Direction
 
 #### Quantization And Low-Precision Training
 
 - [LiquidGEMM: Hardware-Efficient W4A8 GEMM Kernel for High-Performance LLM Serving](https://arxiv.org/abs/2509.01229) (2025)
 - [Towards Fully FP8 GEMM LLM Training at Scale](https://arxiv.org/abs/2505.20524) (2025)
 - [Training LLMs with MXFP4](https://arxiv.org/abs/2502.20586) (2025)
-- [QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532) (2024, kept as an impact paper for quantization-plus-systems co-design)
+- [QServe: W4A8KV4 Quantization and System Co-design for Efficient LLM Serving](https://arxiv.org/abs/2405.04532) (2024, kept as an impact paper)
 
 #### KV Cache Compression And Reuse
 
@@ -103,22 +77,31 @@ This radar now leans toward 2025-2026 work. A 2024 paper remains only when it is
 - [Hybrid Architectures for Language Models: Systematic Analysis and Design Insights](https://arxiv.org/abs/2510.04800) (2025)
 - [Characterizing State Space Model and Hybrid Language Model Performance with Long Context](https://arxiv.org/abs/2507.12442) (2025)
 
-### Sources To Follow
+### Related Notes
+
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
+
+## Site Coverage
+
+- [Reading Map: Efficient LLM Inference](../research-notes/reading-maps/efficient-llm-inference.md)
+  The best internal guide for inference papers that touch this topic from multiple angles.
+- [April 2026 Roundup: KV Cache Optimization Becomes A Systems Problem](../research-notes/roundups/2026-04-kv-cache-optimization.md)
+  A narrower internal note focused on the cache frontier where efficiency and systems begin to overlap.
+- [AI Systems](../ai-systems/index.md)
+  The place to go when a question stops being about model cost structure and starts being about runtime orchestration.
+
+## Sources To Follow
 
 - [vLLM Documentation](https://docs.vllm.ai/)
 - [Hugging Face Quantization Guide](https://huggingface.co/docs/optimum/concept_guides/quantization)
 - [NVIDIA TensorRT-LLM Documentation](https://docs.nvidia.com/tensorrt-llm/index.html)
-- [LMCache Documentation](https://docs.lmcache.ai/)
-- [OpenReview](https://openreview.net/) for fresh efficiency and inference papers before the story settles
+- [OpenReview](https://openreview.net/)
 
-### Canonical References Worth Keeping
+## Open Backlog
 
-- [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314)
-- [FlashAttention-2](https://arxiv.org/abs/2307.08691)
-- [Mamba: Linear-Time Sequence Modeling with Selective State Spaces](https://arxiv.org/abs/2312.00752)
-
-## Key Resources
-
-- **Blog**: [Tim Dettmers' blog](https://timdettmers.com/).
-- **Engineering notes**: [vLLM blog](https://blog.vllm.ai/).
-- **Paper**: [QLoRA: Efficient Finetuning of Quantized LLMs](https://arxiv.org/abs/2305.14314).
+- A dedicated note on quantization as a research area, not just an inference trick: W4A8, FP8, MXFP4, and what “fair comparison” should mean.
+- A reading map on speculative decoding families and the failure modes hidden by synthetic workloads.
+- A deeper note on KV-cache compression across language-only and multimodal settings.
+- A research note on efficient architectures after Mamba, with explicit criteria for what counts as a real frontier shift.
+- A boundary note explaining where Efficient AI should hand off to AI Systems and where it should not.
